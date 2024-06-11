@@ -11,7 +11,7 @@ public class HomeBooksController {
     @GetMapping("")
     public String mostrar(){
 
-        return "hola.html";
+        return "home/hola";
 
     }
     
