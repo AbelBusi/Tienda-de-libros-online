@@ -6,7 +6,12 @@
     <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet" >
 </head>
 <body>
+    <!--Header-->
+    <header th:insert="home/Template_login.html :: Templatelogin"></header>
     <header th:insert="home/template_user.html :: header"></header>
+
+    <!--Bootstrap core JavaScript-->
+    <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 
 </body>
 </html>
