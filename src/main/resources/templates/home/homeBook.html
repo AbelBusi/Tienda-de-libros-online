@@ -8,29 +8,47 @@
     <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
     <header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
     <header th:insert="~{home/template_user.html :: header}"></header>
-    <link th:href="@{/css/imageStyle.css}" rel="stylesheet">
 
 </head>
 <style th:inline="text">
-.img-01{
+    .img-01 {
 
-    background:url([[@{/images/xff.png}]]);
-    height: 50vh;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    top:-15px;
-}    
-
+        background:url([[@{/images/libroFondo.png}]]);
+        height: 40vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: -15px;
+        left: -25px;
+    }
 </style>
 
 <body>
 
     <div class="container-fluid img-01">
-        <h2> Administracion de la libreria</h2>
-
+        <h2 class="text-center text-white"> Administracion de la libreria</h2>
     </div>
+    <div class="container">
+        <h3 class="text-center">Libros recientes </h3>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;" class="img-thumblin">
+                        <p> Manga de comedia</p>
+                        <p> One piece</p>
+                        <p>Categories: New</p>
+                        <div class="row">
+                            <a href="" class="btn btn-danger btn-sm ml-2">Agregar al carrito</a>
+                            <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
+                            <a href="" class=" btn btn-danger btn-sm ml-1"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
     <!--Bootstrap core JavaScript-->
     <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 
