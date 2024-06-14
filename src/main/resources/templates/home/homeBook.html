@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Tienda de libros</title>
-    <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet" >
-</head>
-<body>
     <!--Header-->
+    <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
     <header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
     <header th:insert="~{home/template_user.html :: header}"></header>
+    <link th:href="@{/css/imageStyle.css}" rel="stylesheet">
+
+</head>
+<style th:inline="text">
+.img-01{
+
+    background:url([[@{/images/xff.png}]]);
+    height: 50vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top:-15px;
+}    
+
+</style>
+
+<body>
+
+    <div class="container-fluid img-01">
+        <h2> Administracion de la libreria</h2>
+
+    </div>
 
     <!--Bootstrap core JavaScript-->
     <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 
 </body>
+
 </html>
