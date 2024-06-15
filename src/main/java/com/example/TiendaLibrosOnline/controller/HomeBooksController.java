@@ -14,6 +14,11 @@ public class HomeBooksController {
         return "home/homeBook";
 
     }
+
+    @GetMapping("/register")
+    public String registrarseUsuario(){
+        return "acceso/registerUser.html";
+    }
     
     
 }

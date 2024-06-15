@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+    <title>Registro de usuarios</title>    
+</head>
+<body>
+    <header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
+    <header th:insert="~{home/template_user.html :: header}"></header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <header th:insert="~{home/footer.html :: footer}"></header>
+    <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
