@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Tienda de libros</title>
     <!--Header-->
@@ -28,111 +29,109 @@
 </style>
 
 <body style="background-color: #f7f7f7;">
-        <!-- Navbar -->      
-        <!-- Background image -->
-        <div
-          class="p-5 text-center bg-image"
-          style="
+    <!-- Navbar -->
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image " style="
             background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
             height: 40vh;
             width: 100%;
-          "
-        >
-          <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-            <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-white">
-                <h1 class="mb-3">Heading</h1>
-                <h4 class="mb-3">Subheading</h4>
-                <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button"
-                >Call to action</a
-                >
-              </div>
+
+          ">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+            <div class="d-flex justify-content-center align-items-center h-100 ">
+                <div class="text-white">
+                    <h1 class="mb-3">BlazeBook</h1>
+                    <h4 class="mb-3">Libros </h4>
+                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button">Ver mas
+                        novedades</a>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- Background image -->
+    </div>
+    <!-- Background image -->
     <br><br>
     <!--Libros recientes star-->
     <div class="container">
         <h3 class="text-center">Libros Recientes </h3>
         <br><br>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+        <div class="row" >
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
         </div>
         <br>
         <div class="text-center mt-1">
@@ -146,82 +145,83 @@
         <h3 class="text-center">Libros Nuevos </h3>
         <br><br>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-danger btn-sm ml-2">Carrito</a>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
         </div>
         <br>
         <div class="text-center mt-1">
@@ -235,83 +235,89 @@
         <h3 class="text-center">Libros Antiguos </h3>
         <br><br>
         <div class="row">
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
+
+
+            <div class="col-md-4 mb-4" onmouseover="this.style.color='#303f9f';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';">
+                <div class="card h-100">
+                    <img th:src="@{/images/auto.png}" class="card-img-top img-fluid" alt="Portada del libro"
+                        style="max-height: 300px; object-fit: contain;">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One Piece</h5>
+                        <p class="card-text mb-3">Esta versión refinada mejora la legibilidad y la estética del
+                            componente de producto en tu ecommerce de libros, utilizando las características de
+                            Bootstrap de manera efectiva para un diseño responsive y agradable.</p>
+                        <p class="card-text"><small class="text-muted">Categoría: Nuevo</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
+                                <p class="mb-0 font-weight-bold">$250</p>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#" class="btn btn-danger btn-sm">Agregar al carrito</a>
+                                <a href="#" class="btn btn-success btn-sm ml-2">Detalles</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-3">
-                <div class="card crd-ho">
-                    <div class="card-body text-center">
-                        <img alt="" th:src="@{/images/auto.png}" style="width: 150px;height: 200px;"
-                            class="img-thumblin">
-                        <p> Manga de comedia</p>
-                        <p> One piece</p>
-                        <p>Categories: New</p>
-                        <div class="row">
-                            <p>
-                                <a href="" class="btn btn-success btn-sm ml-1">Detalle del libro</a>
-                                <a href="" class="btn btn-danger btn-sm ml-1">250 </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
         </div>
-        <br>
-        <div class="text-center mt-1">
-            <a href="" class="btn btn-danger btn-sm text-white">Ver todos</a>
-        </div>
+    </div>
+    <br>
+    <div class="text-center mt-1">
+        <a href="" class="btn btn-danger btn-sm text-white">Ver todos</a>
+    </div>
     </div>
     <br>
     <br>
@@ -324,4 +330,5 @@
     <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 
 </body>
+
 </html>
