@@ -7,7 +7,9 @@
 <head>
     <meta charset="ISO-8859-1">
     <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-    <title>Registro de usuarios</title>    
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    
 </head>
 
 <style>
@@ -23,23 +25,22 @@ top: 13px;
 </style>
 
 <body>
-    <header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
     <header th:insert="~{home/template_user.html :: header}"></header>
 
-    <section class="h-100 bg-dark">
+    <section class="h-100 bg-white">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col">
             <div class="card card-registration my-4">
               <div class="row g-0">
                 <div class="col-xl-6 d-none d-xl-block">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                    alt="Sample photo" class="img-fluid"
-                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  <video  width="700" height="1200" autoplay muted>
+                    <source th:src="@{/images/videoPrueba.mp4}" type="video/mp4">
+                  </video>
                 </div>
                 <div class="col-xl-6">
                   <div class="card-body p-md-5 text-black">
-                    <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                    <h3 class="mb-5 text-uppercase">Registrarse para mas beneficios</h3>
     
                     <div class="row">
                       <div class="col-md-6 mb-4">
@@ -144,8 +145,8 @@ top: 13px;
                     </div>
     
                     <div class="d-flex justify-content-end pt-3">
-                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
-                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-lg ms-2">Submit form</button>
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg" style="background-color: #AC8ED0;">Reset all</button>
+                      <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success" style="background-color:#190F25;">Submit form</button>
                     </div>
     
                   </div>
