@@ -1,139 +1,180 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-</html>
 <html>
 
 <head>
-    <meta charset="ISO-8859-1">
-    <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-    <title>Registro de usuarios</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
-    
+  <meta charset="ISO-8859-1">
+  <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+  <title>Registro de usuarios</title>
+
+
 </head>
 
 <style>
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-font-size: 1rem;
-line-height: 2.15;
-padding-left: .75em;
-padding-right: .75em;
-}
-.card-registration .select-arrow {
-top: 13px;
-}
+  .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+  }
+
+  .card-registration .select-arrow {
+    top: 13px;
+  }
 </style>
 
 <body>
-    <header th:insert="~{home/template_user.html :: header}"></header>
+  <header th:insert="~{home/template_user.html :: header}"></header>
 
-    <section class="h-100 bg-white">
-      <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col">
-            <div class="card card-registration my-4">
-              <div class="row g-0">
-                <div class="col-xl-6 d-none d-xl-block">
-                  <img th:src="@{/images/pruebaBook.gif}" class="Animacion gif" height="1050" width="650">
-                </div>
-                <div class="col-xl-6">
-                  <div class="card-body p-md-5 text-black">
-                    <h2 class="mb-5 text-uppercase text-center" style="font-weight: bolder;">Registrarse </h2>
-    
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example1m" style="font-weight: bold">Nombre</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example1n" style="font-weight: bold">Apellidos</label>
-                        </div>
+  <section class="h-100 bg-white">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img th:src="@{/images/pruebaBook.gif}" class="Animacion gif" height="1050" width="650">
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h2 class="mb-5 text-uppercase text-center" style="font-weight: bolder;"><i
+                      class="fas fa-user-plus"></i> Registrarse </h2>
+
+                  <div class="row">
+
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1m" class="form-control form-control-lg" />
+                          <br>
+                        <label class="form-label" for="form3Example1m" style="font-weight: bold"><i class="fas fa-file-signature"></i> Primer Nombre</label>
                       </div>
                     </div>
-    
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example1m1" style="font-weight: bold">Nombre de la madre</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <div data-mdb-input-init class="form-outline">
-                          <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example1n1" style="font-weight: bold">Nombre del padre</label>
-                        </div>
+
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1n" class="form-control form-control-lg" /><br>
+                        <label class="form-label" for="form3Example1n" style="font-weight: bold"><i class="fas fa-file-signature"></i> Segundo Nombre</label>
                       </div>
                     </div>
-    
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example8" style="font-weight: bold">Direccion</label>
-                    </div>
-    
-                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-    
-                      <h6 class="mb-0 me-4" style="font-weight: bold">Genero: </h6>
-    
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                          value="option1" />
-                        <label class="form-check-label" for="femaleGender" style="font-weight: bold">Masculino</label>
-                      </div>
-    
-                      <div class="form-check form-check-inline mb-0 me-4">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                          value="option2" />
-                        <label class="form-check-label" for="maleGender" style="font-weight: bold">Femenino</label>
-                      </div>
-    
-                      <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                          value="option3" />
-                        <label class="form-check-label" for="otherGender" style="font-weight: bold">Otros</label>
-                      </div>
-    
-                    </div>  
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="form3Example9" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example9" style="font-weight: bold;">Edad</label>
-                    </div>
-    
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="form3Example90" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example90" style="font-weight: bold;">Correo Electronico</label>
-                    </div>
-    
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example99" style="font-weight: bold;">Clave</label>
-                    </div>
-    
-                    <div data-mdb-input-init class="form-outline mb-4">
-                      <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example97" style="font-weight: bold;">Clave</label>
-                    </div>
-    
-                    <div class="container-fluid">
-                      <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg" style="background-color: #AC8ED0;">Limpiar casillas</button>
-                      <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success" style="background-color:#190F25;">Registrarse</button>
-                    </div>
-    
+
                   </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1m1" class="form-control form-control-lg" /><br>
+                        <label class="form-label" for="form3Example1m1" style="font-weight: bold"><i class="fas fa-signature"></i> Apellido
+                          Paterno</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1n1" class="form-control form-control-lg" /><br>
+                        <label class="form-label" for="form3Example1n1" style="font-weight: bold"><i class="fas fa-signature"></i> Apellido
+                          Materno</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1m1" class="form-control form-control-lg" /><br>
+                        <label class="form-label" for="form3Example1m1" style="font-weight: bold"><i class="fas fa-sign-language"></i> Edad</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div data-mdb-input-init class="form-outline">
+                        <input
+                          style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                          type="text" id="form3Example1n1" class="form-control form-control-lg" /><br>
+                        <label class="form-label" for="form3Example1n1" style="font-weight: bold"><i class="fas fa-mobile"></i> Telefono</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+
+                    <h6 class="mb-0 me-4" style="font-weight: bold"><i class="fas fa-neuter"></i> Genero: </h6>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                        value="option1" />
+                      <label class="form-check-label" for="femaleGender" style="font-weight: bold"><i class="fas fa-male"></i> Masculino</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-0 me-4">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                        value="option2" />
+                      <label class="form-check-label" for="maleGender" style="font-weight: bold"><i class="fas fa-female"></i> Femenino</label>
+                    </div>
+
+                    <div class="form-check form-check-inline mb-0">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                        value="option3" />
+                      <label class="form-check-label" for="otherGender" style="font-weight: bold"><i class="fas fa-venus-double"></i> Otros</label>
+                    </div>
+
+                  </div>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example9" style="font-weight: bold;"><i class="fas fa-map-marker-alt"></i> Direccion</label><br>
+                    <input
+                      style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                      type="text" id="form3Example9" class="form-control form-control-lg" />
+                    
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example90" style="font-weight: bold;"><i class="fas fa-at"></i> Correo Electronico</label><br>
+                    <input
+                      style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                      type="text" id="form3Example90" class="form-control form-control-lg" />
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example99" style="font-weight: bold;"><i class="fas fa-key"></i> Clave</label><br>
+                    <input
+                      style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                      type="password" id="form3Example99" class="form-control form-control-lg" /><br>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example97" style="font-weight: bold;"><i class="fas fa-user-check"></i> Verificar Clave</label><br>
+                    <input
+                      style="background:white; color:black; font-weight:bold; padding:8px; border:3px solid #1E15B6;font: inherit;"
+                      type="password" id="form3Example97" class="form-control form-control-lg" /><br>
+                  </div>
+
+                  <div class="container-fluid">
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success "
+                      style="background-color: #AC8ED0;"> <i class="fas fa-broom"></i> Limpiar casillas</button>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg"
+                      style="background-color:#190F25;"><i class="fas fa-plus-circle"></i> Registrarse</button>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    
-    <header th:insert="~{home/footer.html :: footer}"></header>
-    <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+
+  <header th:insert="~{home/footer.html :: footer}"></header>
+  <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 </body>
+
 </html>
