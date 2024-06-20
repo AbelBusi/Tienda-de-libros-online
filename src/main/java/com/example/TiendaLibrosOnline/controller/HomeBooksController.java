@@ -19,6 +19,13 @@ public class HomeBooksController {
     public String registrarseUsuario(){
         return "acceso/registerUser.html";
     }
+
+    @GetMapping("/login")
+    public String iniciarSesion(){
+
+        return "acceso/login";
+
+    }
     
     
 }
