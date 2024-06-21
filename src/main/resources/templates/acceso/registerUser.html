@@ -45,9 +45,12 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <br>
-                      <label for="lastName" style="color: #303f9f;" class="form-label">Ingresa tu edad <span class="text-danger">*</span></label>
-                      <input type="number" class="form-control" name="lastName" id="lastName" placeholder="Ingresa tu edad"
-                        required>
+                      <select class="form-select" aria-label="Default select example" style="color: #303f9f;">
+                        <option selected>Genero</option>
+                        <option value="1">Masculino</option>
+                        <option value="2">Femenino</option>
+                        <option value="3">Otros</option>
+                      </select>
                     </div>
                     <div class="col-md-6 mb-4">
                       <br>
@@ -103,7 +106,7 @@
               <div class="row">
                 <div class="col-12">
                   <hr class="mt-5 mb-4 border-secondary-subtle">
-                  <p class="m-0 text-secondary text-center">Â¿Ya tienes una cuenta? <a th:href="@{/home/login}"
+                  <p class="m-0 text-secondary text-center">¿Ya tienes una cuenta? <a th:href="@{/home/login}"
                       class="link-primary text-decoration-none">Ingresar</a></p>
                 </div>
               </div>
