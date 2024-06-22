@@ -16,7 +16,7 @@ public class HomeBooksController {
     }
 
     @GetMapping("/register")
-    public String registrarseUsuario(){
+    public String registrarUsuario(){
         return "acceso/registerUser.html";
     }
 
