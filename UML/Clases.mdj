@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "UsuarioService",
+					"name": "IUsuarioService",
 					"stereotype": "interface",
 					"attributes": [
 						{
@@ -497,7 +497,7 @@
 											"top": 292,
 											"width": 214.931640625,
 											"height": 13,
-											"text": "UsuarioService"
+											"text": "IUsuarioService"
 										},
 										{
 											"_type": "LabelView",
@@ -730,7 +730,7 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 493,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "«Service»"
 										},
@@ -743,7 +743,7 @@
 											"font": "Arial;13;1",
 											"left": 661,
 											"top": 508,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "UsuarioServiceImpl"
 										},
@@ -778,7 +778,7 @@
 									"font": "Arial;13;0",
 									"left": 656,
 									"top": 488,
-									"width": 211.626953125,
+									"width": 233.259765625,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQPJuv+z9bHXA="
@@ -815,16 +815,16 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 531,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
-											"text": "+usuarioService",
+											"text": "-UsuarioRepository: usuarioRepository",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 656,
 									"top": 526,
-									"width": 211.626953125,
+									"width": 233.259765625,
 									"height": 23
 								},
 								{
@@ -849,7 +849,7 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 554,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "+crearUsuario()",
 											"horizontalAlignment": 0
@@ -866,7 +866,7 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 569,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "+eliminarUsuario()",
 											"horizontalAlignment": 0
@@ -883,7 +883,7 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 584,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "+actualizarUsuario()",
 											"horizontalAlignment": 0
@@ -900,7 +900,7 @@
 											"font": "Arial;13;0",
 											"left": 661,
 											"top": 599,
-											"width": 201.626953125,
+											"width": 223.259765625,
 											"height": 13,
 											"text": "+verficiarPassUsuario()",
 											"horizontalAlignment": 0
@@ -909,7 +909,7 @@
 									"font": "Arial;13;0",
 									"left": 656,
 									"top": 549,
-									"width": 211.626953125,
+									"width": 233.259765625,
 									"height": 68
 								},
 								{
@@ -949,7 +949,7 @@
 							"containerChangeable": true,
 							"left": 656,
 							"top": 488,
-							"width": 211.626953125,
+							"width": 233.259765625,
 							"height": 129,
 							"showProperty": false,
 							"nameCompartment": {
@@ -1445,7 +1445,7 @@
 											"top": 332,
 											"width": 218.181640625,
 											"height": 13,
-											"text": "UsuarioRepository"
+											"text": "IUsuarioRepository"
 										},
 										{
 											"_type": "LabelView",
@@ -3499,8 +3499,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGQPJuv+z9XTTg="
 							},
-							"name": "usuarioService",
-							"type": ""
+							"name": "UsuarioRepository",
+							"visibility": "private",
+							"type": "usuarioRepository"
 						}
 					],
 					"operations": [
@@ -3552,7 +3553,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "UsuarioRepository",
+					"name": "IUsuarioRepository",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
