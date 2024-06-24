@@ -30,26 +30,26 @@
                   </div>
                 </div>
               </div>
-              <form action="#!">
+              <form th:action="@{/usuario/guardarUsuario}" method="post" th:object="${usuarioForm}">
                 <div class="row gy-3 gy-md-4 overflow-hidden">
                   <div class="col-12">
                     <label for="firstName" style="color: #303f9f;" class="form-label">Ingresa tu nombre <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="firstName" id="firstName" placeholder="Nombre"
+                    <input type="email" class="form-control" placeholder="Nombre" th:field="*{nombre}"
                       required>
                   </div>
                   <div class="col-12">
                     <label for="lastName" style="color: #303f9f;" class="form-label">Ingresa tu apellido <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="lastName" id="lastName" placeholder="Apellido"
+                    <input type="email" class="form-control" th:field="*{apellido}"  placeholder="Apellido"
                       required>
                   </div>
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <br>
-                      <select class="form-select" aria-label="Default select example" style="color: #303f9f;">
+                      <select class="form-select"  aria-label="Default select example" style="color: #303f9f;">
                         <option selected>Genero</option>
-                        <option value="1">Masculino</option>
-                        <option value="2">Femenino</option>
-                        <option value="3">Otros</option>
+                        <option value="Masculino" >Masculino</option>
+                        <option value="Femenino" >Femenino</option>
+                        <option value="Otros" >Otros</option>
                       </select>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -106,7 +106,7 @@
               <div class="row">
                 <div class="col-12">
                   <hr class="mt-5 mb-4 border-secondary-subtle">
-                  <p class="m-0 text-secondary text-center">¿Ya tienes una cuenta? <a th:href="@{/usuario/ingresar}"
+                  <p class="m-0 text-secondary text-center">ï¿½Ya tienes una cuenta? <a th:href="@{/usuario/ingresar}"
                       class="link-primary text-decoration-none">Ingresar</a></p>
                 </div>
               </div>
