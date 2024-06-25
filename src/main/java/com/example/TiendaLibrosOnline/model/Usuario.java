@@ -8,8 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.Date;
 
-import java.time.LocalDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Data
@@ -27,7 +28,10 @@ public class Usuario {
     private String genero;
     private String direccion;
     private String telefono;
-    private LocalDateTime fechaNacimiento;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fechaNacimiento;
+    
     private String email;
     private String password;
     private String rol;

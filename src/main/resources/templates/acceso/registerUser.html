@@ -34,12 +34,12 @@
                 <div class="row gy-3 gy-md-4 overflow-hidden">
                   <div class="col-12">
                     <label for="firstName" style="color: #303f9f;" class="form-label">Ingresa tu nombre <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" placeholder="Nombre" th:field="*{nombre}"
+                    <input type="text" class="form-control" placeholder="Nombre" th:field="*{nombre}"
                       required>
                   </div>
                   <div class="col-12">
                     <label for="lastName" style="color: #303f9f;" class="form-label">Ingresa tu apellido <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" th:field="*{apellido}"  placeholder="Apellido"
+                    <input type="text" class="form-control" th:field="*{apellido}"  placeholder="Apellido"
                       required>
                   </div>
                   <div class="row">
@@ -64,7 +64,7 @@
                     <div class="col-md-6 mb-4">
                       <br>
                       <label for="telefono" style="color: #303f9f;" class="form-label">Telefono movil <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" th:field="*{telefono}" placeholder="Ingresa tu numero"
+                      <input type="number" class="form-control" th:field="*{telefono}" placeholder="Ingresa tu numero"
                         required>
                     </div>
                     <div class="col-md-6 mb-4">
@@ -77,16 +77,16 @@
 
                   <div class="col-12">
                     <label for="email" style="color: #303f9f;" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" th:field="email" placeholder="name@example.com"
+                    <input type="email" class="form-control" th:field="*{email}" placeholder="name@example.com"
                       required>
                   </div>
                   <div class="col-12">
                     <label for="password" style="color: #303f9f;" class="form-label">Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" th:field="password" required>
+                    <input type="password" class="form-control" th:field="*{password}" required>
                   </div>
                   <div class="col-12">
                     <label for="password" style="color: #303f9f;" class="form-label">Verificar Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" th:field="password" required>
+                    <input type="password" class="form-control"  required>
                   </div>
                   <div class="col-12">
                     <div class="form-check">
