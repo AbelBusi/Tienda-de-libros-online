@@ -45,17 +45,17 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <br>
-                      <select class="form-select"  aria-label="Default select example" style="color: #303f9f;">
-                        <option selected>Genero</option>
-                        <option value="Masculino" >Masculino</option>
-                        <option value="Femenino" >Femenino</option>
-                        <option value="Otros" >Otros</option>
+                      <select class="form-select" th:field="*{genero}" aria-label="Default select example" id="genero" name="genero" style="color: #303f9f;" required>
+                        <option th:value="'Genero'" th:text="Genero" selected></option>
+                        <option th:value="'Masculino'" th:text="Masculino"></option>
+                        <option th:value="'Femenino'" th:text="Femenino"></option>
+                        <option th:value="'Otros'" th:text="Otros"></option>
                       </select>
                     </div>
                     <div class="col-md-6 mb-4">
                       <br>
-                      <label for="lastName" style="color: #303f9f;" class="form-label">Direccion <span class="text-danger">*</span></label>
-                      <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Direccion"
+                      <label for="direccion" style="color: #303f9f;" class="form-label">Direccion <span class="text-danger">*</span></label>
+                      <input type="text" class="form-control" th:field="*{direccion}" placeholder="Direccion"
                         required>
                     </div>
                   </div>
@@ -63,30 +63,30 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <br>
-                      <label for="lastName" style="color: #303f9f;" class="form-label">Telefono movil <span class="text-danger">*</span></label>
-                      <input type="email" class="form-control" name="lastName" id="lastName" placeholder="Ingresa tu numero"
+                      <label for="telefono" style="color: #303f9f;" class="form-label">Telefono movil <span class="text-danger">*</span></label>
+                      <input type="email" class="form-control" th:field="*{telefono}" placeholder="Ingresa tu numero"
                         required>
                     </div>
                     <div class="col-md-6 mb-4">
                       <br>
-                      <label for="lastName" style="color: #303f9f;" class="form-label">Fecha nacimiento <span class="text-danger">*</span></label>
-                      <input type="date" class="form-control" name="lastName" id="lastName" placeholder="Apellido"
+                      <label for="fechaNacimiento" style="color: #303f9f;" class="form-label">Fecha nacimiento <span class="text-danger">*</span></label>
+                      <input type="date" class="form-control" th:field="*{fechaNacimiento}"
                         required>
                     </div>
                   </div>
 
                   <div class="col-12">
                     <label for="email" style="color: #303f9f;" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com"
+                    <input type="email" class="form-control" th:field="email" placeholder="name@example.com"
                       required>
                   </div>
                   <div class="col-12">
                     <label for="password" style="color: #303f9f;" class="form-label">Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="password" id="password" value="" required>
+                    <input type="password" class="form-control" th:field="password" required>
                   </div>
                   <div class="col-12">
                     <label for="password" style="color: #303f9f;" class="form-label">Verificar Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="password" id="password" value="" required>
+                    <input type="password" class="form-control" th:field="password" required>
                   </div>
                   <div class="col-12">
                     <div class="form-check">
