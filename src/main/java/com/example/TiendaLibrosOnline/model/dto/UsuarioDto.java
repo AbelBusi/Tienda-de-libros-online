@@ -1,16 +1,14 @@
 package com.example.TiendaLibrosOnline.model.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
+@ToString
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class UsuarioDto{
 
     private String nombreDto;
@@ -23,7 +21,7 @@ public class UsuarioDto{
 
     private String telefonoDto;
 
-    private LocalDateTime fechaNacimientoDto;
+    private Date fechaNacimientoDto;
 
     private String emailDto;
     private String passwordDto;

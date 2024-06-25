@@ -31,7 +31,7 @@ public class UsuarioController {
     	
     	Usuario usuario= new Usuario();
     	
-    	model.addAttribute("usuarioForm",usuario );
+    	model.addAttribute("usuarioForm",usuario);
     	
         return "acceso/registerUser";
     }
