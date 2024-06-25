@@ -1,5 +1,7 @@
 package com.example.TiendaLibrosOnline.service;
 
+import java.util.Optional;
+
 import com.example.TiendaLibrosOnline.model.Usuario;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 
@@ -11,6 +13,6 @@ public interface IUsuarioService {
 
     Usuario actualizarUsuario(UsuarioDto usuarioDto);
 
-    String verificarUsuario(String passUsuario);
+    Optional<Usuario> verificarUsuario(String emailUsuario);
 
 }

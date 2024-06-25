@@ -4,6 +4,9 @@ import com.example.TiendaLibrosOnline.model.Usuario;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
+
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     public Usuario crearUsuario(UsuarioDto usuarioDto) {
 		Usuario usuario =null;
     	try {
-    	
+    		
     		 usuario = Usuario.builder()
     				.nombre(usuarioDto.getNombreDto())
     				.apellido(usuarioDto.getApellidoDto())
@@ -58,7 +61,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	}
 
 	@Override
-	public String verificarUsuario(String passUsuario) {
-		return null;
+	public Optional<Usuario> verificarUsuario(String emailUsuario) {
+		return usuarioRepository.findByEmail(emailUsuario);
 	}
 }
