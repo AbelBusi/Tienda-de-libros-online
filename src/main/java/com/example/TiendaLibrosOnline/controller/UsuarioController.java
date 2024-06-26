@@ -62,18 +62,19 @@ public class UsuarioController {
     		return "redirect:/";
     	}
     	
-    	UsuarioDto usuarioDTO = new UsuarioDto();
     	
-    	usuarioDTO.setNombreDto(usuario.getNombre());
-    	usuarioDTO.setApellidoDto(usuario.getApellido());
-    	usuarioDTO.setGeneroDto(usuario.getGenero());
-    	usuarioDTO.setDireccionDto(usuario.getDireccion());
-    	usuarioDTO.setTelefonoDto(usuario.getTelefono());
-    	usuarioDTO.setFechaNacimientoDto(usuario.getFechaNacimiento());
-    	usuarioDTO.setEmailDto(usuario.getEmail());
-    	usuarioDTO.setPasswordDto(usuario.getPassword());
-    	
-    	//usuarioService.crearUsuario(usuarioDTO);
+    	UsuarioDto usuarioDTO = UsuarioDto.builder()
+    			.nombreDto(usuario.getNombre())
+    			.apellidoDto(usuario.getApellido())
+    			.generoDto(usuario.getGenero())
+    			.direccionDto(usuario.getDireccion())
+    			.telefonoDto(usuario.getTelefono())
+    			.fechaNacimientoDto(usuario.getFechaNacimiento())
+    			.emailDto(usuario.getEmail())
+    			.passwordDto(usuario.getPassword())
+    			.build();
+    
+    	usuarioService.crearUsuario(usuarioDTO);
     	
     	logger.info("Usuario {}",usuario);
     	logger.info("Usuario DTO{}",usuarioDTO);
