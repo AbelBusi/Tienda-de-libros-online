@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.TiendaLibrosOnline.model.Usuario;
+import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;
 
 
@@ -57,14 +58,25 @@ public class UsuarioController {
     	Optional<Usuario> UsuarioEmail= usuarioService.verificarUsuario(usuario.getEmail());
     	
     	if(UsuarioEmail.isPresent()) {
+    		logger.info("El usuario ya existe: {}",usuario);
     		return "redirect:/";
     	}
     	
+    	UsuarioDto usuarioDTO = new UsuarioDto();
     	
+    	usuarioDTO.setNombreDto(usuario.getNombre());
+    	usuarioDTO.setApellidoDto(usuario.getApellido());
+    	usuarioDTO.setGeneroDto(usuario.getGenero());
+    	usuarioDTO.setDireccionDto(usuario.getDireccion());
+    	usuarioDTO.setTelefonoDto(usuario.getTelefono());
+    	usuarioDTO.setFechaNacimientoDto(usuario.getFechaNacimiento());
+    	usuarioDTO.setEmailDto(usuario.getEmail());
+    	usuarioDTO.setPasswordDto(usuario.getPassword());
     	
-    	usuarioService.crearUsuario(usuario);
+    	//usuarioService.crearUsuario(usuarioDTO);
     	
     	logger.info("Usuario {}",usuario);
+    	logger.info("Usuario DTO{}",usuarioDTO);
     	
     	return "home/homeBook";
     }

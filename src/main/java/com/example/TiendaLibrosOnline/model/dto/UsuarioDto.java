@@ -1,7 +1,9 @@
 package com.example.TiendaLibrosOnline.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
@@ -9,6 +11,8 @@ import java.util.Date;
 @Data
 @ToString
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UsuarioDto{
 
     private String nombreDto;
