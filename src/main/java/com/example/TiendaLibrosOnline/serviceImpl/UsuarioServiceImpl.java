@@ -36,11 +36,16 @@ public class UsuarioServiceImpl implements IUsuarioService {
     				.email(usuarioDto.getEmailDto())
     				.password(usuarioDto.getPasswordDto()).
     				build();
-    		logger.info("Se guardo correctamente el USUARIO {}",usuario);
+/*    		 if(usuario==null) {
+    				logger.info("No se guardo el USUARIO correctamente {}",usuario);			
+    			 throw new NullPointerException("No se puede guardar un usuario vacio");
+    		 }*/
+    		 
     		
     		return usuarioRepository.save(usuario);
     		
-		} catch (Exception e) {
+
+		} catch (RuntimeException e) {
     		
 			logger.info("No se guardo el USUARIO {}",usuario);			
 			

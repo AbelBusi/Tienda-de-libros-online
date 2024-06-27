@@ -36,7 +36,9 @@ class IUsuarioRepositoryTest {
 				.direccion("Ciudad de dios mz A lote 9")
 				.telefono("987 654 342")
 				.fechaNacimiento(new Date())
-				
+				.email("cesarBustamante@Gmail.com")
+				.password("trabalengua24")
+				.rol("Admin")
 				.build();
 	}
 
@@ -46,7 +48,7 @@ class IUsuarioRepositoryTest {
 		
 		//GIVEN: se describe las precondiciones necesarias para la ejecucion del escenario
 		
-		Usuario usuario = Usuario.builder()
+		usuario = Usuario.builder()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")
