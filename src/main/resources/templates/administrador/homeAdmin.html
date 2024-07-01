@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Tienda de libros</title>
+
+    <!--Header-->
+    <Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
+    <header th:insert="~{home/template_user.html :: header}"></header>
+
+	
+	<div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100" alt="Wild Landscape"/>
+		  </div>
+		  <div class="carousel-item">
+			<img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100" alt="Camera"/>
+		  </div>
+		  <div class="carousel-item">
+			<img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100" alt="Exotic Fruits"/>
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	  
+
+	
+	<!--Bootstrap core JavaScript-->
+	
+	<footer th:insert="~{home/footer.html :: footer}"></footer>
+	<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+	
+</body>

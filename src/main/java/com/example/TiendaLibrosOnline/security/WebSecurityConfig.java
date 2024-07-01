@@ -19,12 +19,12 @@ public class WebSecurityConfig {
 						.requestMatchers("/images/**").permitAll()
 						.requestMatchers("/home").permitAll()
 						.requestMatchers("/usuario/ingresar").permitAll()
-						.requestMatchers("/usuario/accederUusario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
+						.requestMatchers("/admin/homeConfigurer").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin( (form )->form 
-						.loginPage("/acceso/login")
+						.loginPage("/usuario/ingresar")
 						.permitAll())
 				.logout((logout)-> logout.permitAll() );
 		

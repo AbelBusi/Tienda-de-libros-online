@@ -38,13 +38,6 @@ public class UsuarioController {
 
     }
     
-    @PostMapping("/accederUsuario")
-    @ResponseStatus( HttpStatus.OK)
-    public String accederUsuario() {
-    	
-    	return "home/homeBook";
-    }
-    
     @GetMapping("/crearCuenta")
     public String registrarUsuario(Model model){
     	
