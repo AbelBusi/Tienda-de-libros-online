@@ -37,7 +37,14 @@ public class UsuarioController {
         return "acceso/login";
 
     }
-
+    
+    @PostMapping("/accederUsuario")
+    @ResponseStatus( HttpStatus.OK)
+    public String accederUsuario() {
+    	
+    	return "home/homeBook";
+    }
+    
     @GetMapping("/crearCuenta")
     public String registrarUsuario(Model model){
     	
@@ -59,7 +66,7 @@ public class UsuarioController {
     	
     	if(UsuarioEmail.isPresent()) {
     		logger.info("El usuario ya existe: {}",usuario);
-    		return "redirect:/";
+    		return "acceso/registerUser";
     	}
     	
     	

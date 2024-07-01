@@ -1269,7 +1269,7 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 685,
-											"width": 335.75927734375,
+											"width": 347.29931640625,
 											"height": 13,
 											"text": "«Controller»"
 										},
@@ -1282,7 +1282,7 @@
 											"font": "Arial;13;1",
 											"left": 341,
 											"top": 700,
-											"width": 335.75927734375,
+											"width": 347.29931640625,
 											"height": 13,
 											"text": "UsuarioController (\"/usuario\")"
 										},
@@ -1317,7 +1317,7 @@
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 680,
-									"width": 345.75927734375,
+									"width": 357.29931640625,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQQPtm1SId6a4="
@@ -1344,7 +1344,7 @@
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 718,
-									"width": 345.75927734375,
+									"width": 357.29931640625,
 									"height": 10
 								},
 								{
@@ -1369,7 +1369,7 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 733,
-											"width": 335.75927734375,
+											"width": 347.29931640625,
 											"height": 13,
 											"text": "+registrarUsuario <<GetMapping(\"/crearCuenta\")>>\")()",
 											"horizontalAlignment": 0
@@ -1386,7 +1386,7 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 748,
-											"width": 335.75927734375,
+											"width": 347.29931640625,
 											"height": 13,
 											"text": "+iniciarSesion <<GetMapping(\"/ingresar\") >>()",
 											"horizontalAlignment": 0
@@ -1403,17 +1403,34 @@
 											"font": "Arial;13;0",
 											"left": 341,
 											"top": 763,
-											"width": 335.75927734375,
+											"width": 347.29931640625,
 											"height": 13,
 											"text": "+guardarUsuario <<PostMapping(\"/guardarUsuario\")>>\")()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGQYf8PGWH3eDY=",
+											"_parent": {
+												"$ref": "AAAAAAGQQPtm1SIiZK0="
+											},
+											"model": {
+												"$ref": "AAAAAAGQYf8PCWHxvtM="
+											},
+											"font": "Arial;13;0",
+											"left": 341,
+											"top": 778,
+											"width": 347.29931640625,
+											"height": 13,
+											"text": "+accederUsuario <<GetMapping(\"/accederUsuario\")>>\")()()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 728,
-									"width": 345.75927734375,
-									"height": 53
+									"width": 357.29931640625,
+									"height": 68
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1452,8 +1469,8 @@
 							"containerChangeable": true,
 							"left": 336,
 							"top": 680,
-							"width": 345.75927734375,
-							"height": 113,
+							"width": 357.29931640625,
+							"height": 116,
 							"showProperty": false,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQQPtm1SIc0J4="
@@ -3825,7 +3842,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 699,
+									"left": 705,
 									"top": 785,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3846,7 +3863,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 699,
+									"left": 705,
 									"top": 800,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3867,7 +3884,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 700,
+									"left": 706,
 									"top": 755,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -3951,7 +3968,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 706,
+									"left": 717,
 									"top": 784,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -3971,7 +3988,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 709,
+									"left": 720,
 									"top": 798,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -3991,7 +4008,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 702,
+									"left": 713,
 									"top": 757,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4036,7 +4053,7 @@
 							"tail": {
 								"$ref": "AAAAAAGQQRYh5Lu3BpE="
 							},
-							"points": "720:776;681:776",
+							"points": "720:776;692:776",
 							"showVisibility": true,
 							"showProperty": false,
 							"nameLabel": {
@@ -4409,6 +4426,14 @@
 								"$ref": "AAAAAAGQQPtm1SIZqVg="
 							},
 							"name": "guardarUsuario <<PostMapping(\"/guardarUsuario\")>>\")"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGQYf8PCWHxvtM=",
+							"_parent": {
+								"$ref": "AAAAAAGQQPtm1SIZqVg="
+							},
+							"name": "accederUsuario <<GetMapping(\"/accederUsuario\")>>\")()"
 						}
 					]
 				},

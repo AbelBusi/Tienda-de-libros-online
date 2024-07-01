@@ -36,10 +36,15 @@ public class UsuarioServiceImpl implements IUsuarioService {
     				.email(usuarioDto.getEmailDto())
     				.password(usuarioDto.getPasswordDto()).
     				build();
-/*    		 if(usuario==null) {
+    		 if(usuario==null) {
     				logger.info("No se guardo el USUARIO correctamente {}",usuario);			
     			 throw new NullPointerException("No se puede guardar un usuario vacio");
-    		 }*/
+    		 }
+    		 
+    		 if(usuarioRepository.findByEmail(usuarioDto.getEmailDto()).isPresent()) {
+    			 logger.info("El usuario ya existe");
+    			 throw new RuntimeException("El usuario ya existe");
+    		 }
     		 
     		
     		return usuarioRepository.save(usuario);
