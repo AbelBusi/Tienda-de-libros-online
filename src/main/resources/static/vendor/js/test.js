@@ -1,4 +1,8 @@
-// Initialization for ES Users
-import { Carousel, initMDB } from "mdb-ui-kit";
+// archivo.js
+import { Ripple, initMDB } from "mdb-ui-kit";
 
-initMDB({ Carousel });
+document.addEventListener('DOMContentLoaded', function () {
+
+    initMDB({ Ripple });
+}
+);
