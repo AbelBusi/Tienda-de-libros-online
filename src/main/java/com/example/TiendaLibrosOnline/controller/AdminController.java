@@ -13,6 +13,13 @@ public class AdminController {
 	public String home() {
 		return "administrador/homeAdmin";
 	}
+
+	@GetMapping("/agregarProducto")
+	public String producto(){
+
+		return "administrador/addLibro";
+
+	}
 	
 	
 }

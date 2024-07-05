@@ -21,6 +21,7 @@ public class WebSecurityConfig {
 						.requestMatchers("/usuario/ingresar").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
 						.requestMatchers("/admin/homeConfigurer").permitAll()
+						.requestMatchers("/admin/agregarProducto").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin( (form )->form 
