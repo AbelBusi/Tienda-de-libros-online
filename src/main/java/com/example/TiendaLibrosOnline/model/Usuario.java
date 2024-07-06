@@ -1,5 +1,6 @@
 package com.example.TiendaLibrosOnline.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,17 +24,32 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
 
+    @Column(name = "nombre")
     private String nombre;
+    
+    @Column(name = "apellido")
     private String apellido;
+    
+    @Column(name = "genero")
     private String genero;
+
+    @Column(name = "direccion")
     private String direccion;
+    
+    @Column(name = "telefono")
     private String telefono;
     
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "fecha_nacimiento")
     private Date fechaNacimiento;
     
+    @Column(name = "email")
     private String email;
+    
+    @Column(name = "password")
     private String password;
+    
+    @Column(name = "rol")
     private String rol;
 
 }
