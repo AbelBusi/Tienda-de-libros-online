@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -20,17 +21,18 @@ public class Libro {
     @Column(name = "id_libro")
     private Integer idLibro;
 
+    @ManyToOne
     @Column(name = "autor")
-    private Integer idAutor;
+    private Autor idAutor;
 
     @Column(name = "editorial")
-    private Integer idEditorial;
+    private Editorial idEditorial;
 
     @Column(name = "categoria")
-    private Integer idCategoria;
+    private CategoriaLibro idCategoria;
 
     @Column(name = "usuario")
-    private Integer idUsuario;
+    private Usuario idUsuario;
 
     @Column(name = "nombre")
     private String nombre;
@@ -57,4 +59,15 @@ public class Libro {
     @Column(name = "ISBN")
     private String ISBN;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Libro libro)) return false;
+        return Double.compare(libro.getPeso(), getPeso()) == 0 && Double.compare(libro.getAlto(), getAlto()) == 0 && Double.compare(libro.getAncho(), getAncho()) == 0 && getNumeroPagina() == libro.getNumeroPagina() && Objects.equals(getIdLibro(), libro.getIdLibro()) && Objects.equals(getIdAutor(), libro.getIdAutor()) && Objects.equals(getIdEditorial(), libro.getIdEditorial()) && Objects.equals(getIdCategoria(), libro.getIdCategoria()) && Objects.equals(getIdUsuario(), libro.getIdUsuario()) && Objects.equals(getNombre(), libro.getNombre()) && Objects.equals(getSipnosis(), libro.getSipnosis()) && Objects.equals(getFechaPublicacion(), libro.getFechaPublicacion()) && Objects.equals(getISBN(), libro.getISBN());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdLibro(), getIdAutor(), getIdEditorial(), getIdCategoria(), getIdUsuario(), getNombre(), getSipnosis(), getPeso(), getAlto(), getAncho(), getFechaPublicacion(), getNumeroPagina(), getISBN());
+    }
 }

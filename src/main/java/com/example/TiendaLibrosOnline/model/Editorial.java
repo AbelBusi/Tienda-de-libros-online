@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.Objects;
+
 @Entity
 @Data
 @Builder
@@ -29,4 +31,15 @@ public class Editorial {
     @Column(name = "ubicacion")
     private String ubicacion;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Editorial editorial)) return false;
+        return Objects.equals(getIdEditorial(), editorial.getIdEditorial()) && Objects.equals(getNombre(), editorial.getNombre()) && Objects.equals(getDescripcion(), editorial.getDescripcion()) && Objects.equals(getUbicacion(), editorial.getUbicacion());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdEditorial(), getNombre(), getDescripcion(), getUbicacion());
+    }
 }

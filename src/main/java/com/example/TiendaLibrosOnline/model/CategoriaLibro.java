@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -23,4 +25,15 @@ public class CategoriaLibro {
     @Column(name = "descripcion")
     private String descripcion;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CategoriaLibro that)) return false;
+        return Objects.equals(getIdCategoria(), that.getIdCategoria()) && Objects.equals(getNombre(), that.getNombre()) && Objects.equals(getDescripcion(), that.getDescripcion());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdCategoria(), getNombre(), getDescripcion());
+    }
 }

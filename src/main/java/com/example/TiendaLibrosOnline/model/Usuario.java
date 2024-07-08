@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Date;
+import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -50,4 +51,15 @@ public class Usuario {
     @Column(name = "rol")
     private String rol;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Usuario usuario)) return false;
+        return Objects.equals(getIdUsuario(), usuario.getIdUsuario()) && Objects.equals(getNombre(), usuario.getNombre()) && Objects.equals(getApellido(), usuario.getApellido()) && Objects.equals(getGenero(), usuario.getGenero()) && Objects.equals(getDireccion(), usuario.getDireccion()) && Objects.equals(getTelefono(), usuario.getTelefono()) && Objects.equals(getFechaNacimiento(), usuario.getFechaNacimiento()) && Objects.equals(getEmail(), usuario.getEmail()) && Objects.equals(getPassword(), usuario.getPassword()) && Objects.equals(getRol(), usuario.getRol());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getIdUsuario(), getNombre(), getApellido(), getGenero(), getDireccion(), getTelefono(), getFechaNacimiento(), getEmail(), getPassword(), getRol());
+    }
 }
