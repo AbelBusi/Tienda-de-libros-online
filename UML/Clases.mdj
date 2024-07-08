@@ -4580,7 +4580,7 @@
 											"top": 228,
 											"width": 135.1416015625,
 											"height": 13,
-											"text": "libro"
+											"text": "Libro"
 										},
 										{
 											"_type": "LabelView",
@@ -17354,7 +17354,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "libro",
+					"name": "Libro",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
