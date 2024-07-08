@@ -1,9 +1,6 @@
 package com.example.TiendaLibrosOnline.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,16 +12,21 @@ import org.springframework.beans.factory.annotation.Value;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "Editorial")
 public class Editorial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_editorial")
     private Integer idEditorial;
 
+    @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "descripcion")
     private String descripcion;
 
+    @Column(name = "ubicacion")
     private String ubicacion;
 
 }
