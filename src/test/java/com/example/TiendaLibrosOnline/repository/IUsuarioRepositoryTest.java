@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import com.example.TiendaLibrosOnline.model.Usuario;
+import com.example.TiendaLibrosOnline.model.entity.Usuario;
 
 /*Se implementa la metodologia agil de bdd para determinar como se comportara
  * el ´programa*/

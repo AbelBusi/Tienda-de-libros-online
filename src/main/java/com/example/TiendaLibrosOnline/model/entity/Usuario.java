@@ -1,4 +1,4 @@
-package com.example.TiendaLibrosOnline.model;
+package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -50,6 +51,9 @@ public class Usuario {
     
     @Column(name = "rol")
     private String rol;
+
+    @OneToMany(mappedBy = "idUsuario",fetch = FetchType.LAZY)
+    private List<Libro> libros;
 
     @Override
     public boolean equals(Object o) {

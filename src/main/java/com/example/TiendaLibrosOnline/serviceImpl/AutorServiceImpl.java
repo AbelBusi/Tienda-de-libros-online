@@ -1,6 +1,6 @@
 package com.example.TiendaLibrosOnline.serviceImpl;
 
-import com.example.TiendaLibrosOnline.model.Autor;
+import com.example.TiendaLibrosOnline.model.entity.Autor;
 import com.example.TiendaLibrosOnline.model.dto.AutorDTO;
 import com.example.TiendaLibrosOnline.repository.IAutorRepository;
 import com.example.TiendaLibrosOnline.service.IAutorService;

@@ -1,12 +1,12 @@
-package com.example.TiendaLibrosOnline.model;
+package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -30,6 +30,8 @@ public class Editorial {
 
     @Column(name = "ubicacion")
     private String ubicacion;
+    @OneToMany(mappedBy = "idEditorial")
+    private List<Libro> libros;
 
     @Override
     public boolean equals(Object o) {

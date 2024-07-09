@@ -1,6 +1,6 @@
 package com.example.TiendaLibrosOnline.service;
 
-import com.example.TiendaLibrosOnline.model.Autor;
+import com.example.TiendaLibrosOnline.model.entity.Autor;
 import com.example.TiendaLibrosOnline.model.dto.AutorDTO;
 
 import java.util.List;

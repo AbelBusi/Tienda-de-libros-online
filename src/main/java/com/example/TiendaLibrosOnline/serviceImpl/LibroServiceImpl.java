@@ -1,6 +1,6 @@
 package com.example.TiendaLibrosOnline.serviceImpl;
 
-import com.example.TiendaLibrosOnline.model.Libro;
+import com.example.TiendaLibrosOnline.model.entity.Libro;
 import com.example.TiendaLibrosOnline.model.dto.LibroDto;
 import com.example.TiendaLibrosOnline.repository.ILibroRepository;
 import com.example.TiendaLibrosOnline.service.ILibroService;

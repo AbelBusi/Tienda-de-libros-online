@@ -1,6 +1,6 @@
 package com.example.TiendaLibrosOnline.service;
 
-import com.example.TiendaLibrosOnline.model.CategoriaLibro;
+import com.example.TiendaLibrosOnline.model.entity.CategoriaLibro;
 import com.example.TiendaLibrosOnline.model.dto.CategoriaLibroDTO;
 
 import java.util.List;

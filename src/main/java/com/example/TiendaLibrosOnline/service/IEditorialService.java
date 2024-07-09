@@ -1,6 +1,6 @@
 package com.example.TiendaLibrosOnline.service;
 
-import com.example.TiendaLibrosOnline.model.Editorial;
+import com.example.TiendaLibrosOnline.model.entity.Editorial;
 import com.example.TiendaLibrosOnline.model.dto.EditorialDTO;
 
 import java.util.List;

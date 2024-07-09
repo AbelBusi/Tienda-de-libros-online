@@ -1,10 +1,8 @@
 package com.example.TiendaLibrosOnline.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 import java.util.Date;
@@ -17,7 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import com.example.TiendaLibrosOnline.model.Usuario;
+import com.example.TiendaLibrosOnline.model.entity.Usuario;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;

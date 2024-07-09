@@ -1,4 +1,4 @@
-package com.example.TiendaLibrosOnline.model;
+package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -51,6 +52,9 @@ public class Autor {
 
     @Column(name = "ocupacion")
     private String ocupacion;
+
+    @OneToMany(mappedBy = "idAutor")
+    private List<Libro> libros;
 
     @Override
     public boolean equals(Object o) {

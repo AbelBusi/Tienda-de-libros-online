@@ -2,7 +2,7 @@ package com.example.TiendaLibrosOnline.service;
 
 import java.util.Optional;
 
-import com.example.TiendaLibrosOnline.model.Usuario;
+import com.example.TiendaLibrosOnline.model.entity.Usuario;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 
 public interface IUsuarioService {

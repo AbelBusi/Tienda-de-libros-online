@@ -1,4 +1,4 @@
-package com.example.TiendaLibrosOnline.model;
+package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,16 +22,19 @@ public class Libro {
     private Integer idLibro;
 
     @ManyToOne
-    @Column(name = "autor")
+    @JoinColumn(name = "autor")
     private Autor idAutor;
 
-    @Column(name = "editorial")
+    @ManyToOne
+    @JoinColumn(name = "editorial")
     private Editorial idEditorial;
 
-    @Column(name = "categoria")
+    @ManyToOne
+    @JoinColumn(name = "categoria")
     private CategoriaLibro idCategoria;
 
-    @Column(name = "usuario")
+    @ManyToOne
+    @JoinColumn(name = "usuario")
     private Usuario idUsuario;
 
     @Column(name = "nombre")
