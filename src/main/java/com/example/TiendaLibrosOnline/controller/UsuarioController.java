@@ -38,6 +38,15 @@ public class UsuarioController {
 
     }
     
+    @PostMapping("/iniciarSesion")
+    public String ingresar() {
+    	
+    	
+    	
+    	return "";
+    	
+    }
+    
     @GetMapping("/crearCuenta")
     public String registrarUsuario(Model model){
     	
