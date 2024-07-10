@@ -1453,13 +1453,30 @@
 											"height": 13,
 											"text": "+accederUsuario <<GetMapping(\"/accederUsuario\")>>\")()()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGQngzHx+NP9xY=",
+											"_parent": {
+												"$ref": "AAAAAAGQQPtm1SIiZK0="
+											},
+											"model": {
+												"$ref": "AAAAAAGQngw929tk7eM="
+											},
+											"font": "Arial;13;0",
+											"left": 341,
+											"top": 793,
+											"width": 347.29931640625,
+											"height": 13,
+											"text": "+ingresar <<PostMapping(\"/iniciarSesion\")>>\")()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 336,
 									"top": 728,
 									"width": 357.29931640625,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1499,7 +1516,7 @@
 							"left": 336,
 							"top": 680,
 							"width": 357.29931640625,
-							"height": 116,
+							"height": 131,
 							"showProperty": false,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQQPtm1SIc0J4="
@@ -16840,6 +16857,14 @@
 								"$ref": "AAAAAAGQQPtm1SIZqVg="
 							},
 							"name": "accederUsuario <<GetMapping(\"/accederUsuario\")>>\")()"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGQngw929tk7eM=",
+							"_parent": {
+								"$ref": "AAAAAAGQQPtm1SIZqVg="
+							},
+							"name": "ingresar <<PostMapping(\"/iniciarSesion\")>>\")"
 						}
 					]
 				},

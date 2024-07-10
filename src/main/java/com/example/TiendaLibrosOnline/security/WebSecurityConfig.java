@@ -23,6 +23,7 @@ public class WebSecurityConfig {
 						.requestMatchers("/usuario/ingresar").permitAll()
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
+						.requestMatchers("/usuario/iniciarSesion").permitAll()
 						.requestMatchers("/admin/homeConfigurer").permitAll()
 						.requestMatchers("/admin/agregarProducto").permitAll()
 						.anyRequest().authenticated()

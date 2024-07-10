@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
@@ -39,11 +40,31 @@ public class UsuarioController {
     }
     
     @PostMapping("/iniciarSesion")
-    public String ingresar() {
+    public String ingresar(@RequestParam(required = true) String correo, @RequestParam(required = true) String clave ) {
     	
+    	Optional<Usuario> usuario = usuarioService.verificarUsuario(correo);
     	
+    	if(correo=="" && clave =="") {
+        	logger.info("correo: {}",correo);
+        	logger.info("clave: {}",clave);
+    		return "redirect:/ ";
+    	}
+    	if (!usuario.isPresent()) {
+    		logger.info("Usuario no figura en el sistema");
+        	logger.info("correo: {}",correo);
+        	logger.info("clave: {}",clave);
+    		return "redirect:/";
+    	}
     	
-    	return "";
+    	if (!usuario.get().getPassword().equalsIgnoreCase(clave)) {
+    		logger.info("Clave incorrecta");
+        	logger.info("correo: {}",correo);
+        	logger.info("clave: {}",clave);
+    		return "redirect:/";
+    	}
+    	
+    	logger.info("Usuario si figura en el sistema {}",usuario.get());
+    	return "home/homeBook";
     	
     }
     
