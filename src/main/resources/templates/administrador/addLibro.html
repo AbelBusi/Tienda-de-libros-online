@@ -7,16 +7,17 @@
 
 	<!--Header-->
 	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-	<link th:href="@{/vendor/css/search.css}" rel="stylesheet">	
+	<link th:href="@{/vendor/css/search.css}" rel="stylesheet">
 
 </head>
 <style>
-    .center-container {
+	.center-container {
 		display: flex;
-		 justify-content: center;
-		 align-items: center;
-    }
+		justify-content: center;
+		align-items: center;
+	}
 </style>
+
 <body>
 
 	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
@@ -28,7 +29,7 @@
 				<div class="row g-0">
 					<div class="col-md-6 text-center center-container ">
 						<img src="https://via.placeholder.com/300" alt="Product Image" class="product-image "
-							id="productImagePreview" width="600" height="600" >
+							id="productImagePreview" width="600" height="600">
 						<div class="text d-block">
 							<label for="productImage" class="form-label custom-file-upload ">
 								<i class="bi bi-upload"></i> Subir Imagen del Producto
@@ -46,7 +47,7 @@
 									</div>
 								</div>
 							</div>
-							<form th:action="@{/usuario/iniciarSesion}" method="post">
+							<form action="#" method="post">
 								<div class="row gy-3 gy-md-4 overflow-hidden">
 									<div class="col-12">
 										<label for="email" style="color: #303f9f;" class="form-label">Nombre <span
@@ -57,8 +58,8 @@
 									<div class="col-12">
 										<label for="password" style="color: #303f9f;" class="form-label">Sipnosis <span
 												class="text-danger">*</span></label>
-										<textarea type="text" class="form-control" placeholder="Sipnosis del libro" name="clave" id="password" value=""
-											required></textarea>
+										<textarea type="text" class="form-control" placeholder="Sipnosis del libro"
+											name="clave" id="password" value="" required></textarea>
 									</div>
 
 									<div class="row">
@@ -66,8 +67,7 @@
 											<br>
 											<label for="telefono" style="color: #303f9f;" class="form-label">Peso <span
 													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Peso"
-												required>
+											<input type="number" class="form-control" placeholder="Peso" required>
 										</div>
 										<div class="col-md-6 mb-4">
 											<br>
@@ -82,8 +82,7 @@
 											<br>
 											<label for="telefono" style="color: #303f9f;" class="form-label">Ancho<span
 													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Ancho"
-												required>
+											<input type="number" class="form-control" placeholder="Ancho" required>
 										</div>
 										<div class="col-md-6 mb-4">
 											<br>
@@ -111,28 +110,46 @@
 									</div>
 									<div class="row">
 										<div class="col-md-6 mb-4">
-											<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-											
-											<ul id="myMenu">
-											  <li><a href="#">HTML</a></li>
-											  <li><a href="#">CSS</a></li>
-											  <li><a href="#">JavaScript</a></li>
-											  <li><a href="#">PHP</a></li>
-											  <li><a href="#">Python</a></li>
-											  <li><a href="#">jQuery</a></li>
-											  <li><a href="#">SQL</a></li>
-											  <li><a href="#">Bootstrap</a></li>
-											  <li><a href="#">Node.js</a></li>
-											</ul>
+											<div>
+												<label for="fechaNacimiento" style="color: #303f9f;"
+													class="form-label">Autor
+													<span class="text-danger">*</span></label>
+												<input type="text" id="mySearch" onkeyup="myFunction()"
+													placeholder="Buscar.." title="Type in a category">
+
+												<ul id="myMenu" style="display: none;">
+													<li><a href="#">HTML</a></li>
+													<li><a href="#">CSS</a></li>
+													<li><a href="#">JavaScript</a></li>
+													<li><a href="#">PHP</a></li>
+													<li><a href="#">Python</a></li>
+													<li><a href="#">jQuery</a></li>
+													<li><a href="#">SQL</a></li>
+													<li><a href="#">Bootstrap</a></li>
+													<li><a href="#">Node.js</a></li>
+												</ul>
+											</div>
 										</div>
 										<div class="col-md-6 mb-4">
-											<select class="form-select" aria-label="Default select example" id="genero"
-												name="genero" style="color: #303f9f;" required>
-												<option selected>Editorial</option>
-												<option>Mario</option>
-												<option>Vargas</option>
-												<option>Llosa</option>
-											</select>
+											<div>
+												<label for="fechaNacimiento" style="color: #303f9f;"
+													class="form-label">Editorial
+													<span class="text-danger">*</span></label>
+												<input type="text" id="mySearch" onkeyup="myFunction()"
+													placeholder="Buscar.." title="Type in a category">
+
+												<ul id="myMenu" style="display: none;">
+													<li><a href="#">HTML</a></li>
+													<li><a href="#">CSS</a></li>
+													<li><a href="#">JavaScript</a></li>
+													<li><a href="#">PHP</a></li>
+													<li><a href="#">Python</a></li>
+													<li><a href="#">jQuery</a></li>
+													<li><a href="#">SQL</a></li>
+													<li><a href="#">Bootstrap</a></li>
+													<li><a href="#">Node.js</a></li>
+												</ul>
+											</div>
 										</div>
 									</div>
 									<div class="row">
@@ -146,8 +163,7 @@
 											</select>
 										</div>
 										<div class="col-md-6 mb-4">
-											<input type="number" class="form-control" placeholder="Usuario"
-												required>
+											<input type="number" class="form-control" placeholder="Usuario" required>
 										</div>
 									</div>
 									<div class="col-12">

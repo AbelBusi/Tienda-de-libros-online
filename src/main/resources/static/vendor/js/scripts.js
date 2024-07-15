@@ -33,6 +33,13 @@ function myFunction() {
   ul = document.getElementById("myMenu");
   li = ul.getElementsByTagName("li");
 
+  // Show the menu only if there is input
+  if (filter.length > 0) {
+    ul.style.display = "block";
+  } else {
+    ul.style.display = "none";
+  }
+
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < li.length; i++) {
     a = li[i].getElementsByTagName("a")[0];
@@ -42,4 +49,4 @@ function myFunction() {
       li[i].style.display = "none";
     }
   }
-};
+}

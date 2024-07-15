@@ -2,8 +2,9 @@
 #mySearch {
   width: 100%;
   font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
+  padding: 4px;
+  border: 1px solid #303f9f;
+  color: #303f9f;
 }
 
 /* Style the navigation menu */
@@ -15,12 +16,13 @@
 
 /* Style the navigation links */
 #myMenu li a {
-  padding: 12px;
+  padding: 10px;
   text-decoration: none;
-  color: black;
+  color: #303f9f;
   display: block
 }
 
 #myMenu li a:hover {
-  background-color: #eee;
+  border:1px solid #303f9f;	
+  background-color: white;
 }
