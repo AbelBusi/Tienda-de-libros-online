@@ -26,6 +26,9 @@ public class WebSecurityConfig {
 						.requestMatchers("/usuario/iniciarSesion").permitAll()
 						.requestMatchers("/admin/homeConfigurer").permitAll()
 						.requestMatchers("/admin/agregarProducto").permitAll()
+						.requestMatchers("/admin/formEditorial").permitAll()
+						.requestMatchers("/admin/formCategoria").permitAll()
+						.requestMatchers("/admin/formAutor").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin( (form )->form 

@@ -19,5 +19,24 @@ public class AdminController {
 		return "administrador/addLibro";
 
 	}
+	
+	@GetMapping("/formEditorial")
+	public String editorial() {
+		
+		return "administrador/addEditorial";
+	}
+	
+	@GetMapping("/formCategoria")
+	public String categoria() {
+		
+		return "administrador/addCategoria";
+	}
+	
+	@GetMapping("/formAutor")
+	public String autor(){
+		
+		return "administrador/addAutor";
+		
+	}
 
 }
