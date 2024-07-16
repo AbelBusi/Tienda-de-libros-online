@@ -23,7 +23,7 @@
 	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
 	<header th:insert="~{home/template_user.html :: header}"></header>
 
-	<section class="p-3 p-md-4 p-xl-5">
+		<section class="p-3 p-md-4 p-xl-5">
 		<div class="container">
 			<div class="card border-light-subtle shadow-sm">
 				<div class="row g-0">
@@ -32,7 +32,7 @@
 							id="productImagePreview" width="600" height="600">
 						<div class="text d-block">
 							<label for="productImage" class="form-label custom-file-upload ">
-								<i class="bi bi-upload"></i> Subir Imagen del Producto
+								<i class="bi bi-upload"></i> Subir Imagen de la categoria
 							</label>
 							<input type="file" class="form-control" id="productImage" accept="image/*"
 								style="display: none;" onchange="previewImage(event)">
@@ -43,7 +43,7 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="mb-5">
-										<h3 style="color: #303f9f;">Formulario Libro</h3>
+										<h3 style="color: #303f9f;">Formulario para guardar una Categoria</h3>
 									</div>
 								</div>
 							</div>
@@ -53,124 +53,19 @@
 										<label for="email" style="color: #303f9f;" class="form-label">Nombre <span
 												class="text-danger">*</span></label>
 										<input type="text" class="form-control" name="correo" id="email"
-											placeholder="Nombre del libro" required>
+											placeholder="Nombre de la editorial" required>
 									</div>
 									<div class="col-12">
-										<label for="password" style="color: #303f9f;" class="form-label">Sipnosis <span
+										<label for="password" style="color: #303f9f;" class="form-label">Descripcion <span
 												class="text-danger">*</span></label>
-										<textarea type="text" class="form-control" placeholder="Sipnosis del libro"
+										<textarea type="text" class="form-control" placeholder="Descripcion de la Editorial"
 											name="clave" id="password" value="" required></textarea>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Peso <span
-													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Peso" required>
-										</div>
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="fechaNacimiento" style="color: #303f9f;" class="form-label">Alto
-												<span class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Alto" required>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Ancho<span
-													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Ancho" required>
-										</div>
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="fechaNacimiento" style="color: #303f9f;"
-												class="form-label">Fecha publicacion <span
-													class="text-danger">*</span></label>
-											<input type="date" class="form-control" required>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Numero de
-												paginas<span class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Numero paginas"
-												required>
-										</div>
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="fechaNacimiento" style="color: #303f9f;" class="form-label">ISBN
-												<span class="text-danger">*</span></label>
-											<input type="text" class="form-control" placeholder="ISBN" required>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<div>
-												<label for="fechaNacimiento" style="color: #303f9f;"
-													class="form-label">Autor
-													<span class="text-danger">*</span></label>
-												<input type="text" id="mySearch" onkeyup="myFunction()"
-													placeholder="Buscar.." title="Type in a category">
-
-												<ul id="myMenu" style="display: none;">
-													<li><a href="#">HTML</a></li>
-													<li><a href="#">CSS</a></li>
-													<li><a href="#">JavaScript</a></li>
-													<li><a href="#">PHP</a></li>
-													<li><a href="#">Python</a></li>
-													<li><a href="#">jQuery</a></li>
-													<li><a href="#">SQL</a></li>
-													<li><a href="#">Bootstrap</a></li>
-													<li><a href="#">Node.js</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-md-6 mb-4">
-											<div>
-												<label for="fechaNacimiento" style="color: #303f9f;"
-													class="form-label">Editorial
-													<span class="text-danger">*</span></label>
-												<input type="text" id="mySearch" onkeyup="myFunction()"
-													placeholder="Buscar.." title="Type in a category">
-
-												<ul id="myMenu" style="display: none;">
-													<li><a href="#">HTML</a></li>
-													<li><a href="#">CSS</a></li>
-													<li><a href="#">JavaScript</a></li>
-													<li><a href="#">PHP</a></li>
-													<li><a href="#">Python</a></li>
-													<li><a href="#">jQuery</a></li>
-													<li><a href="#">SQL</a></li>
-													<li><a href="#">Bootstrap</a></li>
-													<li><a href="#">Node.js</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<select class="form-select" aria-label="Default select example" id="genero"
-												name="genero" style="color: #303f9f;" required>
-												<option selected>Categoria</option>
-												<option>Mario</option>
-												<option>Vargas</option>
-												<option>Llosa</option>
-											</select>
-										</div>
-										<div class="col-md-6 mb-4">
-											<input type="number" class="form-control" placeholder="Usuario" required>
-										</div>
 									</div>
 									<div class="col-12">
 										<br>
 										<div class="d-grid">
 											<button style="background-color: #303f9f;"
-												class="btn bsb-btn-xl btn-primary" type="submit">Guardar libro</button>
+												class="btn bsb-btn-xl btn-primary" type="submit">Guardar Categoria</button>
 										</div>
 									</div>
 								</div>

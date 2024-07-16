@@ -11,20 +11,32 @@ public class AutorDTO {
     private Date fechaNacimientoDto;
     private String nacionalidadDto;
     private String religionDto;
-    private String padresDto;
+    private String padreDto;
+    private String madreDto;
     private String hijosDto;
     private String educacionDto;
     private String ocupacionDto;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof AutorDTO autorDTO)) return false;
-        return Objects.equals(nombreDto, autorDTO.nombreDto) && Objects.equals(apellidoDto, autorDTO.apellidoDto) && Objects.equals(sexoDto, autorDTO.sexoDto) && Objects.equals(fechaNacimientoDto, autorDTO.fechaNacimientoDto) && Objects.equals(nacionalidadDto, autorDTO.nacionalidadDto) && Objects.equals(religionDto, autorDTO.religionDto) && Objects.equals(padresDto, autorDTO.padresDto) && Objects.equals(hijosDto, autorDTO.hijosDto) && Objects.equals(educacionDto, autorDTO.educacionDto) && Objects.equals(ocupacionDto, autorDTO.ocupacionDto);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nombreDto, apellidoDto, sexoDto, fechaNacimientoDto, nacionalidadDto, religionDto, padresDto, hijosDto, educacionDto, ocupacionDto);
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(apellidoDto, educacionDto, fechaNacimientoDto, hijosDto, madreDto, nacionalidadDto,
+				nombreDto, ocupacionDto, padreDto, religionDto, sexoDto);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AutorDTO other = (AutorDTO) obj;
+		return Objects.equals(apellidoDto, other.apellidoDto) && Objects.equals(educacionDto, other.educacionDto)
+				&& Objects.equals(fechaNacimientoDto, other.fechaNacimientoDto)
+				&& Objects.equals(hijosDto, other.hijosDto) && Objects.equals(madreDto, other.madreDto)
+				&& Objects.equals(nacionalidadDto, other.nacionalidadDto) && Objects.equals(nombreDto, other.nombreDto)
+				&& Objects.equals(ocupacionDto, other.ocupacionDto) && Objects.equals(padreDto, other.padreDto)
+				&& Objects.equals(religionDto, other.religionDto) && Objects.equals(sexoDto, other.sexoDto);
+	}
+    
+    
 }

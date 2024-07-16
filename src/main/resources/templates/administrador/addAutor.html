@@ -10,7 +10,7 @@
 	<link th:href="@{/vendor/css/search.css}" rel="stylesheet">
 
 </head>
- <style>
+<style>
 	.center-container {
 		display: flex;
 		justify-content: center;
@@ -43,51 +43,39 @@
 							<div class="row">
 								<div class="col-12">
 									<div class="mb-5">
-										<h3 style="color: #303f9f;">Formulario Libro</h3>
+										<h3 style="color: #303f9f;">Formulario para agregar un Autor</h3>
 									</div>
 								</div>
 							</div>
 							<form action="#" method="post">
 								<div class="row gy-3 gy-md-4 overflow-hidden">
 									<div class="col-12">
-										<label for="email" style="color: #303f9f;" class="form-label">Nombre <span
+										<label for="firstName" style="color: #303f9f;" class="form-label">Nombre <span
 												class="text-danger">*</span></label>
-										<input type="text" class="form-control" name="correo" id="email"
-											placeholder="Nombre del libro" required>
+										<input type="text" class="form-control" placeholder="Nombre" required>
 									</div>
 									<div class="col-12">
-										<label for="password" style="color: #303f9f;" class="form-label">Sipnosis <span
+										<label for="lastName" style="color: #303f9f;" class="form-label">Apellidos <span
 												class="text-danger">*</span></label>
-										<textarea type="text" class="form-control" placeholder="Sipnosis del libro"
-											name="clave" id="password" value="" required></textarea>
+										<input type="text" class="form-control" placeholder="Apellido" required>
 									</div>
-
 									<div class="row">
 										<div class="col-md-6 mb-4">
 											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Peso <span
-													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Peso" required>
-										</div>
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="fechaNacimiento" style="color: #303f9f;" class="form-label">Alto
+											<label for="firstName" style="color: #303f9f;" class="form-label">Genero
 												<span class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Alto" required>
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Ancho<span
-													class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Ancho" required>
+											<select class="form-select" aria-label="Default select example" id="genero"
+												name="genero" style="color: #303f9f;" required>
+												<option th:value="'Genero'" th:text="Genero" selected></option>
+												<option th:value="'Masculino'" th:text="Masculino"></option>
+												<option th:value="'Femenino'" th:text="Femenino"></option>
+												<option th:value="'Otros'" th:text="Otros"></option>
+											</select>
 										</div>
 										<div class="col-md-6 mb-4">
 											<br>
 											<label for="fechaNacimiento" style="color: #303f9f;"
-												class="form-label">Fecha publicacion <span
+												class="form-label">Fecha nacimiento <span
 													class="text-danger">*</span></label>
 											<input type="date" class="form-control" required>
 										</div>
@@ -96,81 +84,96 @@
 									<div class="row">
 										<div class="col-md-6 mb-4">
 											<br>
-											<label for="telefono" style="color: #303f9f;" class="form-label">Numero de
-												paginas<span class="text-danger">*</span></label>
-											<input type="number" class="form-control" placeholder="Numero paginas"
-												required>
+											<div>
+												<label for="fechaNacimiento" style="color: #303f9f;"
+													class="form-label">Nacionalidad
+													<span class="text-danger">*</span></label>
+												<input type="text" id="mySearch" onkeyup="myFunction()"
+													placeholder="Buscar.." title="Type in a category">
+
+												<ul id="myMenu" style="display: none;">
+													<li><a href="#">CSS</a></li>
+													<li><a href="#">JavaScript</a></li>
+													<li><a href="#">PHP</a></li>
+													<li><a href="#">Python</a></li>
+													<li><a href="#">jQuery</a></li>
+													<li><a href="#">SQL</a></li>
+													<li><a href="#">Bootstrap</a></li>
+													<li><a href="#">Node.js</a></li>
+												</ul>
+											</div>
+
 										</div>
 										<div class="col-md-6 mb-4">
 											<br>
-											<label for="fechaNacimiento" style="color: #303f9f;" class="form-label">ISBN
-												<span class="text-danger">*</span></label>
-											<input type="text" class="form-control" placeholder="ISBN" required>
+											<div class="col-12">
+												<label for="firstName" style="color: #303f9f;"
+													class="form-label">Religion
+													<span class="text-danger">*</span></label>
+												<input type="text" class="form-control" placeholder="Religion" required>
+											</div>
+
 										</div>
+
+									</div>
+
+									<div class="col-12">
+										<label for="text" style="color: #303f9f;" class="form-label">Padre <span
+												class="text-danger">*</span></label>
+										<input type="text" class="form-control" placeholder="nombres y apellidos"
+											required>
+									</div>
+									<div class="col-12">
+										<label for="password" style="color: #303f9f;" class="form-label">Madre <span
+												class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="password"
+											placeholder="nombres y apellidos" required>
+									</div>
+									<div class="col-12">
+										<label for="password" style="color: #303f9f;" class="form-label">Hijos <span
+												class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="password"
+											placeholder="nombres y apellidos" required>
 									</div>
 									<div class="row">
 										<div class="col-md-6 mb-4">
-											<div>
-												<label for="fechaNacimiento" style="color: #303f9f;"
-													class="form-label">Autor
-													<span class="text-danger">*</span></label>
-												<input type="text" id="mySearch" onkeyup="myFunction()"
-													placeholder="Buscar.." title="Type in a category">
-
-												<ul id="myMenu" style="display: none;">
-													<li><a href="#">HTML</a></li>
-													<li><a href="#">CSS</a></li>
-													<li><a href="#">JavaScript</a></li>
-													<li><a href="#">PHP</a></li>
-													<li><a href="#">Python</a></li>
-													<li><a href="#">jQuery</a></li>
-													<li><a href="#">SQL</a></li>
-													<li><a href="#">Bootstrap</a></li>
-													<li><a href="#">Node.js</a></li>
-												</ul>
+											<br>
+											<div class="col-12">
+												<label for="text" style="color: #303f9f;" class="form-label">Educacion <span
+														class="text-danger">*</span></label>
+												<input type="text" class="form-control"
+													placeholder="Educacion" required>
 											</div>
+
 										</div>
 										<div class="col-md-6 mb-4">
-											<div>
-												<label for="fechaNacimiento" style="color: #303f9f;"
-													class="form-label">Editorial
+											<br>
+											<div class="col-12">
+												<label for="firstName" style="color: #303f9f;"
+													class="form-label">Ocupacion
 													<span class="text-danger">*</span></label>
-												<input type="text" id="mySearch" onkeyup="myFunction()"
-													placeholder="Buscar.." title="Type in a category">
-
-												<ul id="myMenu" style="display: none;">
-													<li><a href="#">HTML</a></li>
-													<li><a href="#">CSS</a></li>
-													<li><a href="#">JavaScript</a></li>
-													<li><a href="#">PHP</a></li>
-													<li><a href="#">Python</a></li>
-													<li><a href="#">jQuery</a></li>
-													<li><a href="#">SQL</a></li>
-													<li><a href="#">Bootstrap</a></li>
-													<li><a href="#">Node.js</a></li>
-												</ul>
+												<input type="text" class="form-control" placeholder="Ocupacion" required>
 											</div>
+
 										</div>
+
 									</div>
-									<div class="row">
-										<div class="col-md-6 mb-4">
-											<select class="form-select" aria-label="Default select example" id="genero"
-												name="genero" style="color: #303f9f;" required>
-												<option selected>Categoria</option>
-												<option>Mario</option>
-												<option>Vargas</option>
-												<option>Llosa</option>
-											</select>
-										</div>
-										<div class="col-md-6 mb-4">
-											<input type="number" class="form-control" placeholder="Usuario" required>
+									<div class="col-12">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" value="" name="iAgree"
+												id="iAgree" required>
+											<label class="form-check-label text-secondary" for="iAgree">
+												Presiona el boton <a href="#!"
+													class="link-primary text-decoration-none">Aceptar terminos y
+													condiciones</a>
+											</label>
 										</div>
 									</div>
 									<div class="col-12">
-										<br>
 										<div class="d-grid">
-											<button style="background-color: #303f9f;"
-												class="btn bsb-btn-xl btn-primary" type="submit">Guardar libro</button>
+											<button class="btn bsb-btn-xl btn-primary"
+												style="background-color: #303f9f;" type="submit">Registrar
+												autor</button>
 										</div>
 									</div>
 								</div>
@@ -190,6 +193,11 @@
 			};
 			reader.readAsDataURL(event.target.files[0]);
 		}
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('.js-example-basic-multiple').select2();
+		});
 	</script>
 	<!--Bootstrap core JavaScript-->
 	<footer th:insert="~{home/footer.html :: footer}"></footer>

@@ -4436,7 +4436,7 @@
 											"top": 380,
 											"width": 135.83984375,
 											"height": 13,
-											"text": "-padres: str",
+											"text": "-padre: str",
 											"horizontalAlignment": 0
 										},
 										{
@@ -4489,13 +4489,30 @@
 											"height": 13,
 											"text": "-ocupacion: str",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGQvdSvSh3HSVg=",
+											"_parent": {
+												"$ref": "AAAAAAGQhixY9KUE9rA="
+											},
+											"model": {
+												"$ref": "AAAAAAGQvdSvLx2vmIg="
+											},
+											"font": "Arial;13;0",
+											"left": 2637,
+											"top": 440,
+											"width": 135.83984375,
+											"height": 13,
+											"text": "-madre: str",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2632,
 									"top": 270,
 									"width": 145.83984375,
-									"height": 173
+									"height": 188
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -4518,7 +4535,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2637,
-											"top": 448,
+											"top": 463,
 											"width": 135.83984375,
 											"height": 13,
 											"text": "+Getters()",
@@ -4535,7 +4552,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 2637,
-											"top": 463,
+											"top": 478,
 											"width": 135.83984375,
 											"height": 13,
 											"text": "+setters()",
@@ -4544,7 +4561,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 2632,
-									"top": 443,
+									"top": 458,
 									"width": 145.83984375,
 									"height": 38
 								},
@@ -4586,7 +4603,7 @@
 							"left": 2632,
 							"top": 232,
 							"width": 145.83984375,
-							"height": 249,
+							"height": 264,
 							"showProperty": false,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQhixY9KT/Hx8="
@@ -17394,7 +17411,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGQhixY86T8CMA="
 							},
-							"name": "padres",
+							"name": "padre",
 							"visibility": "private",
 							"type": "str"
 						},
@@ -17425,6 +17442,16 @@
 								"$ref": "AAAAAAGQhixY86T8CMA="
 							},
 							"name": "ocupacion",
+							"visibility": "private",
+							"type": "str"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGQvdSvLx2vmIg=",
+							"_parent": {
+								"$ref": "AAAAAAGQhixY86T8CMA="
+							},
+							"name": "madre",
 							"visibility": "private",
 							"type": "str"
 						}

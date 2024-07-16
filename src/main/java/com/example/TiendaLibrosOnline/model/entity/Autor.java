@@ -41,8 +41,11 @@ public class Autor {
     @Column(name = "religion")
     private String religion;
 
-    @Column(name = "padres")
-    private String padres;
+    @Column(name = "padre")
+    private String padre;
+    
+    @Column(name="madre")
+    private String madre;
 
     @Column(name = "hijos")
     private String hijos;
@@ -56,15 +59,29 @@ public class Autor {
     @OneToMany(mappedBy = "idAutor")
     private List<Libro> libros;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Autor autor)) return false;
-        return Objects.equals(getIdAutor(), autor.getIdAutor()) && Objects.equals(getNombre(), autor.getNombre()) && Objects.equals(getApellido(), autor.getApellido()) && Objects.equals(getSexo(), autor.getSexo()) && Objects.equals(getFechaNacimiento(), autor.getFechaNacimiento()) && Objects.equals(getNacionalidad(), autor.getNacionalidad()) && Objects.equals(getReligion(), autor.getReligion()) && Objects.equals(getPadres(), autor.getPadres()) && Objects.equals(getHijos(), autor.getHijos()) && Objects.equals(getEducacion(), autor.getEducacion()) && Objects.equals(getOcupacion(), autor.getOcupacion());
-    }
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Autor other = (Autor) obj;
+		return Objects.equals(apellido, other.apellido) && Objects.equals(educacion, other.educacion)
+				&& Objects.equals(fechaNacimiento, other.fechaNacimiento) && Objects.equals(hijos, other.hijos)
+				&& Objects.equals(idAutor, other.idAutor) && Objects.equals(libros, other.libros)
+				&& Objects.equals(madre, other.madre) && Objects.equals(nacionalidad, other.nacionalidad)
+				&& Objects.equals(nombre, other.nombre) && Objects.equals(ocupacion, other.ocupacion)
+				&& Objects.equals(padre, other.padre) && Objects.equals(religion, other.religion)
+				&& Objects.equals(sexo, other.sexo);
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getIdAutor(), getNombre(), getApellido(), getSexo(), getFechaNacimiento(), getNacionalidad(), getReligion(), getPadres(), getHijos(), getEducacion(), getOcupacion());
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(apellido, educacion, fechaNacimiento, hijos, idAutor, libros, madre, nacionalidad, nombre,
+				ocupacion, padre, religion, sexo);
+	}
+
+    
 }
