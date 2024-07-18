@@ -24,9 +24,9 @@ import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;
 
 @Controller
 @RequestMapping("/usuario")
-public class UsuarioController {
+public class UserController {
 	
-	private final Logger logger = LoggerFactory.getLogger(UsuarioController.class);
+	private final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
 	private UsuarioServiceImpl usuarioService;

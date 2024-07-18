@@ -29,6 +29,7 @@ public class WebSecurityConfig {
 						.requestMatchers("/admin/formEditorial").permitAll()
 						.requestMatchers("/admin/formCategoria").permitAll()
 						.requestMatchers("/admin/formAutor").permitAll()
+						.requestMatchers("/admin/libros").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin( (form )->form 

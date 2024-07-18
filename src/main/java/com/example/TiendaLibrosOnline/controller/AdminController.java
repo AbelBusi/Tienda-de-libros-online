@@ -20,6 +20,13 @@ public class AdminController {
 
 	}
 	
+	@GetMapping("/libros")
+	public String totalLibros() {
+		
+		return "administrador/librosAll";
+		
+	}
+	
 	@GetMapping("/formEditorial")
 	public String editorial() {
 		

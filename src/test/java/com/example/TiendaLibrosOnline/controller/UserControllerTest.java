@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 @WebMvcTest
-class UsuarioControllerTest {
+class UserControllerTest {
 
 	@Test
 	void test() {
