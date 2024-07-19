@@ -7,8 +7,8 @@
 
 	<!--Header-->
 	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-	<link th:href="@{/vendor/css/styles.css}" rel="stylesheet" />
+	<link th:href="@{/vendor/css/styles.css}" rel="stylesheet"/>
+	<link th:href="@{/vendor/css/footer.css}" rel="stylesheet">
 </head>
 <style>
 	.carousel-container {
@@ -40,15 +40,15 @@
 	}
 </style>
 
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" id="body">
 
 	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
 	<header th:insert="~{home/template_admin.html :: templateAdmin}"></header>
 	<div th:insert="~{home/homeBook.html :: carrusel}"></div><br><br>
-	<div th:fragment="carrusel">
+	<div th:fragment="carrusel"></div>
 
-		<div th:fragment="admin">
-
+	<div th:fragment="admin">
+		<div>
 			<div id="layoutSidenav">
 				<div id="layoutSidenav_content">
 					<main>
@@ -622,7 +622,8 @@
 				crossorigin="anonymous"></script>
 			<script th:src="@{/vendor/js/datatables-simple-demo.js}"></script>
 		</div>
-		<footer th:insert="~{home/footer.html :: footer}"></footer>
+	</div>
+	<footer id="footer" th:insert="~{home/footer.html :: footer}"></footer>
 
 </body>
 
