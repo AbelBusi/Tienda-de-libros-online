@@ -1,39 +1,24 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "Autor")
-public class Autor {
+public class Autor extends Persona {
+	
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_autor")
-    private Integer idAutor;
 
-    @Column(name = "nombre")
-    private String nombre;
-
-    @Column(name = "apellido")
-    private String apellido;
-
-    @Column(name = "sexo")
+	@Column(name = "sexo")
     private String sexo;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_nacimiento")
-    private Date fechaNacimiento;
 
     @Column(name = "nacionalidad")
     private String nacionalidad;
@@ -59,6 +44,19 @@ public class Autor {
     @OneToMany(mappedBy = "idAutor")
     private List<Libro> libros;
 
+	
+    public Autor(Integer idPersona, String nombre, String apellido, Date fechaNacimiento) {
+		super(idPersona, nombre, apellido, fechaNacimiento);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(educacion, hijos, libros, madre, nacionalidad, ocupacion, padre, religion, sexo);
+	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -68,19 +66,11 @@ public class Autor {
 		if (getClass() != obj.getClass())
 			return false;
 		Autor other = (Autor) obj;
-		return Objects.equals(apellido, other.apellido) && Objects.equals(educacion, other.educacion)
-				&& Objects.equals(fechaNacimiento, other.fechaNacimiento) && Objects.equals(hijos, other.hijos)
-				&& Objects.equals(idAutor, other.idAutor) && Objects.equals(libros, other.libros)
-				&& Objects.equals(madre, other.madre) && Objects.equals(nacionalidad, other.nacionalidad)
-				&& Objects.equals(nombre, other.nombre) && Objects.equals(ocupacion, other.ocupacion)
+		return Objects.equals(educacion, other.educacion) && Objects.equals(hijos, other.hijos)
+				&& Objects.equals(libros, other.libros) && Objects.equals(madre, other.madre)
+				&& Objects.equals(nacionalidad, other.nacionalidad) && Objects.equals(ocupacion, other.ocupacion)
 				&& Objects.equals(padre, other.padre) && Objects.equals(religion, other.religion)
 				&& Objects.equals(sexo, other.sexo);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(apellido, educacion, fechaNacimiento, hijos, idAutor, libros, madre, nacionalidad, nombre,
-				ocupacion, padre, religion, sexo);
 	}
 
     

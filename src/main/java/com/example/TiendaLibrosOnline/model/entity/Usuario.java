@@ -4,31 +4,22 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
-@Data
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Table(name = "Usuario")
-public class Usuario {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
-
-    @Column(name = "nombre")
-    private String nombre;
-    
-    @Column(name = "apellido")
-    private String apellido;
+public class Usuario extends Persona{
     
     @Column(name = "genero")
     private String genero;
@@ -39,9 +30,6 @@ public class Usuario {
     @Column(name = "telefono")
     private String telefono;
     
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_nacimiento")
-    private Date fechaNacimiento;
     
     @Column(name = "email")
     private String email;
@@ -55,15 +43,40 @@ public class Usuario {
     @OneToMany(mappedBy = "idUsuario",fetch = FetchType.LAZY)
     private List<Libro> libros;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Usuario usuario)) return false;
-        return Objects.equals(getIdUsuario(), usuario.getIdUsuario()) && Objects.equals(getNombre(), usuario.getNombre()) && Objects.equals(getApellido(), usuario.getApellido()) && Objects.equals(getGenero(), usuario.getGenero()) && Objects.equals(getDireccion(), usuario.getDireccion()) && Objects.equals(getTelefono(), usuario.getTelefono()) && Objects.equals(getFechaNacimiento(), usuario.getFechaNacimiento()) && Objects.equals(getEmail(), usuario.getEmail()) && Objects.equals(getPassword(), usuario.getPassword()) && Objects.equals(getRol(), usuario.getRol());
-    }
+    @Builder
+	public Usuario(Integer idPersona, String nombre, String apellido, Date fechaNacimiento,String direccion, String email,
+			String genero, String password, String rol, String telefono) {
+		super(idPersona, nombre, apellido, fechaNacimiento);
+		this.direccion=direccion;
+		this.email=email;
+		this.genero=genero;
+		this.password=password;
+		this.rol=rol;
+		this.telefono=telefono;
+		// TODO Auto-generated constructor stub
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getIdUsuario(), getNombre(), getApellido(), getGenero(), getDireccion(), getTelefono(), getFechaNacimiento(), getEmail(), getPassword(), getRol());
-    }
+	@Override
+	public int hashCode() {
+		return Objects.hash(direccion, email, genero, libros, password, rol, telefono);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		return Objects.equals(direccion, other.direccion) && Objects.equals(email, other.email)
+				&& Objects.equals(genero, other.genero) && Objects.equals(libros, other.libros)
+				&& Objects.equals(password, other.password) && Objects.equals(rol, other.rol)
+				&& Objects.equals(telefono, other.telefono);
+	}
+	
+	
+    
+    
 }
