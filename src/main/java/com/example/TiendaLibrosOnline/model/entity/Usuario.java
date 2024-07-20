@@ -1,26 +1,28 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
+import jakarta.persistence.Entity;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
+
+
 @Entity
-@Getter
-@Setter
+@Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Usuario")
 public class Usuario extends Persona{
     
+	@Nonnull
     @Column(name = "genero")
     private String genero;
 
@@ -40,6 +42,7 @@ public class Usuario extends Persona{
     @Column(name = "rol")
     private String rol;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "idUsuario",fetch = FetchType.LAZY)
     private List<Libro> libros;
 

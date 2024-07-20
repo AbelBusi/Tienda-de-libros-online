@@ -314,7 +314,7 @@
 											"top": 533,
 											"width": 263,
 											"height": 13,
-											"text": "-fechaNacimiento: LocalDateTime",
+											"text": "-fechaNacimiento: Date",
 											"horizontalAlignment": 0
 										},
 										{
@@ -15875,7 +15875,7 @@
 							},
 							"name": "fechaNacimiento",
 							"visibility": "private",
-							"type": "LocalDateTime"
+							"type": "Date"
 						},
 						{
 							"_type": "UMLAttribute",
