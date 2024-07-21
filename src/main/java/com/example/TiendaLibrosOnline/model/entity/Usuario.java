@@ -1,9 +1,10 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,24 +23,22 @@ import java.util.Objects;
 @Table(name = "Usuario")
 public class Usuario extends Persona{
     
-	@Nonnull
-    @Column(name = "genero")
+    @Column(name = "genero",nullable = false)
     private String genero;
 
-    @Column(name = "direccion")
+    @Column(name = "direccion",nullable = false)
     private String direccion;
     
-    @Column(name = "telefono")
+    @Column(name = "telefono",nullable = false)
     private String telefono;
     
-    
-    @Column(name = "email")
+    @Column(name = "email",nullable = false)
     private String email;
     
-    @Column(name = "password")
+    @Column(name = "password",nullable = false)
     private String password;
     
-    @Column(name = "rol")
+    @Column(name = "rol",nullable = true)
     private String rol;
 
     @ToString.Exclude

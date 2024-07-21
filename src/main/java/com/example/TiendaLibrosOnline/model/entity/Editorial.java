@@ -1,6 +1,5 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +7,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Objects;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Data
@@ -22,13 +29,13 @@ public class Editorial {
     @Column(name = "id_editorial")
     private Integer idEditorial;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre",nullable = false)
     private String nombre;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",nullable = false)
     private String descripcion;
 
-    @Column(name = "ubicacion")
+    @Column(name = "ubicacion",nullable = false)
     private String ubicacion;
     @OneToMany(mappedBy = "idEditorial")
     private List<Libro> libros;

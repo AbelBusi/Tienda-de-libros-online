@@ -1,10 +1,18 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 import java.util.Date;
 import java.util.Objects;
@@ -22,44 +30,44 @@ public class Libro {
     private Integer idLibro;
 
     @ManyToOne
-    @JoinColumn(name = "autor")
+    @JoinColumn(name = "autor",nullable = false)
     private Autor idAutor;
 
     @ManyToOne
-    @JoinColumn(name = "editorial")
+    @JoinColumn(name = "editorial",nullable = false)
     private Editorial idEditorial;
 
     @ManyToOne
-    @JoinColumn(name = "categoria")
+    @JoinColumn(name = "categoria",nullable = false)
     private CategoriaLibro idCategoria;
 
     @ManyToOne
-    @JoinColumn(name = "usuario")
+    @JoinColumn(name = "usuario",nullable = false)
     private Usuario idUsuario;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre",nullable = false)
     private String nombre;
 
-    @Column(name = "sipnosis")
+    @Column(name = "sipnosis",nullable = false)
     private String sipnosis;
 
-    @Column(name = "peso")
+    @Column(name = "peso",nullable = false)
     private double peso;
 
-    @Column(name = "alto")
+    @Column(name = "alto",nullable = false)
     private double alto;
 
-    @Column(name = "ancho")
+    @Column(name = "ancho",nullable = false)
     private double ancho;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_publicacion")
+    @Column(name = "fecha_publicacion",nullable = false)
     private Date fechaPublicacion;
 
-    @Column(name = "numero_pagimas")
+    @Column(name = "numero_pagimas",nullable = false)
     private int numeroPagina;
 
-    @Column(name = "ISBN")
+    @Column(name = "ISBN",nullable = false)
     private String ISBN;
 
     @Override

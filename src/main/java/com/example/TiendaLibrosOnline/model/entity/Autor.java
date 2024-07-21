@@ -1,6 +1,5 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,37 +7,40 @@ import lombok.Setter;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "Autor")
 public class Autor extends Persona {
-	
 
-
-	@Column(name = "sexo")
+	@Column(name = "sexo",nullable = false)
     private String sexo;
 
-    @Column(name = "nacionalidad")
+    @Column(name = "nacionalidad",nullable = false)
     private String nacionalidad;
 
-    @Column(name = "religion")
+    @Column(name = "religion",nullable = false)
     private String religion;
 
-    @Column(name = "padre")
+    @Column(name = "padre",nullable = false)
     private String padre;
     
-    @Column(name="madre")
+    @Column(name="madre",nullable = false)
     private String madre;
 
-    @Column(name = "hijos")
+    @Column(name = "hijos",nullable = false)
     private String hijos;
 
-    @Column(name = "educacion")
+    @Column(name = "educacion",nullable = false)
     private String educacion;
 
-    @Column(name = "ocupacion")
+    @Column(name = "ocupacion",nullable = false)
     private String ocupacion;
 
     @OneToMany(mappedBy = "idAutor")

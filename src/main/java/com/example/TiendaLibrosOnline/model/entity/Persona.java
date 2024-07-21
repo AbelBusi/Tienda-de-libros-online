@@ -26,14 +26,14 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Integer idPersona;
 	
-	@Column(name = "nombre")
+	@Column(name = "nombre",nullable = false)
 	private String nombre;
 	
-	@Column(name = "apellido")
+	@Column(name = "apellido",nullable = false)
 	private String apellido;
 	
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_nacimiento")
+    @Column(name = "fecha_nacimiento",nullable = false)
 	private Date fechaNacimiento;
 	
 
