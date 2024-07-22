@@ -10,8 +10,12 @@ import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,45 +23,47 @@ import jakarta.persistence.Table;
 @Table(name = "Autor")
 public class Autor extends Persona {
 
-	@Column(name = "sexo",nullable = false)
-    private String sexo;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_autor")
+	private Integer idAutor;
 
-    @Column(name = "nacionalidad",nullable = false)
-    private String nacionalidad;
+	@Column(name = "sexo", nullable = false)
+	private String sexo;
 
-    @Column(name = "religion",nullable = false)
-    private String religion;
+	@Column(name = "nacionalidad", nullable = false)
+	private String nacionalidad;
 
-    @Column(name = "padre",nullable = false)
-    private String padre;
-    
-    @Column(name="madre",nullable = false)
-    private String madre;
+	@Column(name = "religion", nullable = false)
+	private String religion;
 
-    @Column(name = "hijos",nullable = false)
-    private String hijos;
+	@Column(name = "padre", nullable = false)
+	private String padre;
 
-    @Column(name = "educacion",nullable = false)
-    private String educacion;
+	@Column(name = "madre", nullable = false)
+	private String madre;
 
-    @Column(name = "ocupacion",nullable = false)
-    private String ocupacion;
+	@Column(name = "hijos", nullable = false)
+	private String hijos;
 
-    @OneToMany(mappedBy = "idAutor")
-    private List<Libro> libros;
+	@Column(name = "educacion", nullable = false)
+	private String educacion;
 
-	
-    public Autor(Integer idPersona, String nombre, String apellido, Date fechaNacimiento) {
-		super(idPersona, nombre, apellido, fechaNacimiento);
+	@Column(name = "ocupacion", nullable = false)
+	private String ocupacion;
+
+	@OneToMany(mappedBy = "idAutor")
+	private List<Libro> libros;
+
+	public Autor(Integer idPersona, String nombre, String apellido, Date fechaNacimiento) {
+		super(nombre, apellido, fechaNacimiento);
 		// TODO Auto-generated constructor stub
 	}
 
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(educacion, hijos, libros, madre, nacionalidad, ocupacion, padre, religion, sexo);
+		return Objects.hash(educacion, hijos, idAutor, libros, madre, nacionalidad, ocupacion, padre, religion, sexo);
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -69,11 +75,10 @@ public class Autor extends Persona {
 			return false;
 		Autor other = (Autor) obj;
 		return Objects.equals(educacion, other.educacion) && Objects.equals(hijos, other.hijos)
-				&& Objects.equals(libros, other.libros) && Objects.equals(madre, other.madre)
-				&& Objects.equals(nacionalidad, other.nacionalidad) && Objects.equals(ocupacion, other.ocupacion)
-				&& Objects.equals(padre, other.padre) && Objects.equals(religion, other.religion)
-				&& Objects.equals(sexo, other.sexo);
+				&& Objects.equals(idAutor, other.idAutor) && Objects.equals(libros, other.libros)
+				&& Objects.equals(madre, other.madre) && Objects.equals(nacionalidad, other.nacionalidad)
+				&& Objects.equals(ocupacion, other.ocupacion) && Objects.equals(padre, other.padre)
+				&& Objects.equals(religion, other.religion) && Objects.equals(sexo, other.sexo);
 	}
 
-    
 }

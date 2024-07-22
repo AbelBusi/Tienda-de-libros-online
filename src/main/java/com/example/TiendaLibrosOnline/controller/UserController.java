@@ -2,6 +2,8 @@ package com.example.TiendaLibrosOnline.controller;
 
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.example.TiendaLibrosOnline.model.entity.Escritor;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;
+import com.example.TiendaLibrosOnline.serviceImpl.exritorSerbiceImpl;
 
 
 
@@ -30,6 +34,9 @@ public class UserController {
 	
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
+	
+	@Autowired
+	private exritorSerbiceImpl exritorSerbiceImpl;
 
     @GetMapping("/ingresar")
     @ResponseStatus(HttpStatus.OK)
@@ -62,7 +69,7 @@ public class UserController {
         	logger.info("clave: {}",clave);
     		return "redirect:/";
     	}
-    	
+
     	logger.info("Usuario si figura en el sistema {}",usuario.get());
     	return "home/homeBook";
     	

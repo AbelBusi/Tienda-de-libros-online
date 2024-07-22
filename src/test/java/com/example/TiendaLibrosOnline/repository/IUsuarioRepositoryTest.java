@@ -65,7 +65,7 @@ class IUsuarioRepositoryTest {
 		//THEN: se escriben las respuestas esperadas del sistema o validaciones
 		assertAll(
 				()-> assertThat(userTest).isNotNull(),
-				()-> assertThat(userTest.getIdPersona()).isGreaterThan(0)
+				()-> assertThat(userTest.getIdUsuario()).isGreaterThan(0)
 				);
 	}
 

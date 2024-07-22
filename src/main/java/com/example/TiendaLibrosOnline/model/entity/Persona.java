@@ -22,10 +22,6 @@ import lombok.Setter;
 @MappedSuperclass
 public class Persona {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	private Integer idPersona;
-	
 	@Column(name = "nombre",nullable = false)
 	private String nombre;
 	
