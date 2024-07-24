@@ -15796,7 +15796,7 @@
 											"top": 1084,
 											"width": 297.197265625,
 											"height": 13,
-											"text": "AdminManagentController (\"/managent\")"
+											"text": "AdminManagentController (\"/admin/managent\")"
 										},
 										{
 											"_type": "LabelView",
@@ -19755,7 +19755,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "AdminManagentController (\"/managent\")",
+					"name": "AdminManagentController (\"/admin/managent\")",
 					"stereotype": "Controller",
 					"operations": [
 						{
