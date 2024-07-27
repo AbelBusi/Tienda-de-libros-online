@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tienda de libros</title>
+
+	<!--Header-->
+	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<style>
+	.carousel-container {
+		width: 100vw;
+		background-color: #d3d3d3;
+		/* Color gris claro */
+	}
+
+	.carousel-item img {
+		height: 400px;
+		/* Ajusta la altura según sea necesario */
+		object-fit: cover;
+		width: 100vw;
+		/* Asegura que las imágenes ocupen todo el ancho de la ventana */
+	}
+
+	.bd-placeholder-img {
+		font-size: 1.125rem;
+		text-anchor: middle;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+	}
+
+	@media (min-width: 768px) {
+		.bd-placeholder-img-lg {
+			font-size: 3.5rem;
+		}
+	}
+</style>
+
+<body>
+	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
+	<header th:insert="~{home/template_admin.html :: templateAdmin}"></header>
+	<div th:insert="~{home/homeBook.html :: carrusel}"></div><br><br>
+	<div th:fragment="carrusel">
+		<div class="container center">
+			<div class="row">
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/add.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Agregar Libro</h5>
+							<p class="card-text">Solo los administradores tienen este rol, revisar con cautela
+								la descripcion del libro a ingresar.
+							</p>
+							<a th:href="@{/admin/agregarProducto}" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/todosBook.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Todos los Libros</h5>
+							<p class="card-text">Lista con todos los libros del inventario, cada uno con su
+								respectiva categoria.
+							</p>
+							<a th:href="@{/admin/libros}" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/pedido.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Pedidos</h5>
+							<p class="card-text">Lista de todos los pedidos y registro de ventas.</p>
+							<a href="#!" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/add.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Agregar Editorial</h5>
+							<p class="card-text">Solo los administradores tienen este rol, revisar con cautela
+								la descripcion del libro a ingresar.
+							</p>
+							<a th:href="@{/admin/formEditorial}" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/add.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Agregar Categoria</h5>
+							<p class="card-text">Solo los administradores tienen este rol, revisar con cautela
+								la descripcion del libro a ingresar.
+							</p>
+							<a th:href="@{/admin/formCategoria}" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 mb-4">
+					<div class="card ">
+						<div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+							<img th:src="@{/images/add.jpg}" class="img-fluid" />
+							<a href="#!">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</a>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Agregar Autor</h5>
+							<p class="card-text">Solo los administradores tienen este rol, revisar con cautela
+								la descripcion del libro a ingresar.
+							</p>
+							<a th:href="@{/admin/formAutor}" class="btn btn-primary" data-mdb-ripple-init
+								data-mdb-ripple-color="light">Ingresar</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div><br><br>
+
+
+	<!--Bootstrap core JavaScript-->
+
+	<footer th:insert="~{home/footer.html :: footer}"></footer>
+	<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>
