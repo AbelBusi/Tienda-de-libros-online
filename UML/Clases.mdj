@@ -3632,13 +3632,48 @@
 											"height": 13,
 											"text": "+totalLibros <<GetMapping(\"/libros\") >>()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGQ9lgDIX00llE=",
+											"_parent": {
+												"$ref": "AAAAAAGQSy5gnfwUzb8="
+											},
+											"model": {
+												"$ref": "AAAAAAGQ9lgDC30idXk="
+											},
+											"font": "Arial;13;0",
+											"left": 1317,
+											"top": 1207,
+											"width": 302.25,
+											"height": 13,
+											"text": "+Logistics<<GetMapping(\"/Logistics\") >>()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGQ9lgOHYBG4Q8=",
+											"_parent": {
+												"$ref": "AAAAAAGQSy5gnfwUzb8="
+											},
+											"model": {
+												"$ref": "AAAAAAGQ9lgOFIA0dCI="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 1317,
+											"top": 1222,
+											"width": 302.25,
+											"height": 13,
+											"text": "+Operation2()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1312,
 									"top": 1112,
 									"width": 312.25,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3678,7 +3713,7 @@
 							"left": 1312,
 							"top": 1064,
 							"width": 312.25,
-							"height": 146,
+							"height": 176,
 							"showProperty": false,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQSy5gnPwOvJc="
@@ -17030,6 +17065,22 @@
 								"$ref": "AAAAAAGQSy5gnPwLHjk="
 							},
 							"name": "totalLibros <<GetMapping(\"/libros\") >>"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGQ9lgDC30idXk=",
+							"_parent": {
+								"$ref": "AAAAAAGQSy5gnPwLHjk="
+							},
+							"name": "Logistics<<GetMapping(\"/Logistics\") >>"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGQ9lgOFIA0dCI=",
+							"_parent": {
+								"$ref": "AAAAAAGQSy5gnPwLHjk="
+							},
+							"name": "Operation2"
 						}
 					]
 				},

@@ -45,5 +45,12 @@ public class AdminController {
 		return "administrador/addAutor";
 		
 	}
+	
+	@GetMapping("/logistics")
+	public String logistics() {
+		
+		return "administrador/logisticsBook";
+		
+	}
 
 }
