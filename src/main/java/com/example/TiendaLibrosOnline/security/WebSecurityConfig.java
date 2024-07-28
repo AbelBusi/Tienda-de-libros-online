@@ -38,6 +38,7 @@ public class WebSecurityConfig {
 						.requestMatchers("/admin/managent/editorials").permitAll()
 						.requestMatchers("/admin/managent/rankingBooks").permitAll()
 						.requestMatchers("/admin/managent/actors").permitAll()
+						.requestMatchers("/admin/logistics").permitAll()
 						.anyRequest().authenticated()
 						)
 				.formLogin( (form )->form 
