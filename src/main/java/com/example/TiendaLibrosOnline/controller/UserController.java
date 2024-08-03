@@ -9,6 +9,8 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +38,7 @@ public class UserController {
 	private UsuarioServiceImpl usuarioService;
 	
 	@Autowired
-	private exritorSerbiceImpl exritorSerbiceImpl;
+	private PasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("/ingresar")
     @ResponseStatus(HttpStatus.OK)
@@ -45,7 +47,7 @@ public class UserController {
         return "acceso/login";
 
     }
-    
+    /*
     @PostMapping("/iniciarSesion")
     public String ingresar(@RequestParam(required = true) String correo, @RequestParam(required = true) String clave ) {
     	
@@ -74,7 +76,7 @@ public class UserController {
     	return "home/homeBook";
     	
     }
-    
+    */
     @GetMapping("/crearCuenta")
     public String registrarUsuario(Model model){
     	
@@ -108,9 +110,8 @@ public class UserController {
     			.telefonoDto(usuario.getTelefono())
     			.fechaNacimientoDto(usuario.getFechaNacimiento())
     			.emailDto(usuario.getEmail())
-    			.passwordDto(usuario.getPassword())
+    			.passwordDto(bCryptPasswordEncoder.encode(usuario.getPassword()))
     			.build();
-    
     	usuarioService.crearUsuario(usuarioDTO);
     	
     	logger.info("Usuario {}",usuario);
