@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -53,7 +54,7 @@ public class WebSecurityConfig {
 						)
 				.formLogin( (form )->form 
 						.loginPage("/usuario/ingresar")
-						.loginProcessingUrl("/usuario/log")
+						.loginProcessingUrl("/usuario/ingresar")
 						.defaultSuccessUrl("/home")
 						.permitAll())
 				.logout((logout)-> logout.permitAll());
@@ -69,6 +70,13 @@ public class WebSecurityConfig {
 	public PasswordEncoder passwordEncoder() {
 		
 		return new BCryptPasswordEncoder();
+	}
+	
+	@Autowired
+	public void configure(AuthenticationManagerBuilder auth )throws Exception {
+		
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		
 	}
 	
 

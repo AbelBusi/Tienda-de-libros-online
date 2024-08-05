@@ -42,10 +42,6 @@ public class UsuarioServiceImpl implements IUsuarioService {
     			 throw new NullPointerException("No se puede guardar un usuario vacio");
     		 }
     		 
-    		 if(usuarioRepository.findByEmail(usuarioDto.getEmailDto()).isPresent()) {
-    			 logger.info("El usuario ya existe");
-    			 throw new RuntimeException("El usuario ya existe");
-    		 }
     		 
     		logger.info("Usuario guardado con exito {}", usuario);
     		return usuarioRepository.save(usuario);
@@ -71,8 +67,4 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return null;
 	}
 
-	@Override
-	public Optional<Usuario> verificarUsuario(String emailUsuario) {
-		return usuarioRepository.findByEmail(emailUsuario);
-	}
 }

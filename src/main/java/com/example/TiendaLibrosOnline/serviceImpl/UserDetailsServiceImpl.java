@@ -1,7 +1,8 @@
 package com.example.TiendaLibrosOnline.serviceImpl;
 
-import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,11 +14,13 @@ import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.security.SecurityUser;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Service
 @AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService{
+	
+	private final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+
 	
 	@Autowired
 	private IUsuarioRepository usuarioRepository;
@@ -25,12 +28,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		Optional<Usuario> usuario = usuarioRepository.findByEmail(username);
+		Usuario usuario = usuarioRepository.findByEmail(username);
 		if(usuario==null) {
 			System.out.println("prueba xd");
+			System.out.println("Usuario: "+username);
 			throw new UsernameNotFoundException(username);
 		}
-		
 		return new SecurityUser(usuario);
 	}
 	

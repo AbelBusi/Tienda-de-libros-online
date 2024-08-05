@@ -66,7 +66,7 @@ class UsuarioServiceTest {
 	@Test
 	void testGuardarEmpleado() {
 		// given
-		given(usuarioRepository.findByEmail(usuario.getEmail())).willReturn(Optional.empty());
+		given(usuarioRepository.findByEmail(usuario.getEmail()));
 		
 		given(usuarioRepository.save(usuario)).willReturn(usuario);
 		

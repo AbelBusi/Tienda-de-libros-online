@@ -17,24 +17,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SecurityUser implements UserDetails{
 	
-	private Optional<Usuario> usuario;
-	
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return Collections.singletonList(new SimpleGrantedAuthority(usuario.get().getRol()));
-	}
+	private Usuario usuario;
 
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return usuario.get().getPassword();
+		return usuario.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return usuario.get().getEmail();
+		return usuario.getEmail();
 	}
 
 	@Override
@@ -59,6 +53,12 @@ public class SecurityUser implements UserDetails{
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

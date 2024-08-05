@@ -13,6 +13,5 @@ public interface IUsuarioService {
 
     Usuario actualizarUsuario(UsuarioDto usuarioDto);
 
-    Optional<Usuario> verificarUsuario(String emailUsuario);
 
 }

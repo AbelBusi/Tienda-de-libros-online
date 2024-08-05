@@ -41,23 +41,22 @@
                   </div>
                 </div>
               </div>
-              <form th:action="@{/usuario/log}" method="post">
-                <div class="row gy-3 gy-md-4 overflow-hidden">
-                  <div class="col-12">
-                    <label for="email" style="color: #303f9f;" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                  </div>
-                  <div class="col-12">
-                    <label for="password" style="color: #303f9f;" class="form-label">Password <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="password" id="password" value="" required>
-                  </div>
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <button style="background-color: #303f9f;" class="btn bsb-btn-xl btn-primary" type="submit">Ingresar</button>
-                    </div>
-                  </div>
-                </div>
+			  
+			  <div class="message" th:if="${param.error}">
+			             Invalid Username or Password
+			          </div>
+			  
+              <form th:action="@{/usuario/ingresar}" method="post">
+				<div>
+				<input type="text" name="email" placeholder="Username"/>
+				</div>
+				<div>
+				<input type="password" name="password" placeholder="Password"/>
+				</div>
+				<input type="submit" value="Log in" />
               </form>
+			  
+			  
               <div class="row">
                 <div class="col-12">
                   <hr class="mt-5 mb-4 border-secondary-subtle">

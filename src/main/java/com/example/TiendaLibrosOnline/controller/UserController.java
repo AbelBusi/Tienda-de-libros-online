@@ -37,6 +37,8 @@ public class UserController {
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
 	
+	
+	
 	@Autowired
 	private PasswordEncoder bCryptPasswordEncoder;
 
@@ -87,7 +89,7 @@ public class UserController {
         return "acceso/registerUser";
     }
     
-    
+    /*
     @PostMapping("/guardarUsuario")
     @ResponseStatus(HttpStatus.CREATED)
     public String guardarUsuario(@ModelAttribute Usuario usuario,Model model ) {
@@ -119,7 +121,7 @@ public class UserController {
     	
     	return "home/homeBook";
     }
-
+*/
 
 
 
