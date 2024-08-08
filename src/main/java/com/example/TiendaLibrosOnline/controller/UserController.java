@@ -45,7 +45,8 @@ public class UserController {
     @GetMapping("/ingresar")
     @ResponseStatus(HttpStatus.OK)
     public String iniciarSesion(){
-
+    	
+    	
         return "acceso/login";
 
     }
@@ -89,20 +90,12 @@ public class UserController {
         return "acceso/registerUser";
     }
     
-    /*
+    
     @PostMapping("/guardarUsuario")
     @ResponseStatus(HttpStatus.CREATED)
     public String guardarUsuario(@ModelAttribute Usuario usuario,Model model ) {
     	
-    	model.addAttribute("usuarioForm", usuario);
-    	
-    	Optional<Usuario> UsuarioEmail= usuarioService.verificarUsuario(usuario.getEmail());
-    	
-    	if(UsuarioEmail.isPresent()) {
-    		logger.info("El usuario ya existe: {}",usuario);
-    		return "acceso/registerUser";
-    	}
-    	
+    	model.addAttribute("usuarioForm", usuario);    	
     	
     	UsuarioDto usuarioDTO = UsuarioDto.builder()
     			.nombreDto(usuario.getNombre())
@@ -121,7 +114,7 @@ public class UserController {
     	
     	return "home/homeBook";
     }
-*/
+
 
 
 

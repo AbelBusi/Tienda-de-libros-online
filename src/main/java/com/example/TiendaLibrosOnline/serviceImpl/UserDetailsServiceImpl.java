@@ -11,12 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
-import com.example.TiendaLibrosOnline.security.SecurityUser;
+import com.example.TiendaLibrosOnline.security.CustomUserDetails;
 
 import lombok.AllArgsConstructor;
 
 @Service
-@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	private final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
@@ -26,15 +25,16 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	private IUsuarioRepository usuarioRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		Usuario usuario = usuarioRepository.findByEmail(username);
+		Usuario usuario = usuarioRepository.findByEmail(email);
 		if(usuario==null) {
 			System.out.println("prueba xd");
-			System.out.println("Usuario: "+username);
-			throw new UsernameNotFoundException(username);
+			System.out.println("Usuario: "+email);
+			throw new UsernameNotFoundException(email);
 		}
-		return new SecurityUser(usuario);
+		logger.info("Uusario: {}"+usuario);
+		return new CustomUserDetails(usuario);
 	}
 	
 	

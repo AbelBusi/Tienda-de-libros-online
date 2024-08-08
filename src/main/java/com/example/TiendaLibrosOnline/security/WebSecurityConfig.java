@@ -18,6 +18,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.example.TiendaLibrosOnline.serviceImpl.UserDetailsServiceImpl;
+
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -34,7 +36,7 @@ public class WebSecurityConfig {
 				.authorizeHttpRequests((requests) -> requests
 						.requestMatchers("/vendor/**").permitAll()
 						.requestMatchers("/images/**").permitAll()
-						.requestMatchers("/home").permitAll()
+						.requestMatchers("/home").authenticated()
 						.requestMatchers("/usuario/ingresar").permitAll()
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
@@ -54,7 +56,9 @@ public class WebSecurityConfig {
 						)
 				.formLogin( (form )->form 
 						.loginPage("/usuario/ingresar")
-						.loginProcessingUrl("/usuario/ingresar")
+						.usernameParameter("email")
+						.passwordParameter("password")
+						.successForwardUrl("/home")
 						.defaultSuccessUrl("/home")
 						.permitAll())
 				.logout((logout)-> logout.permitAll());
@@ -64,10 +68,10 @@ public class WebSecurityConfig {
 	}
 	
 	@Autowired
-	private UserDetailsService userDetailsService;
+	UserDetailsServiceImpl userDetailsServiceImpl;
 	
 	@Bean
-	public PasswordEncoder passwordEncoder() {
+	public static PasswordEncoder passwordEncoder() {
 		
 		return new BCryptPasswordEncoder();
 	}
@@ -75,10 +79,9 @@ public class WebSecurityConfig {
 	@Autowired
 	public void configure(AuthenticationManagerBuilder auth )throws Exception {
 		
-		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(userDetailsServiceImpl).passwordEncoder(passwordEncoder());
 		
 	}
 	
-
 
 }
