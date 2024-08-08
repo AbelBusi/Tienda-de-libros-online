@@ -50,36 +50,7 @@ public class UserController {
         return "acceso/login";
 
     }
-    /*
-    @PostMapping("/iniciarSesion")
-    public String ingresar(@RequestParam(required = true) String correo, @RequestParam(required = true) String clave ) {
-    	
-    	Optional<Usuario> usuario = usuarioService.verificarUsuario(correo);
-    	
-    	if(correo=="" && clave =="") {
-        	logger.info("correo: {}",correo);
-        	logger.info("clave: {}",clave);
-    		return "redirect:/ ";
-    	}
-    	if (!usuario.isPresent()) {
-    		logger.info("Usuario no figura en el sistema");
-        	logger.info("correo: {}",correo);
-        	logger.info("clave: {}",clave);
-    		return "redirect:/";
-    	}
-    	
-    	if (!usuario.get().getPassword().equalsIgnoreCase(clave)) {
-    		logger.info("Clave incorrecta");
-        	logger.info("correo: {}",correo);
-        	logger.info("clave: {}",clave);
-    		return "redirect:/";
-    	}
 
-    	logger.info("Usuario si figura en el sistema {}",usuario.get());
-    	return "home/homeBook";
-    	
-    }
-    */
     @GetMapping("/crearCuenta")
     public String registrarUsuario(Model model){
     	

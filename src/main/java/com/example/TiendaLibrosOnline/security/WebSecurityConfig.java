@@ -61,6 +61,10 @@ public class WebSecurityConfig {
 						.successForwardUrl("/home")
 						.defaultSuccessUrl("/home")
 						.permitAll())
+				.sessionManagement(session -> session
+			            .maximumSessions(1)
+			            .maxSessionsPreventsLogin(true).expiredSessionStrategy(null)
+			            )
 				.logout((logout)-> logout.permitAll());
 		
 		return http.build() ;
@@ -68,7 +72,7 @@ public class WebSecurityConfig {
 	}
 	
 	@Autowired
-	UserDetailsServiceImpl userDetailsServiceImpl;
+	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
 	@Bean
 	public static PasswordEncoder passwordEncoder() {
