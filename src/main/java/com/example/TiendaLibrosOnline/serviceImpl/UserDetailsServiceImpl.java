@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 			System.out.println("Usuario: "+email);
 			throw new UsernameNotFoundException(email);
 		}
-		logger.info("Uusario: {}"+usuario);
+		logger.info("Uusario: {}",usuario.getNombre());
 		return new CustomUserDetails(usuario);
 	}
 	

@@ -7,7 +7,7 @@
 
 	<!--Header-->
 	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
-	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
+	<header th:insert="~{home/Template_login.html :: Templatelogin_visitor}"></header>
 	<header th:insert="~{home/template_user.html :: header}"></header>
 
 
@@ -19,8 +19,39 @@
 		padding: 20px;
 		border: 1px solid #ddd;
 		border-radius: 10px;
-		background-color: #f9f9f9;
-	}
+		background-color: #f9f9f9;}
+
+		.error-message {
+		    display: flex;
+		    align-items: center;
+		    padding: 8px 12px;
+		    margin-bottom: 12px;
+		    background-color: #f8d7da;
+		    border: 1px solid #f5c6cb;
+		    border-radius: 4px;
+		    color: #721c24;
+		    font-family: Arial, sans-serif;
+		    font-size: 14px;
+		    max-width: 100%;
+		}
+		
+		.error-icon {
+		    margin-right: 8px;
+		}
+		
+		.error-icon svg {
+		    fill: #721c24;
+		    width: 20px;
+		    height: 20px;
+		}
+		
+		.error-text {
+		    flex: 1;
+		    word-wrap: break-word;
+		}
+
+
+	
 </style>
 
 <body>
@@ -43,8 +74,15 @@
 								</div>
 							</div>
 
-							<div class="message" th:if="${param.error}">
-								Invalid Username or Password
+							<div class="error-message" th:if="${param.error}">
+							    <div class="error-icon">
+							        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+							            <path d="M8 1.5a.5.5 0 0 1 .447.276l6 12a.5.5 0 0 1-.447.724H1.447a.5.5 0 0 1-.447-.724l6-12A.5.5 0 0 1 8 1.5zm.5 3.5h-1v4h1v-4zm0 6h-1v-1h1v1z"/>
+							        </svg>
+							    </div>
+							    <div class="error-text">
+							        Usuario o clave incorrectos
+							    </div>
 							</div>
 
 							<form th:action="@{/usuario/ingresar}" method="post">

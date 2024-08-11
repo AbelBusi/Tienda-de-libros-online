@@ -1,24 +1,60 @@
 <html xmlns:th="http://www.thymeleaf.org"></html>
 
-<div class="container-fluid" style="height: 20px;background-color: #303f9f;width: 100px;"></div>
-<div th:fragment="Templatelogin">
+<div th:fragment="Templatelogin_visitor">
 
     <div class="container-fluid p-3 bg-light">
         <div class="row">
             <div class="col-md-3 text-success">
-                <h3 style="color: #1E15B6;"><i class="fas fa-book"></i>  Libros</h3>
+                <h3 style="color: #1E15B6;"><i class="fas fa-book"></i> Libros</h3>
             </div>
             <div class="col-md-6">
                 <form class="d-flex">
                     <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-primary my-2 my-sm-0" type="submit"> Buscar</button>
-                  </form>
+                </form>
             </div>
 
-            <div class="text-center col-md-3" >
-                <a th:href="@{/usuario/ingresar}" class="btn btn-success" style="background-color: #303f9f;"><i class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
-                <a th:href="@{/usuario/crearCuenta}" class="btn btn-success" style="background-color: #303f9f;"><i class="fas fa-address-card"></i> Registrarse</a>
+            <div class="text-center col-md-3">
+                <a th:href="@{/usuario/ingresar}" class="btn btn-success" style="background-color: #303f9f;"><i
+                        class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
+                <a th:href="@{/usuario/crearCuenta}" class="btn btn-success" style="background-color: #303f9f;"><i
+                        class="fas fa-address-card"></i> Registrarse</a>
             </div>
         </div>
     </div>
+
 </div>
+
+<div th:fragment="Templatelogin_user">
+    <div class="container-fluid p-3 bg-light shadow-sm">
+        <div class="row align-items-center">
+            <div class="col-md-3">
+                <h3 class="text-primary"><i class="fas fa-book"></i> Libros</h3>
+            </div>
+            <div class="col-md-5">
+                <form class="d-flex">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-primary rounded-pill px-4" type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="col-md-4 d-flex justify-content-end">
+                <div class="btn-group">
+                    <a th:href="@{/usuario/ingresar}" class="btn btn-outline-primary rounded-pill me-2">
+                        <i class="fas fa-sign-in-alt"></i> Usuario
+                    </a>
+                    <a th:href="@{/usuario/crearCuenta}" class="btn btn-outline-primary rounded-pill me-2">
+                        <i class="fas fa-shopping-cart"></i> Carrito
+                    </a>
+                    <a th:href="@{/usuario/crearCuenta}" class="btn btn-outline-primary rounded-pill me-2">
+                        <i class="fas fa-box-open"></i> Ver compras
+                    </a>
+                    <a th:href="@{/usuario/crearCuenta}" class="btn btn-outline-primary rounded-pill">
+                        <i class="fas fa-sign-out-alt"></i> Salir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+</div>
+

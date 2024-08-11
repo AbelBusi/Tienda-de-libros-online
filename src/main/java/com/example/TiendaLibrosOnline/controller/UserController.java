@@ -1,5 +1,6 @@
 package com.example.TiendaLibrosOnline.controller;
 
+import com.example.TiendaLibrosOnline.serviceImpl.UserDetailsServiceImpl;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
@@ -36,9 +37,7 @@ public class UserController {
 	
 	@Autowired
 	private UsuarioServiceImpl usuarioService;
-	
-	
-	
+
 	@Autowired
 	private PasswordEncoder bCryptPasswordEncoder;
 
@@ -85,7 +84,6 @@ public class UserController {
     	
     	return "home/homeBook";
     }
-
 
 
 

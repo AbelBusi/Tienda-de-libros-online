@@ -58,7 +58,6 @@ public class WebSecurityConfig {
 						.loginPage("/usuario/ingresar")
 						.usernameParameter("email")
 						.passwordParameter("password")
-						.successForwardUrl("/home")
 						.defaultSuccessUrl("/home")
 						.permitAll())
 				.sessionManagement(session -> session
@@ -70,7 +69,7 @@ public class WebSecurityConfig {
 		return http.build() ;
 		
 	}
-	
+
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;
 	
