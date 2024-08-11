@@ -37,11 +37,43 @@
 </nav>
 
 <div th:fragment="header">
+
+    <style>
+        .custom-link {
+        background-color: #1E15B6;
+        color: white !important;
+        border-radius: 20px;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .custom-link:hover {
+        background-color: #fff !important;
+        color: #303f9f !important;
+        }
+
+        .custom-linkv {
+        background-color: #fff;
+        color: #303f9f !important;
+        border-radius: 20px;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .custom-linkv:hover {
+        background-color: #1E15B6 !important;
+        color: white !important;
+        }
+
+    </style>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#1E15B6 ;">
         <div class="container-fluid">
-            <a class="navbar-brand" th:href="@{/home}"><i class="fas fa-bookmark"></i> BookBlaz</a>
+            <a class="navbar-brand" th:href="@{/home}"><i class="fas fa-bookmark"></i> Libros </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -50,40 +82,32 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/home}"
-                           style="background-color:#1E15B6;color:white;border-radius:15px;padding:5px 10px;"
-                           onmouseover="this.style.backgroundColor='#fff'; this.style.color='#303f9f';"
-                           onmouseout="this.style.backgroundColor='#303f9f'; this.style.color='white';">
-                            <i class="fas fa-home"></i> Inicio</a>
+                        <a class="nav-link active custom-link" th:href="@{/home}">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"
-                           style="background-color:#1E15B6;color:white;border-radius:15px;padding:5px 10px;"
-                           onmouseover="this.style.backgroundColor='#fff'; this.style.color='#303f9f';"
-                           onmouseout="this.style.backgroundColor='#303f9f'; this.style.color='white';">
-                            <i class="fas fa-book-open"></i> Libros recientes</a>
+                        <a class="nav-link active custom-link" href="">
+                            <i class="fas fa-home"></i> Libros Recientes
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"
-                           style="background-color:#1E15B6;color:white;border-radius:15px;padding:5px 10px;"
-                           onmouseover="this.style.backgroundColor='#fff'; this.style.color='#303f9f';"
-                           onmouseout="this.style.backgroundColor='#303f9f'; this.style.color='white';">
-                            <i class="fas fa-atlas"></i> Libros nuevos</a>
+                        <a class="nav-link active custom-link" href="">
+                            <i class="fas fa-home"></i> Libros Nuevos
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"
-                           style="background-color:#1E15B6;color:white;border-radius:15px;padding:5px 10px;"
-                           onmouseover="this.style.backgroundColor='#fff'; this.style.color='#303f9f';"
-                           onmouseout="this.style.backgroundColor='#303f9f'; this.style.color='white';">
-                            <i class="fas fa-book-reader"></i> Libros antiguos</a>
+                        <a class="nav-link active custom-link" href="">
+                            <i class="fas fa-home"></i> Libros Antiguos
+                        </a>
                     </li>
                 </ul>
                 <form class="d-flex">
                     <div class="container">
-                        <button class="btn btn-light my-sm-0" type="submit" style="color: #1E15B6;">
+                        <button class="btn btn-light my-sm-0 custom-linkv rounded-pill me-2" type="submit" style="color: #1E15B6;">
                             <i class="fas fa-headset"></i> Soporte
                         </button>
-                        <button class="btn btn-light my-sm-0" type="submit" style="color: #1E15B6;">
+                        <button class="btn btn-light my-sm-0 custom-linkv rounded-pill me-2" type="submit" style="color: #1E15B6;">
                             <i class="fas fa-envelope"></i> Contactarse
                         </button>
                     </div>
