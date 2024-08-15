@@ -1,6 +1,7 @@
 package com.example.TiendaLibrosOnline.controller;
 
 import com.example.TiendaLibrosOnline.serviceImpl.UserDetailsServiceImpl;
+import jakarta.servlet.http.HttpSession;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
@@ -43,8 +44,9 @@ public class UserController {
 
     @GetMapping("/ingresar")
     @ResponseStatus(HttpStatus.OK)
-    public String iniciarSesion(){
-    	
+    public String iniciarSesion(Usuario usuario, HttpSession session){
+
+		session.setAttribute("idUsuario",usuario.getIdUsuario());
     	
         return "acceso/login";
 

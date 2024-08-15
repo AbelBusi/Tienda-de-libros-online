@@ -36,7 +36,7 @@ public class WebSecurityConfig {
 				.authorizeHttpRequests((requests) -> requests
 						.requestMatchers("/vendor/**").permitAll()
 						.requestMatchers("/images/**").permitAll()
-						.requestMatchers("/home").authenticated()
+						.requestMatchers("/home").permitAll()
 						.requestMatchers("/usuario/ingresar").permitAll()
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
