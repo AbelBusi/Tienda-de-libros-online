@@ -45,7 +45,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 
 		session.setAttribute("idUsuario",usuario);
 
-		session.setMaxInactiveInterval(300);
+		session.setMaxInactiveInterval(60);
 
 		logger.info("Usuario id: {}",usuario.getIdUsuario());
 
