@@ -60,10 +60,6 @@ public class WebSecurityConfig {
 						.passwordParameter("password")
 						.defaultSuccessUrl("/home")
 						.permitAll())
-				.sessionManagement(session -> session
-			            .maximumSessions(1)
-			            .maxSessionsPreventsLogin(true).expiredSessionStrategy(null)
-			            )
 				.logout((logout)-> logout.permitAll());
 		
 		return http.build() ;

@@ -44,9 +44,7 @@ public class UserController {
 
     @GetMapping("/ingresar")
     @ResponseStatus(HttpStatus.OK)
-    public String iniciarSesion(Usuario usuario, HttpSession session){
-
-		session.setAttribute("idUsuario",usuario.getIdUsuario());
+    public String iniciarSesion(){
     	
         return "acceso/login";
 

@@ -44,8 +44,9 @@
 </style>
 
 <body style="background-color: #f7f7f7;">
-<header th:insert="~{home/Template_login.html :: Templatelogin_visitor}" th:if="${session==null}"></header>
-<header th:insert="~{home/Template_login.html :: Templatelogin_user}" th:unless="${session==null}"></header>
+<div th:insert="~{home/Template_login.html :: Templatelogin-visitor}" th:if="${sesion==null}"></div>
+<div th:insert="~{home/Template_login.html :: Templatelogin-user}" th:unless="${sesion==null}"></div>
+
 
 <header th:insert="~{home/template_user.html :: header}"></header>
 <div th:fragment="carrusel">
