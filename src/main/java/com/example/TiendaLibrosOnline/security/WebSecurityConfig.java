@@ -60,7 +60,12 @@ public class WebSecurityConfig {
 						.passwordParameter("password")
 						.defaultSuccessUrl("/home")
 						.permitAll())
-				.logout((logout)-> logout.permitAll());
+				.logout((logout)->
+						logout.logoutUrl("/usuario/cerrarSession")
+								.clearAuthentication(true)
+								.logoutSuccessUrl("/home")
+								.permitAll()
+				);
 		
 		return http.build() ;
 		

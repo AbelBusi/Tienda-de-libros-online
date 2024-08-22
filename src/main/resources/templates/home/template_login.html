@@ -44,7 +44,7 @@
             <!-- User Info and Actions -->
             <div class="col-md-4 d-flex justify-content-end align-items-center">
                 <div class="text-end me-3">
-                    <span class="fw-bold text-primary d-block" text="">Nombre del Usuario</span>
+                    <span class="fw-bold text-primary d-block" th:text="${sesion.nombre}">Nombre del Usuario</span>
                     <small class="text-muted">Bienvenido de nuevo</small>
                 </div>
                 <div class="btn-group">
@@ -57,7 +57,7 @@
                     <a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
                         <i class="fas fa-box-open me-2"></i> Compras
                     </a>
-                    <a href="" class="btn btn-outline-danger rounded-pill d-flex align-items-center">
+                    <a th:href="@{/usuario/cerrarSesion}" class="btn btn-outline-danger rounded-pill d-flex align-items-center">
                         <i class="fas fa-sign-out-alt me-2"></i> Salir
                     </a>
                 </div>
