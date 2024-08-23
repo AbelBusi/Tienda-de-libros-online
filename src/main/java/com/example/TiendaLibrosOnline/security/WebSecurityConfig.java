@@ -63,6 +63,7 @@ public class WebSecurityConfig {
 				.logout((logout)->
 						logout.logoutUrl("/usuario/cerrarSession")
 								.clearAuthentication(true)
+								.deleteCookies()
 								.logoutSuccessUrl("/home")
 								.permitAll()
 				);
