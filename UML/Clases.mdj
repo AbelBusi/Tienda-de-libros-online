@@ -360,6 +360,7 @@
 											"model": {
 												"$ref": "AAAAAAGQO9VwOj1Motw="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 1941,
 											"top": 578,
@@ -373,7 +374,7 @@
 									"left": 1936,
 									"top": 438,
 									"width": 273,
-									"height": 158
+									"height": 143
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -396,7 +397,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1941,
-											"top": 601,
+											"top": 586,
 											"width": 263,
 											"height": 13,
 											"text": "+Getters()",
@@ -413,7 +414,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 1941,
-											"top": 616,
+											"top": 601,
 											"width": 263,
 											"height": 13,
 											"text": "+Setters()",
@@ -422,7 +423,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 1936,
-									"top": 596,
+									"top": 581,
 									"width": 273,
 									"height": 38
 								},

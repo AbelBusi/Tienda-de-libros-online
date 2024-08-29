@@ -29,7 +29,7 @@ class IUsuarioRepositoryTest {
 	@BeforeEach
 	void setup() {
 		
-		usuario = Usuario.builder()
+		usuario = Usuario.UserBuilder()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")
@@ -38,7 +38,6 @@ class IUsuarioRepositoryTest {
 				.fechaNacimiento(new Date())
 				.email("cesarBustamante@Gmail.com")
 				.password("trabalengua24")
-				.rol("Admin")
 				.build();
 	}
 
@@ -48,7 +47,7 @@ class IUsuarioRepositoryTest {
 		
 		//GIVEN: se describe las precondiciones necesarias para la ejecucion del escenario
 		
-		usuario = Usuario.builder()
+		usuario = Usuario.UserBuilder()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")

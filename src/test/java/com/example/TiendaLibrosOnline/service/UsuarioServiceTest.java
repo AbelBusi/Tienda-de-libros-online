@@ -36,7 +36,7 @@ class UsuarioServiceTest {
 	@BeforeEach
 	void setup() {
 
-		usuario= Usuario.builder()
+		usuario= Usuario.UserBuilder()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")
@@ -45,7 +45,6 @@ class UsuarioServiceTest {
 				.fechaNacimiento(new Date())
 				.email("cesarBustamante@Gmail.com")
 				.password("trabalengua24")
-				.rol("Admin")
 				.build();
 		
 		usuarioDTO=UsuarioDto.builder()

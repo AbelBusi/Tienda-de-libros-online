@@ -1,8 +1,6 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
@@ -15,10 +13,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Libro")
@@ -28,6 +26,10 @@ public class Libro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_libro")
     private Integer idLibro;
+
+    @ManyToOne
+    @JoinColumn(name = "id_userRol",nullable = false)
+    private UsuarioHasRol userRol;
 
     @ManyToOne
     @JoinColumn(name = "autor",nullable = false)
@@ -41,9 +43,6 @@ public class Libro {
     @JoinColumn(name = "categoria",nullable = false)
     private CategoriaLibro idCategoria;
 
-    @ManyToOne
-    @JoinColumn(name = "usuario",nullable = false)
-    private Usuario idUsuario;
 
     @Column(name = "nombre",nullable = false)
     private String nombre;
@@ -70,15 +69,5 @@ public class Libro {
     @Column(name = "ISBN",nullable = false)
     private String ISBN;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Libro libro)) return false;
-        return Double.compare(libro.getPeso(), getPeso()) == 0 && Double.compare(libro.getAlto(), getAlto()) == 0 && Double.compare(libro.getAncho(), getAncho()) == 0 && getNumeroPagina() == libro.getNumeroPagina() && Objects.equals(getIdLibro(), libro.getIdLibro()) && Objects.equals(getIdAutor(), libro.getIdAutor()) && Objects.equals(getIdEditorial(), libro.getIdEditorial()) && Objects.equals(getIdCategoria(), libro.getIdCategoria()) && Objects.equals(getIdUsuario(), libro.getIdUsuario()) && Objects.equals(getNombre(), libro.getNombre()) && Objects.equals(getSipnosis(), libro.getSipnosis()) && Objects.equals(getFechaPublicacion(), libro.getFechaPublicacion()) && Objects.equals(getISBN(), libro.getISBN());
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getIdLibro(), getIdAutor(), getIdEditorial(), getIdCategoria(), getIdUsuario(), getNombre(), getSipnosis(), getPeso(), getAlto(), getAncho(), getFechaPublicacion(), getNumeroPagina(), getISBN());
-    }
 }
