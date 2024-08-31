@@ -12,12 +12,12 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Usuario_Has_Rol")
+@Entity
 public class UsuarioHasRol {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_userRol",nullable = false)
+    @Column(name = "id_userRol")
     private Integer idUserRol;
 
     @ManyToOne
