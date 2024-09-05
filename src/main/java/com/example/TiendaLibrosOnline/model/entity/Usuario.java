@@ -33,19 +33,19 @@ public class Usuario extends Persona {
     @Column(name = "id_usuario")
     private Integer idUsuario;
 
-    @Column(name = "genero", nullable = false)
+    @Column(name = "genero")
     private String genero;
 
-    @Column(name = "direccion", nullable = false)
+    @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "telefono", nullable = false)
+    @Column(name = "telefono")
     private String telefono;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
 
     @ToString.Exclude

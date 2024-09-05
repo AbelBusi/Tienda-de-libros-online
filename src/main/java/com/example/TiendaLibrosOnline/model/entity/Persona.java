@@ -19,14 +19,14 @@ import jakarta.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Persona {
 	
-	@Column(name = "nombre",nullable = false)
+	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column(name = "apellido",nullable = false)
+	@Column(name = "apellido")
 	private String apellido;
 	
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_nacimiento",nullable = false)
+    @Column(name = "fecha_nacimiento")
 	private Date fechaNacimiento;
 	
 

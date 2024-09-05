@@ -30,27 +30,27 @@ public class UsuarioServiceImpl implements IUsuarioService {
             usuario = Usuario.UserBuilder()
                     .nombre(usuarioDto.getNombreDto())
                     .apellido(usuarioDto.getApellidoDto())
+                    .fechaNacimiento(usuarioDto.getFechaNacimientoDto())
                     .genero(usuarioDto.getGeneroDto())
                     .direccion(usuarioDto.getDireccionDto())
                     .telefono(usuarioDto.getTelefonoDto())
-                    .fechaNacimiento(new Date())
                     .email(usuarioDto.getEmailDto())
-                    .password(usuario.getPassword())
+                    .password(usuarioDto.getPasswordDto())
                     .build();
 
             if (usuario == null) {
-                logger.info("No se guardo el USUARIO correctamente {}", usuario);
+                logger.info("No se guardo el USUARIO correctamente {}", usuario.getPassword());
                 throw new NullPointerException("No se puede guardar un usuario vacio");
             }
 
 
-            logger.info("Usuario guardado con exito {}", usuario);
+            logger.info("Usuario guardado con exito {}", usuario.getNombre());
             return usuarioRepository.save(usuario);
 
 
         } catch (RuntimeException e) {
 
-            logger.info("No se guardo el USUARIO {}", usuario);
+            logger.info("No se guardo el USUARIO {}", usuario.getPassword());
 
             return new Usuario();
 

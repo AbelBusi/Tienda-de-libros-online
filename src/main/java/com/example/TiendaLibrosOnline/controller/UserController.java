@@ -69,9 +69,6 @@ public class UserController {
     			.build();
     	usuarioService.crearUsuario(usuarioDTO);
     	
-    	logger.info("Usuario {}",usuario);
-    	logger.info("Usuario DTO{}",usuarioDTO);
-    	
     	return "home/homeBook";
     }
 
