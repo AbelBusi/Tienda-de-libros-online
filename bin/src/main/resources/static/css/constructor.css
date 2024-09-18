@@ -1,0 +1,22 @@
+.custom-navbar {
+    background-color: #303f9f !important;
+    /* Fondo azul */
+}
+
+.custom-navbar .nav-link {
+    color: white;
+    /* Texto blanco por defecto */
+}
+
+.custom-navbar .nav-link:hover {
+    background-color: white;
+    /* Fondo blanco al hacer hover */
+    color: #303f9f !important;
+    /* Texto azul al hacer hover */
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .navbar-toggler-icon {
+    color: white;
+    /* Texto blanco para la marca y el icono del toggler */
+}

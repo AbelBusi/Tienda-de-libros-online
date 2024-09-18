@@ -26,10 +26,10 @@ public class Libro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_libro")
     private Integer idLibro;
-
+    
     @ManyToOne
-    @JoinColumn(name = "id_userRol",nullable = false)
-    private UsuarioHasRol userRol;
+    @JoinColumn(name = "usuario")
+    private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "autor",nullable = false)

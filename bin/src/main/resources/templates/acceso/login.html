@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tienda de libros</title>
+
+	<!--Header-->
+	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+
+	<div th:insert="~{home/Template_login.html :: Templatelogin-visitor}" th:if="${sesion==null}"></div>
+	<div th:insert="~{home/Template_login.html :: Templatelogin-user}" th:unless="${sesion==null}"></div>
+
+	<header th:insert="~{home/template_user.html :: header}"></header>
+
+
+</head>
+<style>
+	.form-container {
+		max-width: 600px;
+		margin: 50px auto;
+		padding: 20px;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		background-color: #f9f9f9;}
+
+		.error-message {
+		    display: flex;
+		    align-items: center;
+		    padding: 8px 12px;
+		    margin-bottom: 12px;
+		    background-color: #f8d7da;
+		    border: 1px solid #f5c6cb;
+		    border-radius: 4px;
+		    color: #721c24;
+		    font-family: Arial, sans-serif;
+		    font-size: 14px;
+		    max-width: 100%;
+		}
+		
+		.error-icon {
+		    margin-right: 8px;
+		}
+		
+		.error-icon svg {
+		    fill: #721c24;
+		    width: 20px;
+		    height: 20px;
+		}
+		
+		.error-text {
+		    flex: 1;
+		    word-wrap: break-word;
+		}
+
+
+	
+</style>
+
+<body>
+	<!-- Login 4 - Bootstrap Brain Component -->
+	<section class="p-3 p-md-4 p-xl-5">
+		<div class="container">
+			<div class="card border-light-subtle shadow-sm">
+				<div class="row g-0">
+					<div class="col-12 col-md-6">
+						<img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy"
+							th:src="@{/images/login.jpg}" alt="BootstrapBrain Logo">
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="card-body p-3 p-md-4 p-xl-5">
+							<div class="row">
+								<div class="col-12">
+									<div class="mb-5">
+										<h3 style="color: #303f9f;">Iniciar Sesion</h3>
+									</div>
+								</div>
+							</div>
+
+							<div class="error-message" th:if="${param.error}">
+							    <div class="error-icon">
+							        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+							            <path d="M8 1.5a.5.5 0 0 1 .447.276l6 12a.5.5 0 0 1-.447.724H1.447a.5.5 0 0 1-.447-.724l6-12A.5.5 0 0 1 8 1.5zm.5 3.5h-1v4h1v-4zm0 6h-1v-1h1v1z"/>
+							        </svg>
+							    </div>
+							    <div class="error-text">
+							        Usuario o clave incorrectos
+							    </div>
+							</div>
+
+							<form th:action="@{/usuario/ingresar}" method="post">
+								<div class="row gy-3 gy-md-4 overflow-hidden">
+									<div class="col-12">
+										<label for="email" style="color: #303f9f;" class="form-label">Email <span
+												class="text-danger">*</span></label>
+										<input type="email" class="form-control" name="email" id="email"
+											placeholder="name@example.com" required>
+									</div>
+									<div class="col-12">
+										<label for="password" style="color: #303f9f;" class="form-label">Password <span
+												class="text-danger">*</span></label>
+										<input type="password" class="form-control" name="password" id="password"
+											value="" required>
+									</div>
+									<div class="col-12">
+										<div class="d-grid">
+											<button style="background-color: #303f9f;"
+												class="btn bsb-btn-xl btn-primary" type="submit">Ingresar</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-12">
+										<hr class="mt-5 mb-4 border-secondary-subtle">
+										<div
+											class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
+											<a th:href="@{/usuario/crearCuenta}"
+												class="link-primary text-decoration-none">¿No tienes cuenta? </a>
+											<a href="#!" class="link-primary text-decoration-none">Password olvidado</a>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<p class="mt-5 mb-4">Nuestras redes sociales</p>
+										<div class="d-flex gap-3 flex-column flex-xl-row">
+											<a href="#!" class="btn bsb-btn-xl btn-outline-primary"
+												style="color: #303f9f;">
+												<i class="fab fa-facebook"></i>
+												<span class="ms-2 fs-6" style="color: #303f9f;">Facebook</span>
+											</a>
+											<a href="#!" class="btn bsb-btn-xl btn-outline-primary"
+												style="color: #303f9f;">
+												<i class="fab fa-google"></i>
+												<span class="ms-2 fs-6" style="color: #303f9f;">Google</span>
+											</a>
+											<a href="#!" class="btn bsb-btn-xl btn-outline-primary"
+												style="color: #303f9f;">
+												<i class="fab fa-github"></i>
+												<span class="ms-2 fs-6" style="color: #303f9f;">Twitter</span>
+											</a>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+<footer th:insert="~{home/footer.html :: footer}"></footer>
+<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+
+</html>

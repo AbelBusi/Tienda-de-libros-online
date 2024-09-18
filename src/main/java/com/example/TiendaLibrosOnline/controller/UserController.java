@@ -55,7 +55,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public String guardarUsuario(@ModelAttribute Usuario usuario,Model model ) {
     	
-    	model.addAttribute("usuarioForm", usuario);    	
+    	model.addAttribute("usuarioForm", usuario); 
     	
     	UsuarioDto usuarioDTO = UsuarioDto.builder()
     			.nombreDto(usuario.getNombre())

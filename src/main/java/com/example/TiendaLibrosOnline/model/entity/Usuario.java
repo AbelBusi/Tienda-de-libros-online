@@ -7,6 +7,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -47,13 +49,19 @@ public class Usuario extends Persona {
 
     @Column(name = "password")
     private String password;
-
+    
     @ToString.Exclude
-    @OneToMany(mappedBy = "idUsuario", fetch = FetchType.LAZY)
-    private List<UsuarioHasRol> usuarioHasRols;
+    @ManyToOne
+    @JoinColumn(name = "rol")
+    private Rol rol;
+    
+    @ToString.Exclude
+    @OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY)
+    private List<Libro> libros;
 
     @Builder(builderMethodName = "UserBuilder")
-    public Usuario(String nombre, String apellido, Date fechaNacimiento, Integer idUsuario, String genero, String direccion, String telefono, String email, String password) {
+    public Usuario(String nombre, String apellido, Date fechaNacimiento, Integer idUsuario, String genero, 
+    		String direccion, String telefono, String email, String password, Rol rol) {
         super(nombre, apellido, fechaNacimiento);
         this.idUsuario = idUsuario;
         this.genero = genero;
@@ -61,5 +69,6 @@ public class Usuario extends Persona {
         this.telefono = telefono;
         this.email = email;
         this.password = password;
+        this.rol=rol;
     }
 }

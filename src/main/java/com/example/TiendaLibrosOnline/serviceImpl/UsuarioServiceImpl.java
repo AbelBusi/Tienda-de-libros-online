@@ -1,6 +1,8 @@
 package com.example.TiendaLibrosOnline.serviceImpl;
 
+import com.example.TiendaLibrosOnline.model.entity.Rol;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
+import com.example.TiendaLibrosOnline.model.dto.RolDto;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
@@ -25,6 +27,15 @@ public class UsuarioServiceImpl implements IUsuarioService {
     @Override
     public Usuario crearUsuario(UsuarioDto usuarioDto) {
         Usuario usuario = null;
+        
+        RolDto rolDto = RolDto.builder()
+        		.idRol(2)
+        		.build();
+        
+        Rol rol = Rol.builder()
+        		.idRol(rolDto.getIdRol())
+        		.build();
+        
         try {
 
             usuario = Usuario.UserBuilder()
@@ -36,6 +47,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
                     .telefono(usuarioDto.getTelefonoDto())
                     .email(usuarioDto.getEmailDto())
                     .password(usuarioDto.getPasswordDto())
+                    .rol(rol)
                     .build();
 
             if (usuario == null) {

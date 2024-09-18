@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tienda de libros</title>
+
+	<!--Header-->
+	<Link th:href="@{/vendor/css/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{/vendor/css/search.css}" rel="stylesheet">
+
+</head>
+<style>
+	.center-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+
+<body>
+
+	<header th:insert="~{home/Template_login.html :: Templatelogin}"></header>
+	<header th:insert="~{home/template_admin.html :: templateAdmin}"></header>
+
+	<section class="p-3 p-md-4 p-xl-5">
+		<div class="container">
+			<div class="card border-light-subtle shadow-sm">
+				<div class="row g-0">
+					<div class="col-md-6 text-center center-container ">
+						<img src="https://via.placeholder.com/300" alt="Product Image" class="product-image "
+							id="productImagePreview" width="600" height="600">
+						<div class="text d-block">
+							<label for="productImage" class="form-label custom-file-upload ">
+								<i class="bi bi-upload"></i> Subir Imagen del Producto
+							</label>
+							<input type="file" class="form-control" id="productImage" accept="image/*"
+								style="display: none;" onchange="previewImage(event)">
+						</div>
+					</div>
+					<div class="col-12 col-md-6">
+						<div class="card-body p-3 p-md-4 p-xl-5">
+							<div class="row">
+								<div class="col-12">
+									<div class="mb-5">
+										<h3 style="color: #303f9f;">Formulario para llenar un Editorial</h3>
+									</div>
+								</div>
+							</div>
+							<form action="#" method="post">
+								<div class="row gy-3 gy-md-4 overflow-hidden">
+									<div class="col-12">
+										<label for="email" style="color: #303f9f;" class="form-label">Nombre <span
+												class="text-danger">*</span></label>
+										<input type="text" class="form-control" name="correo" id="email"
+											placeholder="Nombre de la editorial" required>
+									</div>
+									<div class="col-12">
+										<label for="password" style="color: #303f9f;" class="form-label">Descripcion <span
+												class="text-danger">*</span></label>
+										<textarea type="text" class="form-control" placeholder="Descripcion de la Editorial"
+											name="clave" id="password" value="" required></textarea>
+									</div>
+
+									<div class="col-12">
+										<label for="email" style="color: #303f9f;" class="form-label">Ubicacion <span
+												class="text-danger">*</span></label>
+										<input type="text" class="form-control" name="correo" id="email"
+											placeholder="Ubicacion de la Editorial" required>
+									</div>	
+									<div class="col-12">
+										<br>
+										<div class="d-grid">
+											<button style="background-color: #303f9f;"
+												class="btn bsb-btn-xl btn-primary" type="submit">Guardar Editorial</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		function previewImage(event) {
+			var reader = new FileReader();
+			reader.onload = function () {
+				var output = document.getElementById('productImagePreview');
+				output.src = reader.result;
+			};
+			reader.readAsDataURL(event.target.files[0]);
+		}
+	</script>
+	<!--Bootstrap core JavaScript-->
+	<footer th:insert="~{home/footer.html :: footer}"></footer>
+	<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/vendor/js/scripts.js}"></script>
+
+</body>
+
+</html>

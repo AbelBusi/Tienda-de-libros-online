@@ -2,6 +2,7 @@ package com.example.TiendaLibrosOnline.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class Rol {
 
     @Id
@@ -25,9 +27,9 @@ public class Rol {
 
     @Column(name = "estado")
     private String estado;
-
-    @OneToMany(mappedBy = "idRol",fetch = FetchType.LAZY)
-    private List<UsuarioHasRol> usuarioHasRols;
+    
+    @OneToMany(mappedBy = "rol",fetch = FetchType.LAZY)
+    private List<Usuario> usuarios;
 
 
 
