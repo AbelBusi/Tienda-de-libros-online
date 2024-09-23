@@ -46,9 +46,7 @@
 </style>
 
 <body>
-<header th:insert="~{home/Template_login.html :: Templatelogin_visitor}" th:if="${session==null}"></header>
-<header th:insert="~{home/Template_login.html :: Templatelogin_user}" th:unless="${session==null}"></header>
-<header th:insert="~{home/template_admin.html :: templateAdmin}"></header>
+<header th:insert="~{home/Template_login.html :: Templatelogin-visitor}" ></header>
 <div th:insert="~{home/homeBook.html :: carrusel}"></div>
 <br><br>
 

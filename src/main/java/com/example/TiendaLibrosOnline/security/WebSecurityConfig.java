@@ -33,8 +33,8 @@ public class WebSecurityConfig {
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
 						.requestMatchers("/usuario/iniciarSesion").permitAll()
-						.requestMatchers("/admin/homeConfigurer/**").hasRole("ADMIN")
-/*						.requestMatchers("/admin/agregarProducto").permitAll()
+						.requestMatchers("/admin/**").permitAll()/*
+						.requestMatchers("/admin/agregarProducto").permitAll()
 						.requestMatchers("/admin/formEditorial").permitAll()
 						.requestMatchers("/admin/formCategoria").permitAll()
 						.requestMatchers("/admin/formAutor").permitAll()

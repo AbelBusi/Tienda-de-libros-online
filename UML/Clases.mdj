@@ -18446,13 +18446,30 @@
 											"height": 13,
 											"text": "-password: str",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGSHGKNnt49iVo=",
+											"_parent": {
+												"$ref": "AAAAAAGSHDiwkPgGlVY="
+											},
+											"model": {
+												"$ref": "AAAAAAGSHGKNit3j1n4="
+											},
+											"font": "Arial;13;0",
+											"left": 1069,
+											"top": 304,
+											"width": 191,
+											"height": 13,
+											"text": "-idAdmin: int",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1064,
 									"top": 254,
 									"width": 201,
-									"height": 53
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -18465,7 +18482,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 1064,
-									"top": 307,
+									"top": 322,
 									"width": 201,
 									"height": 10
 								},
@@ -23936,6 +23953,16 @@
 							"name": "password",
 							"visibility": "private",
 							"type": "str"
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGSHGKNit3j1n4=",
+							"_parent": {
+								"$ref": "AAAAAAGSHDiwkPf+AHI="
+							},
+							"name": "idAdmin",
+							"visibility": "private",
+							"type": "int"
 						}
 					]
 				},
