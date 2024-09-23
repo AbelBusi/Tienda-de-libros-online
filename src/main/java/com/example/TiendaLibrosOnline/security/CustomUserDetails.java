@@ -1,10 +1,15 @@
 package com.example.TiendaLibrosOnline.security;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.TiendaLibrosOnline.model.entity.Rol;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -29,6 +34,10 @@ public class CustomUserDetails implements UserDetails{
 	public String getUsername() {
 		// TODO Auto-generated method stub
 		return usuario.getEmail();
+	}
+	
+	public String getRol() {
+		return usuario.getRol().getNombre();
 	}
 
 	@Override
@@ -58,6 +67,7 @@ public class CustomUserDetails implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
