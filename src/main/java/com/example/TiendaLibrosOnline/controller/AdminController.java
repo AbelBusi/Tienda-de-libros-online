@@ -12,6 +12,13 @@ public class AdminController {
 	public String home() {
 		return "administrador/homeAdmin";
 	}
+	
+	@GetMapping("/ingresarAdmin")
+	public String ingresarAdmin() {
+		
+		return "acceso/loginAdmin";
+		
+	}
 
 	@GetMapping("/agregarProducto")
 	public String producto() {

@@ -25,6 +25,30 @@
 
 </div>
 
+<div th:fragment="Templatelogin-visitor-admin">
+
+    <div class="container-fluid p-3 bg-light">
+        <div class="row">
+            <div class="col-md-3 text-success">
+                <h3 style="color: #1E15B6;"><i class="fas fa-book"></i> Libros</h3>
+            </div>
+            <div class="col-md-6">
+                <form class="d-flex">
+                    <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-primary my-2 my-sm-0" type="submit"> Buscar</button>
+                </form>
+            </div>
+
+            <div class="text-center col-md-3">
+                <a th:href="@{/admin/ingresarAdmin}" class="btn btn-success" style="background-color: #303f9f;"><i
+                        class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <div th:fragment="Templatelogin-user">
     <div class="container-fluid p-3 bg-white shadow-sm border-bottom">
         <div class="row align-items-center">

@@ -21,7 +21,7 @@
 <body>
 
 	<header th:insert="~{home/Template_login.html :: Templatelogin-visitor}"></header>
-	<header th:insert="~{home/template_admin.html :: templateAdmin}"></header>
+	<header th:insert="~{home/template_user.html :: header-admin}"></header>
 
 	<section class="p-3 p-md-4 p-xl-5">
 		<div class="container">
@@ -56,10 +56,11 @@
 											placeholder="Nombre de la editorial" required>
 									</div>
 									<div class="col-12">
-										<label for="password" style="color: #303f9f;" class="form-label">Descripcion <span
-												class="text-danger">*</span></label>
-										<textarea type="text" class="form-control" placeholder="Descripcion de la Editorial"
-											name="clave" id="password" value="" required></textarea>
+										<label for="password" style="color: #303f9f;" class="form-label">Descripcion
+											<span class="text-danger">*</span></label>
+										<textarea type="text" class="form-control"
+											placeholder="Descripcion de la Editorial" name="clave" id="password"
+											value="" required></textarea>
 									</div>
 
 									<div class="col-12">
@@ -67,12 +68,13 @@
 												class="text-danger">*</span></label>
 										<input type="text" class="form-control" name="correo" id="email"
 											placeholder="Ubicacion de la Editorial" required>
-									</div>	
+									</div>
 									<div class="col-12">
 										<br>
 										<div class="d-grid">
 											<button style="background-color: #303f9f;"
-												class="btn bsb-btn-xl btn-primary" type="submit">Guardar Editorial</button>
+												class="btn bsb-btn-xl btn-primary" type="submit">Guardar
+												Editorial</button>
 										</div>
 									</div>
 								</div>
