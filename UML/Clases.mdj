@@ -3479,7 +3479,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1069,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "«Controller»"
 										},
@@ -3492,7 +3492,7 @@
 											"font": "Arial;13;1",
 											"left": 1317,
 											"top": 1084,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "adminController (\"/admin\")"
 										},
@@ -3527,7 +3527,7 @@
 									"font": "Arial;13;0",
 									"left": 1312,
 									"top": 1064,
-									"width": 312.25,
+									"width": 320.17822265625,
 									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGQSy5gnPwPj5I="
@@ -3554,7 +3554,7 @@
 									"font": "Arial;13;0",
 									"left": 1312,
 									"top": 1102,
-									"width": 312.25,
+									"width": 320.17822265625,
 									"height": 10
 								},
 								{
@@ -3579,7 +3579,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1117,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+home <<GetMapping(\"/homeConfigurer\") >>()",
 											"horizontalAlignment": 0
@@ -3596,7 +3596,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1132,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+producto <<GetMapping(\"/agregarProducto\") >>()",
 											"horizontalAlignment": 0
@@ -3613,7 +3613,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1147,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+editorial <<GetMapping(\"/formEditorial\") >>()",
 											"horizontalAlignment": 0
@@ -3630,7 +3630,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1162,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+categoria <<GetMapping(\"/formCategoria\") >>()",
 											"horizontalAlignment": 0
@@ -3647,7 +3647,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1177,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+autor <<GetMapping(\"/formAutor\") >>()",
 											"horizontalAlignment": 0
@@ -3664,7 +3664,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1192,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+totalLibros <<GetMapping(\"/libros\") >>()",
 											"horizontalAlignment": 0
@@ -3681,7 +3681,7 @@
 											"font": "Arial;13;0",
 											"left": 1317,
 											"top": 1207,
-											"width": 302.25,
+											"width": 310.17822265625,
 											"height": 13,
 											"text": "+Logistics<<GetMapping(\"/Logistics\") >>()",
 											"horizontalAlignment": 0
@@ -3703,13 +3703,30 @@
 											"height": 13,
 											"text": "+Operation2()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGSJUW6h7XnFFM=",
+											"_parent": {
+												"$ref": "AAAAAAGQSy5gnfwUzb8="
+											},
+											"model": {
+												"$ref": "AAAAAAGSJUW6bLXVvfg="
+											},
+											"font": "Arial;13;0",
+											"left": 1317,
+											"top": 1222,
+											"width": 310.17822265625,
+											"height": 13,
+											"text": "+ingresarAdmin<<GetMapping(\"/ingresarAdmin\") >>()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1312,
 									"top": 1112,
-									"width": 312.25,
-									"height": 113
+									"width": 320.17822265625,
+									"height": 128
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3748,7 +3765,7 @@
 							"containerChangeable": true,
 							"left": 1312,
 							"top": 1064,
-							"width": 312.25,
+							"width": 320.17822265625,
 							"height": 176,
 							"showProperty": false,
 							"nameCompartment": {
@@ -3788,7 +3805,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1654,
+									"left": 1658,
 									"top": 1111,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3809,7 +3826,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 1654,
+									"left": 1658,
 									"top": 1126,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -3830,7 +3847,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1655,
+									"left": 1659,
 									"top": 1081,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -3914,7 +3931,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1648,
+									"left": 1656,
 									"top": 1110,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -3934,7 +3951,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1651,
+									"left": 1659,
 									"top": 1124,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -3954,7 +3971,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1644,
+									"left": 1652,
 									"top": 1083,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4003,7 +4020,7 @@
 							"tail": {
 								"$ref": "AAAAAAGQQPtm1SIbllg="
 							},
-							"points": "1688:1102;1623:1102",
+							"points": "1688:1102;1631:1102",
 							"showVisibility": true,
 							"showProperty": false,
 							"nameLabel": {
@@ -20790,6 +20807,14 @@
 								"$ref": "AAAAAAGQSy5gnPwLHjk="
 							},
 							"name": "Operation2"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGSJUW6bLXVvfg=",
+							"_parent": {
+								"$ref": "AAAAAAGQSy5gnPwLHjk="
+							},
+							"name": "ingresarAdmin<<GetMapping(\"/ingresarAdmin\") >>"
 						}
 					]
 				},
