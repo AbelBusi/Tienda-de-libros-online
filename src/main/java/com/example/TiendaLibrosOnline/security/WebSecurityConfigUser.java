@@ -52,7 +52,7 @@ public class WebSecurityConfigUser {
 						.loginPage("/usuario/ingresar")
 						.usernameParameter("email")
 						.passwordParameter("password")
-						.defaultSuccessUrl("/home")
+						.successHandler(loginSuccessHandler)
 						.permitAll())
 				.logout((logout)->
 						logout.logoutUrl("/usuario/cerrarSession")
@@ -66,26 +66,9 @@ public class WebSecurityConfigUser {
 		
 	}
 	
-	/*
-	@Bean
-	public SecurityFilterChain securityAdminFilterChain(	HttpSecurity httpSecurity) throws Exception{
-		
-		httpSecurity
-		.csrf(csrf -> csrf.disable())
-			.authorizeHttpRequests((requests) -> requests
-					.requestMatchers("/admin/homeConfigurer").authenticated()
-					.anyRequest().authenticated()
-					)
-			.formLogin( (form )->form 
-					.loginPage("/admin/ingresarAdmin")
-					.permitAll())
-			.logout((logout)->
-					logout.permitAll()
-			);
+	@Autowired
+	private LoginSuccessHandler loginSuccessHandler;
 	
-	return httpSecurity.build() ;
-	}*/
-
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;
 	

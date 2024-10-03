@@ -23,6 +23,7 @@ import lombok.ToString;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -85,5 +86,20 @@ public class Usuario extends Persona {
     		inverseJoinColumns = @JoinColumn(
     				name="idRol",referencedColumnName = "id_Rol"))
     private Set<Rol> roles=new HashSet<>();
+    
+    public boolean hasRole(String roleName) {
+    	
+    	Iterator<Rol> iterator=this.roles.iterator();
+    	
+    	while (iterator.hasNext()) {
+			Rol role= iterator.next();
+			if(role.getNombre().equals(roleName)) {
+				return true;
+			}
+		}
+    	
+    	return false;
+    	
+    }
     
 }

@@ -74,6 +74,11 @@ public class CustomUserDetails implements UserDetails{
 		}
 		return authorities;
 	}
+	
+	public boolean hasRole(String roleName) {
+		
+		return this.usuario.hasRole(roleName); 
+	}
 
 
 
