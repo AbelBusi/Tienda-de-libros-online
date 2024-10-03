@@ -3,6 +3,7 @@ package com.example.TiendaLibrosOnline.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -17,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class WebSecurityConfig {
+public class WebSecurityConfigUser {
 	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception {
@@ -33,7 +34,8 @@ public class WebSecurityConfig {
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
 						.requestMatchers("/usuario/iniciarSesion").permitAll()
-						.requestMatchers("/admin/**").permitAll()/*
+						.requestMatchers("/admin/**").hasAuthority("ADMIN")
+						/*
 						.requestMatchers("/admin/agregarProducto").permitAll()
 						.requestMatchers("/admin/formEditorial").permitAll()
 						.requestMatchers("/admin/formCategoria").permitAll()
@@ -63,6 +65,26 @@ public class WebSecurityConfig {
 		return http.build() ;
 		
 	}
+	
+	/*
+	@Bean
+	public SecurityFilterChain securityAdminFilterChain(	HttpSecurity httpSecurity) throws Exception{
+		
+		httpSecurity
+		.csrf(csrf -> csrf.disable())
+			.authorizeHttpRequests((requests) -> requests
+					.requestMatchers("/admin/homeConfigurer").authenticated()
+					.anyRequest().authenticated()
+					)
+			.formLogin( (form )->form 
+					.loginPage("/admin/ingresarAdmin")
+					.permitAll())
+			.logout((logout)->
+					logout.permitAll()
+			);
+	
+	return httpSecurity.build() ;
+	}*/
 
 	@Autowired
 	private UserDetailsServiceImpl userDetailsServiceImpl;

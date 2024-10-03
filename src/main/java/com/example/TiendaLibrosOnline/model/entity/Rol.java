@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collection;
 import java.util.List;
 
 @Getter
@@ -28,11 +29,12 @@ public class Rol {
     @Column(name = "estado")
     private String estado;
     
-    @OneToMany(mappedBy = "rol",fetch = FetchType.LAZY)
-    private List<Usuario> usuarios;
-    
     @OneToMany(mappedBy = "rol",fetch =FetchType.LAZY)
     private List<Admin> admins;
+    
+    
+    @ManyToMany(mappedBy = "roles")
+    private Collection<Usuario> usuarioss;
 
 
 

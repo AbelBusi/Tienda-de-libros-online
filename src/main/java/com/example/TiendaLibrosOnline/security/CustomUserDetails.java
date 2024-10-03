@@ -3,14 +3,14 @@ package com.example.TiendaLibrosOnline.security;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.TiendaLibrosOnline.model.entity.Rol;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -67,8 +67,12 @@ public class CustomUserDetails implements UserDetails{
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		
-		return null;
+		Set<Rol> roles = usuario.getRoles();
+		List<SimpleGrantedAuthority> authorities= new ArrayList<SimpleGrantedAuthority>();
+		for(Rol role: roles) {
+			authorities.add(new SimpleGrantedAuthority(role.getNombre()));
+		}
+		return authorities;
 	}
 
 

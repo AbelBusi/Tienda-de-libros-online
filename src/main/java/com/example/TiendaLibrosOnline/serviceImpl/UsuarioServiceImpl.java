@@ -7,9 +7,6 @@ import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
 
-import java.util.Date;
-import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

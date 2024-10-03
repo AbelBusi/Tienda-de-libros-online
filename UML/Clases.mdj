@@ -16402,7 +16402,7 @@
 											"top": 172,
 											"width": 295.13427734375,
 											"height": 13,
-											"text": "WebSecurityConfig"
+											"text": "WebSecurityConfigUser"
 										},
 										{
 											"_type": "LabelView",
@@ -23583,7 +23583,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "WebSecurityConfig",
+					"name": "WebSecurityConfigUser",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",

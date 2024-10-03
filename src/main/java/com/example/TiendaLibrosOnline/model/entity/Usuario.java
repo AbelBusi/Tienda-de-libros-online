@@ -1,5 +1,6 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
@@ -8,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -17,9 +20,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 
 @Entity
 @Getter
@@ -71,4 +76,14 @@ public class Usuario extends Persona {
         this.password = password;
         this.rol=rol;
     }
+    
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinTable(
+    		name="users_roles",
+    		joinColumns = @JoinColumn(
+    				name="idUsuario",referencedColumnName = "id_usuario"),
+    		inverseJoinColumns = @JoinColumn(
+    				name="idRol",referencedColumnName = "id_Rol"))
+    private Set<Rol> roles=new HashSet<>();
+    
 }
