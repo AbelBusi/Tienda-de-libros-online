@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler{
 	
-	static String ROLE_USUARIO="USUARIO"; 
+	static String ROLE_USUARIO="USER"; 
 	static String ROLE_ADMIN="ADMIN"; 
 	
 	@Override
@@ -24,10 +24,10 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 		String redirectURL= request.getContextPath();
 		
 		if(userDetails.hasRole(ROLE_ADMIN)) {
-			redirectURL="admin/homeConfigurer";
+			redirectURL="/BookStrore/admin/homeConfigurer";
 		}
 		else if (userDetails.hasRole(ROLE_USUARIO)) {
-			redirectURL="home";
+			redirectURL="/BookStrore/home";
 		}
 		
 		response.sendRedirect(redirectURL);
