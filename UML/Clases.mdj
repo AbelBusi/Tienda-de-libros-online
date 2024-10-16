@@ -1506,7 +1506,7 @@
 											"top": 1177,
 											"width": 347.29931640625,
 											"height": 13,
-											"text": "+cerrarSesion <<PostMapping(\"/cerrarSesion\")>>\")()",
+											"text": "+cerrarSesion <<GetMapping(\"/cerrarSesion\")>>\")()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3720,13 +3720,30 @@
 											"height": 13,
 											"text": "+ingresarAdmin<<GetMapping(\"/ingresarAdmin\") >>()",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGSk7lBdbbI2TE=",
+											"_parent": {
+												"$ref": "AAAAAAGQSy5gnfwUzb8="
+											},
+											"model": {
+												"$ref": "AAAAAAGSk7lBW7a2gTE="
+											},
+											"font": "Arial;13;0",
+											"left": 1317,
+											"top": 1237,
+											"width": 310.17822265625,
+											"height": 13,
+											"text": "+cerrarSesion <<GetMapping(\"/cerrarSesion\")>>\")()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1312,
 									"top": 1112,
 									"width": 320.17822265625,
-									"height": 128
+									"height": 143
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3766,7 +3783,7 @@
 							"left": 1312,
 							"top": 1064,
 							"width": 320.17822265625,
-							"height": 176,
+							"height": 191,
 							"showProperty": false,
 							"nameCompartment": {
 								"$ref": "AAAAAAGQSy5gnPwOvJc="
@@ -20394,7 +20411,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGQQPtm1SIZqVg="
 							},
-							"name": "cerrarSesion <<PostMapping(\"/cerrarSesion\")>>\")"
+							"name": "cerrarSesion <<GetMapping(\"/cerrarSesion\")>>\")"
 						}
 					]
 				},
@@ -20815,6 +20832,14 @@
 								"$ref": "AAAAAAGQSy5gnPwLHjk="
 							},
 							"name": "ingresarAdmin<<GetMapping(\"/ingresarAdmin\") >>"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGSk7lBW7a2gTE=",
+							"_parent": {
+								"$ref": "AAAAAAGQSy5gnPwLHjk="
+							},
+							"name": "cerrarSesion <<GetMapping(\"/cerrarSesion\")>>\")"
 						}
 					]
 				},

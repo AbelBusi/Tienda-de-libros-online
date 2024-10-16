@@ -30,6 +30,16 @@ public class AdminController {
 		return "administrador/homeAdmin";
 	}
 	
+	@GetMapping("/cerrarSesion")
+	public String cerrarSesion(HttpSession session) {
+		
+		session.removeAttribute("idUsuario");
+		logger.info("Session : {}",session.getAttribute("idUsuario"));
+
+		return "home/homeBook";
+
+	}
+	
 	@GetMapping("/ingresarAdmin")
 	public String ingresarAdmin() {
 		
