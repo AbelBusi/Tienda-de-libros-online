@@ -1,95 +1,118 @@
-<html xmlns:th="http://www.thymeleaf.org"></html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+</html>
 
 <div th:fragment="Templatelogin-visitor">
 
-    <div class="container-fluid p-3 bg-light">
-        <div class="row">
-            <div class="col-md-3 text-success">
-                <h3 style="color: #1E15B6;"><i class="fas fa-book"></i> Libros</h3>
-            </div>
-            <div class="col-md-6">
-                <form class="d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit"> Buscar</button>
-                </form>
-            </div>
+	<div class="container-fluid p-3 bg-light">
+		<div class="row">
+			<div class="col-md-3 text-success">
+				<h3 style="color: #1E15B6;"><i class="fas fa-book"></i> Libros</h3>
+			</div>
+			<div class="col-md-6">
+				<form class="d-flex">
+					<input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
+					<button class="btn btn-primary my-2 my-sm-0" type="submit"> Buscar</button>
+				</form>
+			</div>
 
-            <div class="text-center col-md-3">
-                <a th:href="@{/usuario/ingresar}" class="btn btn-success" style="background-color: #303f9f;"><i
-                        class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
-                <a th:href="@{/usuario/crearCuenta}" class="btn btn-success" style="background-color: #303f9f;"><i
-                        class="fas fa-address-card"></i> Registrarse</a>
-            </div>
-        </div>
-    </div>
+			<div class="text-center col-md-3">
+				<a th:href="@{/usuario/ingresar}" class="btn btn-success" style="background-color: #303f9f;"><i
+						class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
+				<a th:href="@{/usuario/crearCuenta}" class="btn btn-success" style="background-color: #303f9f;"><i
+						class="fas fa-address-card"></i> Registrarse</a>
+			</div>
+		</div>
+	</div>
 
 </div>
 
-<div th:fragment="Templatelogin-visitor-admin">
+<div th:fragment="Templatelogin-admin">
 
-    <div class="container-fluid p-3 bg-light">
-        <div class="row">
-            <div class="col-md-3 text-success">
-                <h3 style="color: #1E15B6;"><i class="fas fa-book"></i> Libros</h3>
-            </div>
-            <div class="col-md-6">
-                <form class="d-flex">
-                    <input class="form-control me-2 " type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit"> Buscar</button>
-                </form>
-            </div>
-
-            <div class="text-center col-md-3">
-                <a th:href="@{/admin/ingresarAdmin}" class="btn btn-success" style="background-color: #303f9f;"><i
-                        class="fas fa-sign-in-alt"></i> Iniciar sesion</a>
-                
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid p-3 bg-white shadow-sm border-bottom">
+		<div class="row align-items-center">
+			<!-- Logo and Title -->
+			<div class="col-md-3 d-flex align-items-center">
+				<h3 class="text-primary m-0">
+					<i class="fas fa-book"></i> Libros
+				</h3>
+			</div>
+			<!-- Search Bar -->
+			<div class="col-md-5">
+				<form class="d-flex">
+					<input class="form-control me-2 rounded-pill border-primary" type="search"
+						placeholder="Buscar libros..." aria-label="Search">
+					<button class="btn btn-primary rounded-pill px-4" type="submit">Buscar</button>
+				</form>
+			</div>
+			<!-- User Info and Actions -->
+			<div class="col-md-4 d-flex justify-content-end align-items-center">
+				<div class="text-end me-3">
+					<span class="fw-bold text-primary d-block" th:text="${sesion.nombre}">Nombre del Administrador</span>
+					<small class="text-muted">Bienvenido de nuevo</small>
+				</div>
+				<div class="btn-group">
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-user me-2"></i> Perfil
+					</a>
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-shopping-cart me-2"></i> Agregar Libros
+					</a>
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-box-open me-2"></i> Logisitica
+					</a>
+					<a href=""
+						class="btn btn-outline-danger rounded-pill d-flex align-items-center">
+						<i class="fas fa-sign-out-alt me-2"></i> Salir
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 
 </div>
 
 <div th:fragment="Templatelogin-user">
-    <div class="container-fluid p-3 bg-white shadow-sm border-bottom">
-        <div class="row align-items-center">
-            <!-- Logo and Title -->
-            <div class="col-md-3 d-flex align-items-center">
-                <h3 class="text-primary m-0">
-                    <i class="fas fa-book"></i> Libros
-                </h3>
-            </div>
-            <!-- Search Bar -->
-            <div class="col-md-5">
-                <form class="d-flex">
-                    <input class="form-control me-2 rounded-pill border-primary" type="search" placeholder="Buscar libros..." aria-label="Search">
-                    <button class="btn btn-primary rounded-pill px-4" type="submit">Buscar</button>
-                </form>
-            </div>
-            <!-- User Info and Actions -->
-            <div class="col-md-4 d-flex justify-content-end align-items-center">
-                <div class="text-end me-3">
-                    <span class="fw-bold text-primary d-block" th:text="${sesion.nombre}">Nombre del Usuario</span>
-                    <small class="text-muted">Bienvenido de nuevo</small>
-                </div>
-                <div class="btn-group">
-                    <a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
-                        <i class="fas fa-user me-2"></i> Perfil
-                    </a>
-                    <a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
-                        <i class="fas fa-shopping-cart me-2"></i> Carrito
-                    </a>
-                    <a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
-                        <i class="fas fa-box-open me-2"></i> Compras
-                    </a>
-                    <a th:href="@{/usuario/cerrarSesion}" class="btn btn-outline-danger rounded-pill d-flex align-items-center">
-                        <i class="fas fa-sign-out-alt me-2"></i> Salir
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
+	<div class="container-fluid p-3 bg-white shadow-sm border-bottom">
+		<div class="row align-items-center">
+			<!-- Logo and Title -->
+			<div class="col-md-3 d-flex align-items-center">
+				<h3 class="text-primary m-0">
+					<i class="fas fa-book"></i> Libros
+				</h3>
+			</div>
+			<!-- Search Bar -->
+			<div class="col-md-5">
+				<form class="d-flex">
+					<input class="form-control me-2 rounded-pill border-primary" type="search"
+						placeholder="Buscar libros..." aria-label="Search">
+					<button class="btn btn-primary rounded-pill px-4" type="submit">Buscar</button>
+				</form>
+			</div>
+			<!-- User Info and Actions -->
+			<div class="col-md-4 d-flex justify-content-end align-items-center">
+				<div class="text-end me-3">
+					<span class="fw-bold text-primary d-block" th:text="${sesion.nombre}">Nombre del Usuario</span>
+					<small class="text-muted">Bienvenido de nuevo</small>
+				</div>
+				<div class="btn-group">
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-user me-2"></i> Perfil
+					</a>
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-shopping-cart me-2"></i> Carrito
+					</a>
+					<a href="" class="btn btn-outline-primary rounded-pill me-2 d-flex align-items-center">
+						<i class="fas fa-box-open me-2"></i> Compras
+					</a>
+					<a th:href="@{/usuario/cerrarSesion}"
+						class="btn btn-outline-danger rounded-pill d-flex align-items-center">
+						<i class="fas fa-sign-out-alt me-2"></i> Salir
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/vendor/js/bootstrap.bundle.min.js}"></script>
 </div>
-
-
-

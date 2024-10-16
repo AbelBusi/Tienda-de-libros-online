@@ -74,9 +74,8 @@ public class UserController {
 
 	@GetMapping("/cerrarSesion")
 	public String cerrarSesion(HttpSession session) {
-
+		
 		session.removeAttribute("idUsuario");
-
 		logger.info("Session : {}",session.getAttribute("idUsuario"));
 
 		return "home/homeBook";
