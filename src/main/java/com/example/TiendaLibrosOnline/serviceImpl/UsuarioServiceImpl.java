@@ -44,7 +44,6 @@ public class UsuarioServiceImpl implements IUsuarioService {
                     .telefono(usuarioDto.getTelefonoDto())
                     .email(usuarioDto.getEmailDto())
                     .password(usuarioDto.getPasswordDto())
-                    .rol(rol)
                     .build();
 
             if (usuario == null) {

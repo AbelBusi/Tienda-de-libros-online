@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -57,17 +56,12 @@ public class Usuario extends Persona {
     private String password;
     
     @ToString.Exclude
-    @ManyToOne
-    @JoinColumn(name = "rol")
-    private Rol rol;
-    
-    @ToString.Exclude
     @OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY)
     private List<Libro> libros;
 
     @Builder(builderMethodName = "UserBuilder")
     public Usuario(String nombre, String apellido, Date fechaNacimiento, Integer idUsuario, String genero, 
-    		String direccion, String telefono, String email, String password, Rol rol) {
+    		String direccion, String telefono, String email, String password) {
         super(nombre, apellido, fechaNacimiento);
         this.idUsuario = idUsuario;
         this.genero = genero;
@@ -75,7 +69,6 @@ public class Usuario extends Persona {
         this.telefono = telefono;
         this.email = email;
         this.password = password;
-        this.rol=rol;
     }
     
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
@@ -86,6 +79,7 @@ public class Usuario extends Persona {
     		inverseJoinColumns = @JoinColumn(
     				name="idRol",referencedColumnName = "id_Rol"))
     private Set<Rol> roles=new HashSet<>();
+    
     
     public boolean hasRole(String roleName) {
     	

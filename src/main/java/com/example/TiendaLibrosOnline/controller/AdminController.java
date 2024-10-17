@@ -17,13 +17,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AdminController {
 	
     private final Logger logger = LoggerFactory.getLogger(AdminController.class);
-
+    
 	@GetMapping("/homeConfigurer")
 	public String home(HttpSession session, Model model) {
 		
 		Usuario logueado = (Usuario) session.getAttribute("idUsuario");
 
         model.addAttribute("sesion",logueado);
+        
+        
 
         logger.info("Session: {}",session.getAttribute("idUsuario"));
 		
