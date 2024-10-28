@@ -1,6 +1,7 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +21,7 @@ import jakarta.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "CategoriaLibro")
 public class CategoriaLibro {
 

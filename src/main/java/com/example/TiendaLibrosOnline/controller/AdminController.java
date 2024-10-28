@@ -2,21 +2,30 @@ package com.example.TiendaLibrosOnline.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.TiendaLibrosOnline.model.dto.CategoriaLibroDTO;
+import com.example.TiendaLibrosOnline.model.entity.CategoriaLibro;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
+import com.example.TiendaLibrosOnline.serviceImpl.CategoriaLibroServiceImpl;
 
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	
     private final Logger logger = LoggerFactory.getLogger(AdminController.class);
+    
+    @Autowired
+    private CategoriaLibroServiceImpl categoriaLibroServiceImpl;
     
 	@GetMapping("/homeConfigurer")
 	public String home(HttpSession session, Model model) {
@@ -70,9 +79,28 @@ public class AdminController {
 	}
 	
 	@GetMapping("/formCategoria")
-	public String categoria() {
+	public String categoria(Model model) {
+		
+		CategoriaLibro categoria = new CategoriaLibro();
+		
+		model.addAttribute("categoriaForm",categoria);
 		
 		return "administrador/addCategoria";
+	}
+	
+	@PostMapping("/guardarCategoria")
+	public String guardarCategoria(@ModelAttribute CategoriaLibro categoriaLibro,Model model) {
+		
+		model.addAttribute("categoriaForm",categoriaLibro);
+		
+		CategoriaLibroDTO categoriaLibroDTO= CategoriaLibroDTO.builder()
+				.nombreDto(categoriaLibro.getNombre())
+				.descripcionDto(categoriaLibro.getDescripcion())
+				.build();
+		
+		categoriaLibroServiceImpl.crearCategoria(categoriaLibroDTO);
+		
+		return "administrador/homeAdmin";
 	}
 	
 	@GetMapping("/formAutor")
