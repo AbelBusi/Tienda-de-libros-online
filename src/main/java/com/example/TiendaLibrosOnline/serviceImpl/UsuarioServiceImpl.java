@@ -1,8 +1,6 @@
 package com.example.TiendaLibrosOnline.serviceImpl;
 
-import com.example.TiendaLibrosOnline.model.entity.Rol;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
-import com.example.TiendaLibrosOnline.model.dto.RolDto;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
@@ -15,65 +13,47 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioServiceImpl implements IUsuarioService {
 
-    @Autowired
-    private IUsuarioRepository usuarioRepository;
+	@Autowired
+	private IUsuarioRepository usuarioRepository;
 
-    private final Logger logger = LoggerFactory.getLogger(UsuarioServiceImpl.class);
+	private final Logger logger = LoggerFactory.getLogger(UsuarioServiceImpl.class);
 
+	@Override
+	public Usuario crearUsuario(UsuarioDto usuarioDto) {
+		if (usuarioDto == null) {
+			logger.warn("Los datos del usuario estan vacios");
+		}
 
-    @Override
-    public Usuario crearUsuario(UsuarioDto usuarioDto) {
-        Usuario usuario = null;
-        
-        RolDto rolDto = RolDto.builder()
-        		.idRol(2)
-        		.build();
-        
-        Rol rol = Rol.builder()
-        		.idRol(rolDto.getIdRol())
-        		.build();
-        
-        try {
+		Usuario usuario = Usuario.UserBuilder().nombre(usuarioDto.getNombreDto()).apellido(usuarioDto.getApellidoDto())
+				.fechaNacimiento(usuarioDto.getFechaNacimientoDto()).genero(usuarioDto.getGeneroDto())
+				.direccion(usuarioDto.getDireccionDto()).telefono(usuarioDto.getTelefonoDto())
+				.email(usuarioDto.getEmailDto()).password(usuarioDto.getPasswordDto()).build();
 
-            usuario = Usuario.UserBuilder()
-                    .nombre(usuarioDto.getNombreDto())
-                    .apellido(usuarioDto.getApellidoDto())
-                    .fechaNacimiento(usuarioDto.getFechaNacimientoDto())
-                    .genero(usuarioDto.getGeneroDto())
-                    .direccion(usuarioDto.getDireccionDto())
-                    .telefono(usuarioDto.getTelefonoDto())
-                    .email(usuarioDto.getEmailDto())
-                    .password(usuarioDto.getPasswordDto())
-                    .build();
+		try {
 
-            if (usuario == null) {
-                logger.info("No se guardo el USUARIO correctamente {}", usuario.getPassword());
-                throw new NullPointerException("No se puede guardar un usuario vacio");
-            }
+			usuarioRepository.save(usuario);
+			logger.info("Usuario guardado con exito {}", usuario.getNombre());	
 
+		} catch (RuntimeException e) {
 
-            logger.info("Usuario guardado con exito {}", usuario.getNombre());
-            return usuarioRepository.save(usuario);
+			logger.error("No se guardo el USUARIO {}", usuario.getPassword());
 
+			throw new RuntimeException("Error no se guardo el usuario");
 
-        } catch (RuntimeException e) {
+		}
+		
+		return usuario;
 
-            logger.info("No se guardo el USUARIO {}", usuario.getPassword());
+	}
 
-            return new Usuario();
+	@Override
+	public Integer eliminarUsuario(Integer idUxsuario) {
+		return null;
+	}
 
-        }
-
-    }
-
-    @Override
-    public Integer eliminarUsuario(Integer idUxsuario) {
-        return null;
-    }
-
-    @Override
-    public Usuario actualizarUsuario(UsuarioDto usuarioDto) {
-        return null;
-    }
+	@Override
+	public Usuario actualizarUsuario(UsuarioDto usuarioDto) {
+		return null;
+	}
 
 }

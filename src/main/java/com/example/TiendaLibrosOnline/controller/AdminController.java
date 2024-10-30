@@ -1,5 +1,7 @@
 package com.example.TiendaLibrosOnline.controller;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,41 +23,39 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	
-    private final Logger logger = LoggerFactory.getLogger(AdminController.class);
-    
-    @Autowired
-    private CategoriaLibroServiceImpl categoriaLibroServiceImpl;
-    
+
+	private final Logger logger = LoggerFactory.getLogger(AdminController.class);
+
+	@Autowired
+	private CategoriaLibroServiceImpl categoriaLibroServiceImpl;
+
 	@GetMapping("/homeConfigurer")
 	public String home(HttpSession session, Model model) {
-		
+
 		Usuario logueado = (Usuario) session.getAttribute("idUsuario");
 
-        model.addAttribute("sesion",logueado);
-        
-        
+		model.addAttribute("sesion", logueado);
 
-        logger.info("Session: {}",session.getAttribute("idUsuario"));
-		
+		logger.info("Session: {}", session.getAttribute("idUsuario"));
+
 		return "administrador/homeAdmin";
 	}
-	
+
 	@GetMapping("/cerrarSesion")
 	public String cerrarSesion(HttpSession session) {
-		
+
 		session.removeAttribute("idUsuario");
-		logger.info("Session : {}",session.getAttribute("idUsuario"));
+		logger.info("Session : {}", session.getAttribute("idUsuario"));
 
 		return "home/homeBook";
 
 	}
-	
+
 	@GetMapping("/ingresarAdmin")
 	public String ingresarAdmin() {
-		
+
 		return "acceso/loginAdmin";
-		
+
 	}
 
 	@GetMapping("/agregarProducto")
@@ -64,57 +64,62 @@ public class AdminController {
 		return "administrador/addLibro";
 
 	}
-	
+
 	@GetMapping("/libros")
 	public String totalLibros() {
-		
+
 		return "administrador/librosAll";
-		
+
 	}
-	
+
 	@GetMapping("/formEditorial")
 	public String editorial() {
-		
+
 		return "administrador/addEditorial";
 	}
-	
+
 	@GetMapping("/formCategoria")
 	public String categoria(Model model) {
-		
-		CategoriaLibro categoria = new CategoriaLibro();
-		
-		model.addAttribute("categoriaForm",categoria);
-		
+
 		return "administrador/addCategoria";
 	}
-	
+
 	@PostMapping("/guardarCategoria")
-	public String guardarCategoria(@ModelAttribute CategoriaLibro categoriaLibro,Model model) {
-		
-		model.addAttribute("categoriaForm",categoriaLibro);
-		
-		CategoriaLibroDTO categoriaLibroDTO= CategoriaLibroDTO.builder()
-				.nombreDto(categoriaLibro.getNombre())
-				.descripcionDto(categoriaLibro.getDescripcion())
-				.build();
-		
-		categoriaLibroServiceImpl.crearCategoria(categoriaLibroDTO);
-		
-		return "administrador/homeAdmin";
+	public String guardarCategoria(@ModelAttribute CategoriaLibro categoriaLibro, Model model) {
+
+		model.addAttribute("categoriaForm", categoriaLibro);
+
+		CategoriaLibroDTO categoriaLibroDTO = CategoriaLibroDTO.builder().nombreDto(categoriaLibro.getNombre())
+				.descripcionDto(categoriaLibro.getDescripcion()).build();
+
+		Optional<CategoriaLibro> categoria = categoriaLibroServiceImpl
+				.categoriaExistenteLibro(categoriaLibro.getNombre());
+
+		if (categoria.isPresent()) {
+			model.addAttribute("error", "Esta categoria ya existe");
+			return "administrador/addCategoria";
+		} else {
+
+			categoriaLibroServiceImpl.crearCategoria(categoriaLibroDTO);
+			model.addAttribute("succes", "Categoria agregada correctamente");
+
+			return "administrador/addCategoria";
+		}
+
 	}
-	
+
 	@GetMapping("/formAutor")
-	public String autor(){
-		
+	public String autor() {
+
 		return "administrador/addAutor";
-		
+
 	}
-	
+
 	@GetMapping("/logistics")
 	public String logistics() {
-		
+
 		return "administrador/logisticsBook";
-		
+
 	}
 
 }

@@ -4,6 +4,7 @@ import com.example.TiendaLibrosOnline.model.entity.CategoriaLibro;
 import com.example.TiendaLibrosOnline.model.dto.CategoriaLibroDTO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICategoriaLibroService {
 
@@ -11,4 +12,7 @@ public interface ICategoriaLibroService {
     CategoriaLibro actualizarCategoria(CategoriaLibroDTO categoria);
     List<CategoriaLibro> mostrarCategoria();
     void eliminarCategoria(int idCategoria);
+    Optional<CategoriaLibro> categoriaExistenteLibro (String nombre); 
+    
+    
 }
