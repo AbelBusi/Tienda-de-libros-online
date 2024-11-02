@@ -101,9 +101,8 @@ public class AdminController {
 		} else {
 
 			categoriaLibroServiceImpl.crearCategoria(categoriaLibroDTO);
-			model.addAttribute("succes", "Categoria agregada correctamente");
 
-			return "administrador/addCategoria";
+			return "redirect:/admin/formCategoria";
 		}
 
 	}

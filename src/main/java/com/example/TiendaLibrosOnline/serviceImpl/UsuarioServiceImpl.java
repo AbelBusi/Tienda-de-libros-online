@@ -5,6 +5,8 @@ import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +56,19 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	@Override
 	public Usuario actualizarUsuario(UsuarioDto usuarioDto) {
 		return null;
+	}
+
+	@Override
+	public Usuario verificarUsuario(String emailUsuario) {
+
+		if (emailUsuario==null ){
+
+			logger.warn("El email y password de las validaciones estan vacias");
+			throw  new RuntimeException("Error, no existen datos para validacion");
+		}
+
+		return usuarioRepository.findByEmail(emailUsuario);
+
 	}
 
 }

@@ -12,6 +12,8 @@ public interface IUsuarioService {
     Integer eliminarUsuario(Integer idUxsuario);
 
     Usuario actualizarUsuario(UsuarioDto usuarioDto);
+    
+    Usuario verificarUsuario(String emailUsuario);
 
 
 }
