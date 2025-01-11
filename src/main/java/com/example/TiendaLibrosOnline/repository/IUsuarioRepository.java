@@ -14,7 +14,4 @@ public interface IUsuarioRepository extends JpaRepository<Usuario,Integer> {
 	
 	Usuario findByEmail(String email);
 
-	//verificar correo y clave del usuario
-	Optional<Usuario> findByEmailAndPassword(String email, String passoword);
-	
 }

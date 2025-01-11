@@ -5,7 +5,6 @@ import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.repository.IUsuarioRepository;
 import com.example.TiendaLibrosOnline.service.IUsuarioService;
 
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,14 +23,22 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	public Usuario crearUsuario(UsuarioDto usuarioDto) {
 		if (usuarioDto == null) {
 			logger.warn("Los datos del usuario estan vacios");
+			throw new NullPointerException("No existen datos para el usuario");
 		}
 
-		Usuario usuario = Usuario.UserBuilder().nombre(usuarioDto.getNombreDto()).apellido(usuarioDto.getApellidoDto())
-				.fechaNacimiento(usuarioDto.getFechaNacimientoDto()).genero(usuarioDto.getGeneroDto())
-				.direccion(usuarioDto.getDireccionDto()).telefono(usuarioDto.getTelefonoDto())
-				.email(usuarioDto.getEmailDto()).password(usuarioDto.getPasswordDto()).build();
+		Usuario usuario = Usuario.UserBuilders()
+				.nombre(usuarioDto.getNombreDto())
+				.apellido(usuarioDto.getApellidoDto())
+				.fechaNacimiento(usuarioDto.getFechaNacimientoDto())
+				.genero(usuarioDto.getGeneroDto())
+				.direccion(usuarioDto.getDireccionDto())
+				.telefono(usuarioDto.getTelefonoDto())
+				.email(usuarioDto.getEmailDto())
+				.password(usuarioDto.getPasswordDto())
+				.build();
 
 		try {
+
 
 			usuarioRepository.save(usuario);
 			logger.info("Usuario guardado con exito {}", usuario.getNombre());	

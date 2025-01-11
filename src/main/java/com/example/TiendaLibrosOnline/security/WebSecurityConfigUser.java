@@ -33,7 +33,7 @@ public class WebSecurityConfigUser {
 						.requestMatchers("/usuario/guardarUsuario").permitAll()
 						.requestMatchers("/usuario/crearCuenta").permitAll()
 						.requestMatchers("/usuario/iniciarSesion").permitAll()
-						.requestMatchers("/admin/**").hasAuthority("ADMIN")
+
 						/*
 						.requestMatchers("/admin/agregarProducto").permitAll()
 						.requestMatchers("/admin/formEditorial").permitAll()

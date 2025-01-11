@@ -1,5 +1,9 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,8 +11,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Collection;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -16,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Builder
+@Table(name = "rol")
 public class Rol {
 
     @Id
@@ -27,15 +31,8 @@ public class Rol {
     private String nombre;
 
     @Column(name = "estado")
-    private String estado;
-    
-    @OneToMany(mappedBy = "rol",fetch =FetchType.LAZY)
-    private List<Admin> admins;
-    
-    
-    @ManyToMany(mappedBy = "roles")
-    private Collection<Usuario> usuarioss;
+    private String estado;  
 
-
-
+    @OneToMany(mappedBy = "idRol",fetch = FetchType.EAGER)
+    Set<Access> rol=new HashSet<>();;
 }

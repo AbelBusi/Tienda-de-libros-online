@@ -1,9 +1,14 @@
 package com.example.TiendaLibrosOnline.controller;
 
+import com.example.TiendaLibrosOnline.model.entity.Rol;
+import com.example.TiendaLibrosOnline.serviceImpl.RolServiceImpl;
+import com.example.TiendaLibrosOnline.serviceImpl.RolUsuarioServiceImpl;
+
 import jakarta.servlet.http.HttpSession;
 import org.slf4j.LoggerFactory;
 
-import java.util.Optional;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -25,69 +29,88 @@ import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;
 @RequestMapping("/usuario")
 public class UserController {
 
-	private final Logger logger = LoggerFactory.getLogger(UserController.class);
+    private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-	@Autowired
-	private UsuarioServiceImpl usuarioService;
+    @Autowired
+    private UsuarioServiceImpl usuarioService;
 
-	@Autowired
-	private PasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    private RolServiceImpl rolService;
+    
+    @Autowired
+    private RolUsuarioServiceImpl rolUsuarioServiceImpl;
 
-	@GetMapping("/ingresar")
-	@ResponseStatus(HttpStatus.OK)
-	public String iniciarSesion() {
+    @Autowired
+    private PasswordEncoder bCryptPasswordEncoder;
 
-		return "acceso/login";
+    @GetMapping("/ingresar")
+    @ResponseStatus(HttpStatus.OK)
+    public String iniciarSesion() {
 
-	}
+        return "acceso/login";
 
-	@GetMapping("/crearCuenta")
-	public String registrarUsuario(Model model) {
+    }
 
-		Usuario usuario = new Usuario();
+    @GetMapping("/crearCuenta")
+    public String registrarUsuario(Model model) {
 
-		model.addAttribute("usuarioForm", usuario);
-		return "acceso/registerUser";
-	}
+        Usuario usuario = new Usuario();
 
-	@PostMapping("/guardarUsuario")
-	@ResponseStatus(HttpStatus.CREATED)
-	public String guardarUsuario(Usuario usuario, Model model) {
+        model.addAttribute("usuarioForm", usuario);
+        return "acceso/registerUser";
+    }
 
-		model.addAttribute("usuarioForm", usuario);
+    @PostMapping("/guardarUsuario")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String guardarUsuario(Usuario usuario, Model model) {
 
-		Usuario u =usuarioService.verificarUsuario(usuario.getEmail());
+        model.addAttribute("usuarioForm", usuario);
 
-		if (u!=null) {
+        Set<Rol> rols = new HashSet<Rol>();
+        Rol rol = Rol.builder()
+                .idRol(2)
+                .build();
+        rols.add(rol);
+        Usuario u = usuarioService.verificarUsuario(usuario.getEmail());
 
-			logger.warn("El usuario ya existe y no puede ser creado");
-			model.addAttribute("error", "Ya existe un usuario");
-			return "acceso/registerUser";
-		}else{
+        if (u != null) {
+            logger.warn("El usuario ya existe y no puede ser creado");
+            model.addAttribute("error", "Ya existe un usuario");
+            return "acceso/registerUser";
+        }
 
-			logger.info("Usuario: {}",usuario.getPassword());
+        UsuarioDto usuarioDTO = UsuarioDto.UserDTO()
+                .nombreDto(usuario.getNombre())
+                .apellidoDto(usuario.getApellido())
+                .generoDto(usuario.getGenero())
+                .direccionDto(usuario.getDireccion())
+                .telefonoDto(usuario.getTelefono())
+                .fechaNacimientoDto(usuario.getFechaNacimiento())
+                .emailDto(usuario.getEmail())
+                .passwordDto(bCryptPasswordEncoder.encode(usuario.getPassword()))
+                .build();
 
-			UsuarioDto usuarioDTO = UsuarioDto.builder().nombreDto(usuario.getNombre()).apellidoDto(usuario.getApellido())
-					.generoDto(usuario.getGenero()).direccionDto(usuario.getDireccion()).telefonoDto(usuario.getTelefono())
-					.fechaNacimientoDto(usuario.getFechaNacimiento()).emailDto(usuario.getEmail())
-					.passwordDto(bCryptPasswordEncoder.encode(usuario.getPassword())).build();
 
-			usuarioService.crearUsuario(usuarioDTO);
+        logger.info("Usuario: {}",usuarioDTO);
 
-			return "home/homeBook";
-		}
+        usuarioService.crearUsuario(usuarioDTO);
+        
+ 
 
 
-	}
 
-	@GetMapping("/cerrarSesion")
-	public String cerrarSesion(HttpSession session) {
+        return "home/homeBook";
 
-		session.removeAttribute("idUsuario");
-		logger.info("Session : {}", session.getAttribute("idUsuario"));
+    }
 
-		return "home/homeBook";
+    @GetMapping("/cerrarSesion")
+    public String cerrarSesion(HttpSession session) {
 
-	}
+        session.removeAttribute("idUsuario");
+        logger.info("Session : {}", session.getAttribute("idUsuario"));
+
+        return "home/homeBook";
+
+    }
 
 }

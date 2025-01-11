@@ -1,6 +1,5 @@
 package com.example.TiendaLibrosOnline.model.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
@@ -8,9 +7,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -57,10 +53,29 @@ public class Usuario extends Persona {
     @ToString.Exclude
     @OneToMany(mappedBy = "usuario",fetch = FetchType.LAZY)
     private List<Libro> libros;
+    
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "idUsuario")
+    private Set<Access> access=new HashSet<>();
+    
+    public boolean hasRole(String roleName) {
+    	
+    	Iterator<Access> iterator=this.access.iterator();
+    	
+    	while (iterator.hasNext()) {
+			Access role= iterator.next();
+			if(role.getIdRol().getNombre().equals(roleName)) {
+				return true;
+			}
+		}
+    	
+    	return false;
+    	
+    }
+    
 
-    @Builder(builderMethodName = "UserBuilder")
-    public Usuario(String nombre, String apellido, Date fechaNacimiento, Integer idUsuario, String genero, 
-    		String direccion, String telefono, String email, String password) {
+    @Builder(builderMethodName = "UserBuilders")
+    public Usuario(String nombre, String apellido, Date fechaNacimiento, Integer idUsuario, String genero,
+                   String direccion, String telefono, String email, String password) {
         super(nombre, apellido, fechaNacimiento);
         this.idUsuario = idUsuario;
         this.genero = genero;
@@ -69,30 +84,6 @@ public class Usuario extends Persona {
         this.email = email;
         this.password = password;
     }
-    
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinTable(
-    		name="users_roles",
-    		joinColumns = @JoinColumn(
-    				name="idUsuario",referencedColumnName = "id_usuario"),
-    		inverseJoinColumns = @JoinColumn(
-    				name="idRol",referencedColumnName = "id_Rol"))
-    private Set<Rol> roles=new HashSet<>();
-    
-    
-    public boolean hasRole(String roleName) {
-    	
-    	Iterator<Rol> iterator=this.roles.iterator();
-    	
-    	while (iterator.hasNext()) {
-			Rol role= iterator.next();
-			if(role.getNombre().equals(roleName)) {
-				return true;
-			}
-		}
-    	
-    	return false;
-    	
-    }
+
     
 }

@@ -29,7 +29,7 @@ class IUsuarioRepositoryTest {
 	@BeforeEach
 	void setup() {
 		
-		usuario = Usuario.UserBuilder()
+		usuario = Usuario.UserBuilders()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")
@@ -47,7 +47,7 @@ class IUsuarioRepositoryTest {
 		
 		//GIVEN: se describe las precondiciones necesarias para la ejecucion del escenario
 		
-		usuario = Usuario.UserBuilder()
+		usuario = Usuario.UserBuilders()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")

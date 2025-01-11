@@ -36,7 +36,7 @@ class UsuarioServiceTest {
 	@BeforeEach
 	void setup() {
 
-		usuario= Usuario.UserBuilder()
+		usuario= Usuario.UserBuilders()
 				.nombre("Cesar Abel")
 				.apellido("Bustamante Inoach")
 				.genero("masculino")

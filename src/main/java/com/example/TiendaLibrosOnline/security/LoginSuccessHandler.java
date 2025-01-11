@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component
 public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler{
 	
-	static String ROLE_USUARIO="USER"; 
-	static String ROLE_ADMIN="ADMIN"; 
+	static String ROLE_USUARIO="user";
+	static String ROLE_ADMIN="admin";
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
