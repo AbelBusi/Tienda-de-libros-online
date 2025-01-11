@@ -14,6 +14,8 @@ public interface IUsuarioService {
     Usuario actualizarUsuario(UsuarioDto usuarioDto);
     
     Usuario verificarUsuario(String emailUsuario);
+    
+    Integer idUsuario(Usuario usuario);
 
 
 }

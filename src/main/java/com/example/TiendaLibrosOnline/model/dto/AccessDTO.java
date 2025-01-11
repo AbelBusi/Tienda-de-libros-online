@@ -1,9 +1,5 @@
 package com.example.TiendaLibrosOnline.model.dto;
 
-
-import com.example.TiendaLibrosOnline.model.entity.Rol;
-import com.example.TiendaLibrosOnline.model.entity.Usuario;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,11 +11,10 @@ import lombok.ToString;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rol_UsuarioDTO {
+public class AccessDTO {
 	
-	private Rol idRol;
-	private Usuario idUsuario;
-	
+	private Integer idUsuario;
+	private Integer idRol;
 	
 
 }

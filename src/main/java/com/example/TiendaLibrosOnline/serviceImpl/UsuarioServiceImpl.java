@@ -78,4 +78,13 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
 	}
 
+	@Override
+	public Integer idUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		usuarioRepository.findByEmail(usuario.getEmail());
+		Integer id= usuarioRepository.findByEmail(usuario.getEmail()).getIdUsuario();
+
+		return id;
+	}
+
 }

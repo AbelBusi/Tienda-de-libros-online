@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
+import com.example.TiendaLibrosOnline.model.dto.AccessDTO;
 import com.example.TiendaLibrosOnline.model.dto.UsuarioDto;
 import com.example.TiendaLibrosOnline.serviceImpl.UsuarioServiceImpl;
 
@@ -95,10 +96,15 @@ public class UserController {
 
         usuarioService.crearUsuario(usuarioDTO);
         
- 
-
-
-
+        Integer id=usuarioService.idUsuario(usuario);
+        
+        AccessDTO accessDTO= AccessDTO.builder()
+        		.idUsuario(id)
+        		.idRol(2)
+        		.build();
+        
+        rolUsuarioServiceImpl.guardarRolUsuario(accessDTO);
+        
         return "home/homeBook";
 
     }
