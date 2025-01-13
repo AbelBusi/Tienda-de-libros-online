@@ -27,7 +27,7 @@ public class HomeBooksController {
         model.addAttribute("sesion",logueado);
 
         logger.info("Session: {}",session.getAttribute("idUsuario"));
-
+        
         return "home/homeBook";
 
     }

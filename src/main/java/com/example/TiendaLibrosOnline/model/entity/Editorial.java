@@ -29,14 +29,18 @@ public class Editorial {
     @Column(name = "id_editorial")
     private Integer idEditorial;
 
-    @Column(name = "nombre",nullable = false)
+    @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "descripcion",nullable = false)
+    @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "ubicacion",nullable = false)
+    @Column(name = "ubicacion")
     private String ubicacion;
+    
+    @Column(name = "estado")
+    private boolean estado;
+    
     @OneToMany(mappedBy = "idEditorial")
     private List<Libro> libros;
 
