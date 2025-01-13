@@ -33,6 +33,7 @@ public class EditorialServiceImpl implements IEditorialService {
 				.nombre(editorialDto.getNombreDto())
 				.descripcion(editorialDto.getDescripcionDto())
 				.ubicacion(editorialDto.getUbicacionDto())
+				.estado(true)
 				.build();
 		try {
 			

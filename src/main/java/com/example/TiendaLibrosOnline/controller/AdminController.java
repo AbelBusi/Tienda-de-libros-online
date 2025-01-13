@@ -10,9 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.TiendaLibrosOnline.model.dto.CategoriaLibroDTO;
+import com.example.TiendaLibrosOnline.model.dto.EditorialDTO;
 import com.example.TiendaLibrosOnline.model.entity.CategoriaLibro;
+import com.example.TiendaLibrosOnline.model.entity.Editorial;
 import com.example.TiendaLibrosOnline.model.entity.Usuario;
 import com.example.TiendaLibrosOnline.serviceImpl.CategoriaLibroServiceImpl;
+import com.example.TiendaLibrosOnline.serviceImpl.EditorialServiceImpl;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -28,6 +31,9 @@ public class AdminController {
 
 	@Autowired
 	private CategoriaLibroServiceImpl categoriaLibroServiceImpl;
+	
+	@Autowired
+	private EditorialServiceImpl editorialServiceImpl;
 
 	@GetMapping("/homeConfigurer")
 	public String home(HttpSession session, Model model) {
@@ -73,9 +79,37 @@ public class AdminController {
 	}
 
 	@GetMapping("/formEditorial")
-	public String editorial() {
+	public String editorial(Model model) {
 
+		Editorial editorial= new Editorial();
+		
+		model.addAttribute("editorialForm",editorial);
+		
+		
 		return "administrador/addEditorial";
+	}
+	
+	@PostMapping("/saveEditorial")
+	public String savedEditorial(Editorial editorial,Model model) {
+		
+		model.addAttribute("editorialForm",editorial);
+		
+		if (editorialServiceImpl.verificarEditorialExistente(editorial.getNombre())) {
+			
+			model.addAttribute("error", "Ya existe la editorial");
+			return "administrador/addEditorial";
+		}
+		
+		EditorialDTO editorialDTO=EditorialDTO.builder()
+				.nombreDto(editorial.getNombre())
+				.descripcionDto(editorial.getDescripcion())
+				.ubicacionDto(editorial.getUbicacion())
+				.build();
+		
+		editorialServiceImpl.agregarEditorial(editorialDTO);
+		
+		return "redirect:/admin/homeConfigurer";
+		
 	}
 
 	@GetMapping("/formCategoria")

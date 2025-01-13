@@ -102,24 +102,39 @@
 							<div class="mb-5">
 								<h3 class="header-text">Formulario para llenar un Editorial</h3>
 							</div>
-							<form action="#" method="post">
+							<div class="error-message" th:if="${error}">
+								<div class="error-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+										<path
+											d="M8 1.5a.5.5 0 0 1 .447.276l6 12a.5.5 0 0 1-.447.724H1.447a.5.5 0 0 1-.447-.724l6-12A.5.5 0 0 1 8 1.5zm.5 3.5h-1v4h1v-4zm0 6h-1v-1h1v1z" />
+									</svg>
+								</div>
+								<div class="error-text">
+									Intente con otro usuario
+								</div>
+							</div>
+
+
+							<form th:action="@{/admin/saveEditorial}" method="post" th:object="{editorialForm}">
 								<div class="form-section">
 									<label for="nombreEditorial" class="form-label">Nombre <span
 											class="text-danger">*</span></label>
 									<input type="text" class="form-control" name="nombre" id="nombreEditorial"
-										placeholder="Nombre de la editorial" required>
+										placeholder="Nombre de la editorial" th:field="*{nombre}" required>
 								</div>
 								<div class="form-section">
 									<label for="descripcion" class="form-label">Descripción <span
 											class="text-danger">*</span></label>
 									<textarea class="form-control" placeholder="Descripción de la editorial"
-										name="descripcion" id="descripcion" rows="3" required></textarea>
+										name="descripcion" id="descripcion" rows="3" th:field="*{descripcion}"
+										required></textarea>
 								</div>
 								<div class="form-section">
 									<label for="ubicacion" class="form-label">Ubicación <span
 											class="text-danger">*</span></label>
 									<input type="text" class="form-control" name="ubicacion" id="ubicacion"
-										placeholder="Ubicación de la editorial" required>
+										placeholder="Ubicación de la editorial" th:field="*{ubicacion}" required>
 								</div>
 								<div class="form-section">
 									<div class="d-grid">

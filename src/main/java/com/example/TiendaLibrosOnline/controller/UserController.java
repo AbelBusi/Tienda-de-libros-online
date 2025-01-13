@@ -66,12 +66,6 @@ public class UserController {
     public String guardarUsuario(Usuario usuario, Model model) {
 
         model.addAttribute("usuarioForm", usuario);
-
-        Set<Rol> rols = new HashSet<Rol>();
-        Rol rol = Rol.builder()
-                .idRol(2)
-                .build();
-        rols.add(rol);
         Usuario u = usuarioService.verificarUsuario(usuario.getEmail());
 
         if (u != null) {
