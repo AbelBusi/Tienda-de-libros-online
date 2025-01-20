@@ -83,9 +83,11 @@ public class EditorialServiceImpl implements IEditorialService {
 				estado = true;
 				logger.info("Ya existe una editorial");
 			}
-
+			else {
 			estado = false;
 			logger.info("No existe una editorial todavia");
+			
+			}
 
 		} catch (Exception e) {
 			// TODO: handle exception

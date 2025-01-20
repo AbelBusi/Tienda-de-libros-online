@@ -80,11 +80,9 @@ public class AdminController {
 
 	@GetMapping("/formEditorial")
 	public String editorial(Model model) {
-
-		Editorial editorial= new Editorial();
 		
+		Editorial editorial = new Editorial();
 		model.addAttribute("editorialForm",editorial);
-		
 		
 		return "administrador/addEditorial";
 	}

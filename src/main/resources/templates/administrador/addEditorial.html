@@ -88,13 +88,9 @@
 				<div class="row g-0">
 					<div class="col-md-6 text-center center-container">
 						<div>
-							<img th:src="@{/images/default.png}" alt="Product Image" class="product-image"
+							<img th:src="@{/images/book5.jpg}" alt="Product Image" class="product-image"
 								id="productImagePreview">
-							<label for="productImage" class="custom-file-upload">
-								<i class="bi bi-upload"></i> Subir Imagen
-							</label>
-							<input type="file" class="form-control d-none" id="productImage" accept="image/*"
-								onchange="previewImage(event)">
+
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
@@ -111,12 +107,12 @@
 									</svg>
 								</div>
 								<div class="error-text">
-									Intente con otro usuario
+									Ya existe la editorial
 								</div>
 							</div>
 
 
-							<form th:action="@{/admin/saveEditorial}" method="post" th:object="{editorialForm}">
+							<form th:action="@{/admin/saveEditorial}" method="post" th:object="${editorialForm}">
 								<div class="form-section">
 									<label for="nombreEditorial" class="form-label">Nombre <span
 											class="text-danger">*</span></label>
